@@ -1,5 +1,6 @@
 import style from "./style/home.module.css";
 import Image from "next/image";
+import HomeSecondSection from "./home/HomeSecondSection.jsx"
 export default function Home() {
   const boxDetails = [ 
     {
@@ -81,6 +82,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <HomeSecondSection/>
     </>
   );
 }
