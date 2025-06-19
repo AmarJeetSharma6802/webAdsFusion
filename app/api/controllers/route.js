@@ -29,6 +29,7 @@ export async function POST(req) {
     if (!name || !title || !imageFile) {
       return NextResponse.json({ message: "Name, title, and image are required" }, { status: 400 });
     }
+    
 
     // Upload image to Cloudinary
     const buffer = Buffer.from(await imageFile.arrayBuffer());
