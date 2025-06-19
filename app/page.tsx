@@ -49,7 +49,7 @@ export default function Home() {
         <div className={style.home_video_bg}>
           <video
           className={style.home_video}
-            src="https://dhygzobemt712.cloudfront.net/Web/home/2024-wxp/hero/hero-compress5.mp4"
+            src="/homeVideo.mp4"
             loop
             muted
             autoPlay
