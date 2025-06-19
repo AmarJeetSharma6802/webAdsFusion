@@ -77,6 +77,20 @@ margin-bottom: 1rem;
 .box_para{
     font-size: 14px;
 }
+.HomeSecondSection_heading{
+     max-width: 85vw;
+    margin: auto;
+    padding: 10px;
+}
+.heading_h1{
+    font-size: 6rem;
+     background: linear-gradient(to right, #656565, #000000); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+
 
 @media (max-width:850px) {
     .home_content {
