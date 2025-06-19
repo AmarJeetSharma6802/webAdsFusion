@@ -12,7 +12,7 @@ useEffect(()=>{
   const textElement = gsap.from(textRef.current,{
     scale:1,
     opacity:0,
-    duration:1,
+    duration:0.9,
      color: "#ff00aa",
     ease: "power3.out",
     scrollTrigger:{
