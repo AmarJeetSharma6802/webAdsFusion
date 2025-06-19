@@ -4,6 +4,7 @@ const restSchema = mongoose.Schema({
     name: String,
     title: String,
     image: String,
+    video:String
 }, {
     timestamps: true,
 });

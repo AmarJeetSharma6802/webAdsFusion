@@ -24,6 +24,7 @@ export async function POST(req) {
     const name = formData.get("name");
     const title = formData.get("title");
     const imageFile = formData.get("image");
+    const VideoFile = formData.get("video")
 
     if (!name || !title || !imageFile) {
       return NextResponse.json({ message: "Name, title, and image are required" }, { status: 400 });
@@ -39,11 +40,22 @@ export async function POST(req) {
       return NextResponse.json({ error: "Cloudinary image upload failed" }, { status: 500 });
     }
 
+    const videoBuffer  =  Buffer.from(await VideoFile.arrayBuffer())
+    const VideoFilePath = path.join("/tmp", VideoFile.name)
+      await writeFile(VideoFilePath, videoBuffer);
+
+      const uploadedVideo = await uploadOnCloudinary(VideoFilePath, "video");
+      if (!uploadedVideo) {
+        return NextResponse.json({ error: "Cloudinary video upload failed" }, { status: 500 });
+      }
+
+
     
     const items = await RestItem.create({
       name,
       title,
       image: uploaded.secure_url,
+      video : uploadedVideo.secure_url || ""
       
     });
 

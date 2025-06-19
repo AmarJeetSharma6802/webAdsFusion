@@ -49,7 +49,7 @@ export default function Home() {
         <div className={style.home_video_bg}>
           <video
           className={style.home_video}
-            src="/homeVideo.mp4"
+            src="https://res.cloudinary.com/futurecoder/video/upload/v1750313516/w7tkh3dgwinnsz7zrhtv.mp4"
             loop
             muted
             autoPlay
