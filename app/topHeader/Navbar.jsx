@@ -35,11 +35,7 @@ function Navbar() {
                   )}
                 </span>
               </div>
-              <div
-                className={`${style.inner_service_bg} ${
-                  serv ? style.active : ""
-                }`}
-              >
+              
                 <div
                   className={`${style.inner_service_content}  ${
                     serv ? style.active : ""
@@ -134,7 +130,6 @@ function Navbar() {
                   </div>
 
                 </div>
-              </div>
             </li>
             <li className={style.nav_li}>Contact</li>
           </ul>
