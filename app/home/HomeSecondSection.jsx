@@ -11,24 +11,34 @@ function HomeSecondSection() {
   const textRef = useRef(null);
 
   useEffect(() => {
-    const textElement = gsap.from(textRef.current, {
-      scale: 1,
+  const textElement = gsap.fromTo(
+    textRef.current,
+    {
+      scale: 0.8,
+      y: 80,
       opacity: 0,
-      duration: 0.9,
-      color: "#ff00aa",
-      ease: "power3.out",
+    },
+    {
+      scale: 1,
+      y: 0,
+      opacity: 1,
+      duration: 1.2,
+      ease: "power4.out",
       scrollTrigger: {
         trigger: textRef.current,
         start: "top 80%",
         toggleActions: "play none none none",
-        markers: true,
+        // markers: true, 
       },
-    });
-    return () => {
-      textElement.kill();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+    }
+  );
+
+  return () => {
+    textElement.kill();
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  };
+}, []);
+
 
   useEffect(() => {
 
@@ -41,7 +51,7 @@ function HomeSecondSection() {
     }, 8000)
 
     return () => clearInterval(interval)
-  }, []);
+  }, [currentIndex]);
 
   const message = [
     {

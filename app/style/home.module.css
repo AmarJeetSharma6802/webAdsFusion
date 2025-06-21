@@ -101,10 +101,11 @@ margin-bottom: 1rem;
 width: 50%;
 height: 100vh;
 }
+
 .left_HomeSecondSection{
     padding: 3.5rem;
     margin-left: 2rem;
-    min-height: clamp(50rem, 85vh, 62rem);
+    /* min-height: clamp(50rem, 85vh, 62rem); */
    
 }
 .two_para{
@@ -162,7 +163,6 @@ height: 100vh;
     flex-wrap: wrap;
 }
 .HomeSecondSection_heading{
-    max-width: 100vh;
     padding: 10px;
 }
 .heading_h1{
