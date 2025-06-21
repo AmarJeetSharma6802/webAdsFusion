@@ -31,7 +31,7 @@ function TopHeader() {
   }, []);
 
   return (
-    <>
+    <div className={style.TopHeaderContainer}>
     <div className={style.TopHeadFade}>
 
       <span
@@ -43,7 +43,7 @@ function TopHeader() {
       </span>
     </div>
     <Navbar/>
-    </>
+    </div>
   );
 }
 

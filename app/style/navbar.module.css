@@ -34,6 +34,7 @@
 .Logo_img{
   width: 180px;
 }
+
 .header{
   display: flex;
   justify-content: space-between;
@@ -43,6 +44,7 @@
   align-items: center;
    background-color: black; 
   color: white;
+  
 }
 .nav{
   /* position: relative; */
@@ -129,6 +131,7 @@
   transition: 0.8s;
   z-index: -1;
   border-bottom: 0.5 solid rgb(89, 88, 88);
+  /* display: none; */
 
 }
 .nav_ul.active{
@@ -136,8 +139,6 @@
   z-index: 1;
 }
 
-
-  
 
   .inner_service_content {
     position: inherit; 
