@@ -1,8 +1,16 @@
 .home{
     min-height: 100vh;
-    background-color: black;
+    /* background-color: black; */
+    z-index: -1;
     color: white;
 } 
+.home_page_height{
+    height: 100%;
+    background-color: #000000;
+
+    
+}
+
 .home_content{
     padding-top: 5rem;
     padding-left: 5rem;
@@ -21,6 +29,16 @@ margin-bottom: 1rem;
   font-family: "Urbanist", Arial, sans-serif;
 
 
+}
+
+.bg_back_video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 .home_third_heading{
     max-width: 1200px;
@@ -163,6 +181,7 @@ height: 100vh;
     flex-wrap: wrap;
 }
 .HomeSecondSection_heading{
+   
     padding: 10px;
 }
 .heading_h1{

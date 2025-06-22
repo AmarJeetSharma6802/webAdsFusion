@@ -46,6 +46,8 @@ export default function Home() {
           </p>
         </div>
  
+        <div className={style.home_page_height}>
+
         <div className={style.home_video_bg}>
           <video
           className={style.home_video}
@@ -57,7 +59,8 @@ export default function Home() {
           ></video>
           <div className={style.rgba_bg_color}></div>
         </div>
-        <div className={style.homeboxes}>
+
+        {/* <div className={style.homeboxes}>
           <div className={style.fourBox}>
                {
                 boxDetails.map((item,index)=>{
@@ -78,8 +81,16 @@ export default function Home() {
                     
                   )
                 })
-               }   
+               }
+                  
           </div>
+        </div> */}
+         <video src="https://res.cloudinary.com/futurecoder/video/upload/v1750603285/e52e0fz1kmibbjuwwcwl.mp4"  autoPlay
+              loop
+              muted
+              playsInline 
+              className={style.bg_back_video}
+              ></video>   
         </div>
       </div>
       <HomeSecondSection/>
