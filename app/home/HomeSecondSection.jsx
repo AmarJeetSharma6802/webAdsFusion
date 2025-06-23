@@ -3,6 +3,8 @@ import React, { useRef, useEffect, useState } from "react";
 import style from "../style/home.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import HomeThirdSection from "../home/HomeThirdSection.js"
+
 
 gsap.registerPlugin(ScrollTrigger);
 function HomeSecondSection() {
@@ -131,6 +133,8 @@ function HomeSecondSection() {
           </div>
         </div>
       </div>
+
+<HomeThirdSection/>
     </div>
   );
 }

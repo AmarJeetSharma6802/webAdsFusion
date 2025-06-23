@@ -42,7 +42,7 @@
   height: 60px;
   border-bottom: 0.5px solid rgb(77, 76, 76);
   align-items: center;
-   background-color: black; 
+   background-color: transparent; 
   color: white;
   
 }
@@ -108,6 +108,9 @@
 }
 
 @media (max-width:900px) {
+  .header{
+    background-color: black;
+  }
   .bars_btn{
   display: block;
   background-color: transparent;
