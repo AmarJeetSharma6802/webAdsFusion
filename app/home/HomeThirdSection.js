@@ -12,7 +12,7 @@ function HomeThirdSecotion() {
     },
     {
       id:2,
-      name :"Web development",
+      name :"Web Design",
       img:"/HomeThirdSectionWebDesign.jpg",
       para:"Web Development involves creating websites using tools like React and Next.js. It handles frontend logic, server-side rendering, APIs, and dynamic content for fast, scalable web applications."
     },
