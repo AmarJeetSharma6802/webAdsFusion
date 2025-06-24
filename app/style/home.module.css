@@ -360,10 +360,11 @@ height: 100%;
 
 /* HomeFivthSection */
 .HomeFivthSection {
-  min-height: 100vh;
-  background-color: rgb(9, 9, 9);
+  /* min-height: 100vh; */
+background: #000; /* Black background to blend with edges */
+  padding: 20px 0;
+  overflow: hidden;
   color: white;
-
 }
 .HomeFivthSection_heading{
   text-align: center;
@@ -372,7 +373,7 @@ height: 100%;
   letter-spacing: 2px;
   padding-top: 1.5rem;
 }
-.HomeFivthSection_center{
+/* .HomeFivthSection_center{
   margin: auto;
   max-width: 82vw;
 }
@@ -409,8 +410,88 @@ height: 100%;
   border-radius: 4px;
   background-color: white;
 
+} */
+ .scrollerSection {
+  max-width: 82vw;
+  margin: auto;
+  overflow: hidden; 
+  position: relative
 }
 
+.scrollerWrapper {
+  overflow: hidden;
+  padding: 20px;
+}
+.scoller {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: fit-content;
+  width: 200%;
+  animation: scroll 20s linear infinite;
+}
+.scroller_container {
+  margin-right: 20px; 
+
+  
+}
+.scroller_container_Details{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+background-color: #333;
+padding: 12px;
+border-radius: 10px;
+}
+
+.scoller_marketing{
+   display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: fit-content;
+  width: 200%;
+  animation: scrollMarketing 20s linear infinite;
+}
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); 
+  }
+}
+@keyframes scrollMarketing {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%); 
+  }
+}
+
+/* Add blurred black edges */
+.scrollerSection::before,
+.scrollerSection::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+}
+
+.scrollerSection::before {
+  left: 0;
+}
+
+.scrollerSection::after {
+  right: 0;
+  transform: rotate(180deg); 
+}
 @media (max-width:850px) {
     .home_content {
     padding-top: 3rem;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import style from "../style/home.module.css";
+import Image from "next/image";
 
 function HomeFivthSection() {
-  const [active, setActive] = useState("dev");
   const logo = [
     {
       id: 1,
@@ -15,6 +15,11 @@ function HomeFivthSection() {
       name: "CSS",
     },
     {
+      id: 14,
+      img: "/Nextjs.png",
+      name: "Next js",
+    },
+    {
       id: 3,
       img: "/bootstrap.svg",
       name: "Html",
@@ -24,6 +29,58 @@ function HomeFivthSection() {
       img: "/HTML.svg",
       name: "Html",
     },
+    {
+      id: 5,
+      img: "/javascript.svg",
+      name: "Javascript",
+    },
+    {
+      id: 6,
+      img: "/React.svg",
+      name: "React js",
+    },
+    {
+      id: 7,
+      img: "/typescript.svg",
+      name: "TypeScript",
+    },
+    {
+      id: 8,
+      img: "/nodejs.png",
+      name: "Node js",
+    },
+    {
+      id: 9,
+      img: "/express.svg",
+      name: "Express js",
+    },
+    {
+      id: 10,
+      img: "/mongodb.svg",
+      name: "MongoDB",
+    },
+    {
+      id: 11,
+      img: "/postman.png",
+      name: "Postman",
+    },
+    {
+      id: 12,
+      img: "/git.svg",
+      name: "Git",
+    },
+    {
+      id: 13,
+      img: "/mongoose.png",
+      name: "Mongoose",
+    },
+    
+    {
+      id: 15,
+      img: "/gsap.png",
+      name: "Gsap",
+    },
+    
   ];
   const marketingLogo = [
     {
@@ -36,6 +93,36 @@ function HomeFivthSection() {
       img: "/googleAdsLogo .png",
       name: "Goolge ads ",
     },
+    {
+      id: 3,
+      img: "/metaTags.webp",
+      name: "Meta Ads ",
+    },
+    {
+      id: 4,
+      img: "/googleAdsLogo .png",
+      name: "Goolge ads ",
+    },
+    {
+      id: 5,
+      img: "/metaTags.webp",
+      name: "Meta Ads ",
+    },
+    {
+      id: 6,
+      img: "/googleAdsLogo .png",
+      name: "Goolge ads ",
+    },
+    {
+      id: 7,
+      img: "/metaTags.webp",
+      name: "Meta Ads ",
+    },
+    {
+      id: 8,
+      img: "/googleAdsLogo .png",
+      name: "Goolge ads ",
+    },
   ];
   return (
     <div>
@@ -44,7 +131,7 @@ function HomeFivthSection() {
           The Tools That Power <br></br> WebAdsFusion
         </h1>
 
-        <div className={style.HomeFivthSection_center}>
+        {/* <div className={style.HomeFivthSection_center}>
         <div className={style.HomeFivthSection_btn}>
           <button onClick={() => setActive("dev")} className={`${style.HomeFivthSection_btns} ${active === "dev" ? style.active :""}`}>Development Tools</button>
           <button onClick={() => setActive("marketing")} className={`${style.HomeFivthSection_btns} ${active === "dev" ? style.active :""}`}>
@@ -76,7 +163,50 @@ function HomeFivthSection() {
             );
           })}
           </div>
-      </div>
+      </div> */}
+
+       <div className={style.scrollerSection}>
+          <div className={style.scrollerWrapper}>
+           <div className={style.scoller}>
+              {[...logo, ...logo].map((item, index) => (
+                <div key={`${item.id}-${index}`} className={style.scroller_container}>
+                 <div className={style.scroller_container_Details}>
+                   <Image
+                    src={item.img}
+                    alt="Logo"
+                    width={40}
+                    height={40}
+                    className={style.scoller_logo_img}
+                  />
+                  <p>{item.name}</p>
+                 </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+       <div className={style.scrollerSection}>
+          <div className={style.scrollerWrapper}>
+           <div className={style.scoller_marketing}>
+              {[...marketingLogo, ...marketingLogo].map((item, index) => (
+                <div key={`${item.id}-${index}`} className={style.scroller_container}>
+                 <div className={style.scroller_container_Details}>
+                   <Image
+                    src={item.img}
+                    alt="Logo"
+                    width={40}
+                    height={40}
+                    className={style.scoller_logo_img}
+                  />
+                  <p>{item.name}</p>
+                 </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );

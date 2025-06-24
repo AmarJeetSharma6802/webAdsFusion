@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import style from "../style/navbar.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 function Navbar() {
   const [serv, setServ] = useState(false);
@@ -22,7 +23,7 @@ function Navbar() {
         <nav className={style.nav}>
           <ul className={`${style.nav_ul} ${nav ? style.active:""}`}>
             <li className={style.nav_li}>Home</li>
-            <li className={style.nav_li}>About</li>
+            <li className={style.nav_li}><Link href="/about">About</Link></li>
             <li className={style.nav_li}>Blogs</li>
             <li className={style.nav_li} onClick={handleServ}>
               <div className={style.service_flex_arrow}>
