@@ -1,6 +1,7 @@
 import React from "react";
 import style from "../style/home.module.css";
 import Image from "next/image";
+import HomeFivethSection from "./HomeFivthSection.js"
 
 function HomeThirdSection() {
   const boxes = [
@@ -126,6 +127,8 @@ function HomeThirdSection() {
           </div>
         </div>
       </div>
+
+      <HomeFivethSection/>
     </>
   );
 }
