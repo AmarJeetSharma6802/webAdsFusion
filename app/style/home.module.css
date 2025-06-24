@@ -428,7 +428,7 @@ background: #000; /* Black background to blend with edges */
   white-space: nowrap;
   width: fit-content;
   width: 200%;
-  animation: scroll 20s linear infinite;
+  animation: scroll 18s linear infinite;
 }
 .scroller_container {
   margin-right: 20px; 

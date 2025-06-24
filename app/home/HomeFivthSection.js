@@ -91,17 +91,17 @@ function HomeFivthSection() {
     {
       id: 2,
       img: "/googleAdsLogo .png",
-      name: "Goolge ads ",
+      name: "Goolge Ads ",
     },
     {
       id: 3,
-      img: "/metaTags.webp",
-      name: "Meta Ads ",
+      img: "/GoogleAnalytics.jpg",
+      name: "Googel Ananlytics",
     },
     {
       id: 4,
-      img: "/googleAdsLogo .png",
-      name: "Goolge ads ",
+      img: "/metapixel.png",
+      name: "Meta Pixel ",
     },
     {
       id: 5,
@@ -111,7 +111,7 @@ function HomeFivthSection() {
     {
       id: 6,
       img: "/googleAdsLogo .png",
-      name: "Goolge ads ",
+      name: "Goolge Ads ",
     },
     {
       id: 7,
@@ -120,9 +120,20 @@ function HomeFivthSection() {
     },
     {
       id: 8,
-      img: "/googleAdsLogo .png",
-      name: "Goolge ads ",
+      img: "/GoogleAnalytics.jpg",
+      name: "Googel Ananlytics",
     },
+    {
+      id: 9,
+      img: "/metapixel.png",
+      name: "Meta Pixel ",
+    },
+    {
+      id: 10,
+      img: "/metaTags.webp",
+      name: "Meta Ads ",
+    },
+    
   ];
   return (
     <div>
