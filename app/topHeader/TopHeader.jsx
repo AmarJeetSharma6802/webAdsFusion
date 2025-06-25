@@ -42,7 +42,6 @@ function TopHeader() {
         {messages[currentIndex]}
       </span>
     </div>
-    <Navbar/>
     </div>
   );
 }

@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import style from "../style/navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function Navbar() {
+  const router  = useRouter()
   const [serv, setServ] = useState(false);
   const [nav,setNav] = useState(false)
   const handleServ = () => {
@@ -14,6 +16,10 @@ function Navbar() {
     setNav(!nav);
     console.log("click")
   };
+  const handleDynamic =(name)=>{
+    const slug = name.toLowerCase().replace(/\s+/g, "-");
+    router.push(`/service/${slug}`)
+  }
   return (
     <div>
       <header className={style.header}>
@@ -47,16 +53,16 @@ function Navbar() {
                       Web Development Services
                     </p>
                     <ul className={style.inner_service_content_child_ul}>
-                      <li className={style.inner_service_content_child_li}>
+                      <li className={style.inner_service_content_child_li} onClick={()=>handleDynamic("Website Design")}>
                         <Image
-                          src="webdesignService.svg"
+                          src="/webdesignService.svg"
                           alt=""
                           width={20}
                           height={20}
                         />
                         <span>Website Design</span>
                       </li>
-                      <li className={style.inner_service_content_child_li}>
+                      <li className={style.inner_service_content_child_li} onClick={()=>handleDynamic("E-commerce")}>
                         <Image
                           src="/online-shop.png"
                           alt=""
@@ -65,16 +71,16 @@ function Navbar() {
                         />
                         <span>E - commerce</span>
                       </li>
-                      <li className={style.inner_service_content_child_li}>
+                      <li className={style.inner_service_content_child_li} onClick={()=>handleDynamic("Web Developement")}>
                         <Image
-                          src="development.svg"
+                          src="/development.svg"
                           alt=""
                           width={20}
                           height={20}
                         />
                         <span>Web Developement</span>
                       </li>
-                      <li className={style.inner_service_content_child_li}>
+                      <li className={style.inner_service_content_child_li} onClick={handleDynamic}>
                         <Image
                           src="/Websitemaintance.png"
                           alt=""
