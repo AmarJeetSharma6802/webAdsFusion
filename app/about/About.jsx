@@ -16,7 +16,16 @@ function About() {
             </p>
             <p>We Grow Businesses online . period.</p>
           </div>
+          <video
+            src="/12421542_3840_2160_30fps.mp4"
+            muted
+            loop
+            autoPlay
+            playsInline
+            className={style.about_video}
+          />
         </div>
+
         <div className={style.about_img_content}>
           <div className={style.about_img_First_content}>
             <Image
