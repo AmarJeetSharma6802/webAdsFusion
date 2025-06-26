@@ -77,6 +77,35 @@
     font-weight:500 ;
 }
 
+.tag {
+  flex: 0 0 auto; 
+  margin: 1rem 10px; 
+  padding: 0.5rem 1rem; 
+  background: #1a1a1a; 
+  color: #fff; 
+  border-radius: 8px; 
+  font-size: 1rem; 
+  white-space: nowrap; 
+  
+}
+
+.About_scrollerWrapperTag{
+    overflow: hidden;
+  width: 100%;
+  padding: 1rem 0;
+}
+.About_scrollerTag {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  animation: scrollRight 15s linear infinite;
+}
+
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0);     }
+}
+
 @media (max-width:850px) {
     .about_img_content,.aboutValue{
     flex-wrap: wrap;

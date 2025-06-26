@@ -3,6 +3,14 @@ import style from "../style/about.module.css"
 import Image from "next/image";
 
 function AboutSecond() {
+    const tags = [
+    "Founding BDR's",
+    "Founder's Office",
+    "Growth and Revenue",
+    "Demand & Growth Specialist",
+    "Partnerships Specialist",
+    "Founding Team",
+  ];
   return (
     <div>
         <h1 className={style.about_values_heading}>Our Values</h1>
@@ -28,6 +36,16 @@ function AboutSecond() {
                 <p className={style.value_para}>We maintain complete transparency, keeping clients informed with clear reports, honest communication, and real results.</p>
             </div>
         </div>
+
+           <div className={style.About_scrollerWrapperTag}>
+      <div className={style.About_scrollerTag}>
+        {[...tags, ...tags].map((tag, idx) => (
+          <span key={idx} className={style.tag}>
+            {tag}
+          </span>
+        ))}
+      </div>
+      </div>
     </div>
   )
 }
