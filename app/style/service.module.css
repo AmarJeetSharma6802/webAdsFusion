@@ -1,0 +1,23 @@
+.service_page{
+    min-height: 100vh;
+    background: linear-gradient(257.07deg, #16191c 0, #040404 100%);
+color: white;
+}
+.service_bg{
+    position: relative;
+}
+.service_bg_orange{
+    position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  background:url(https://www.singlegrain.com/wp-content/themes/singlegrain/assets/dist/images/redesign2024/hero-bg.png);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.service_content{
+    display: flex;
+    padding: 5rem;
+    flex-wrap: wrap;
+}
