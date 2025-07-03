@@ -2,6 +2,9 @@
     min-height: 100vh;
     background: linear-gradient(257.07deg, #16191c 0, #040404 100%);
 color: white;
+max-width: 95vw;
+margin:1rem auto;
+border-radius: 10px;
 }
 .service_bg{
     position: relative;
@@ -15,9 +18,13 @@ color: white;
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+border-radius: 10px;
+
 }
 .service_content{
     display: flex;
     padding: 5rem;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
     /* flex-wrap: wrap; */
 }

@@ -10,7 +10,7 @@ function page() {
       <div  className={style.service_bg_orange}></div>
       <div className={style.service_content}>
         <h1>Modern Web Design: Trends, Tools & Timeless Principles</h1>
-        <img src="/service.png" alt=''/>
+        <img src="/serviceWebDesign.png" alt='' style={{width:"50%"}}/>
       </div>
       </div>
     </div>
