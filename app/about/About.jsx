@@ -17,7 +17,7 @@ function About() {
             <p>We Grow Businesses online . period.</p>
           </div>
           <video
-            src="/12421542_3840_2160_30fps.mp4"
+            src="https://res.cloudinary.com/futurecoder/video/upload/v1751554138/gaaqeobrwm77ujsrxclu.mp4"
             muted
             loop
             autoPlay
