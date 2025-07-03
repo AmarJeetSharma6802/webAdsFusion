@@ -19,5 +19,5 @@ color: white;
 .service_content{
     display: flex;
     padding: 5rem;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
