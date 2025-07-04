@@ -2,7 +2,7 @@ import React from 'react'
 import Dynamic from "../[name]/Dynamic.jsx"
 
 export async function generateMetadata({ params }) {
-  const name = params?.name;
+  const name = await params?.name;
 
   const contentName = name
     .replace(/-/g, " ")
