@@ -28,3 +28,7 @@ border-radius: 10px;
     flex-direction: row-reverse;
     /* flex-wrap: wrap; */
 }
+.service_para{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
