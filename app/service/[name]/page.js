@@ -1,11 +1,45 @@
-"use client";
-import React from "react";
-import style from "../../style/service.module.css";
-import { useParams } from "next/navigation";
-import Image from "next/image";
+import React from 'react'
+import Dynamic from "../[name]/Dynamic.jsx"
 
-function Page() {
-  const params = useParams();
+export async function generateMetadata({ params }) {
+  const name = params?.name;
+
+  const contentName = name
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+    
+  return {
+    title: `${contentName} | Creative Digital Marketing & Web Development Agency in India`,
+    description: contentName.para,
+    keywords: `${contentName.name}, Web Ads Fusion, Digital Services, Web Development, Web Design`,
+ 
+  };
+}
+
+ const content = [
+    {
+      id: 1,
+      name: "Website Design",
+      heading: "Modern Web Design: Trends, Tools & Timeless Principles",
+      para: "We craft beautiful, user-friendly web designs that reflect your brand’s identity. Our creative approach ensures your website stands out, engages visitors, and delivers a seamless experience across all devices.",
+      img: "/serviceWebDesign.png",
+      btn:"Plan Your Website With Us"
+    },
+    {
+      id: 2,
+      name: "Web Developement",
+      heading: "Craft High-Performance Websites That Drive Results",
+      para: "We build modern, fast, and secure websites tailored to your business. From unique designs to smooth functionality, our websites help attract customers, boost engagement, and strengthen your brand online.",
+      img: "/Leonardo_Phoenix_09_A_modern_web_development_concept_illustrat_1-removebg-preview.png",
+      btn:"Start Your Website Project"
+    },
+    {
+
+    },
+  ];
+function page({params}) {
+
+ 
   const name = params?.name; 
 
   const slugify = (name) =>
@@ -14,15 +48,7 @@ function Page() {
       .replace(/\s+/g, "-")
       .replace(/[^\w-]+/g, "");
 
-  const content = [
-    {
-      id: 1,
-      name: "Website Design",
-      heading: "Modern Web Design: Trends, Tools & Timeless Principles",
-      para: "How to Design a Website From Scratch in 2025. Web design is a comprehensive process encompassing the planning, conceptualization and implementation of a website's visual layout and user experience.",
-      img: "/serviceWebDesign.png",
-    },
-  ];
+ 
 
   const selectedContent = content.find(
     (item) => slugify(item.name) === name
@@ -33,25 +59,10 @@ function Page() {
   }
 
   return (
-    <>
-      <div className={style.service_page}>
-        <div className={style.service_bg}>
-          <div className={style.service_bg_orange}></div>
-          <div className={style.service_content}>
-            <div className={style.service_content_img}>
-              <Image src={selectedContent.img} alt={selectedContent.name} width={500} height={500 } className={style.selectedContent.img} />
-            </div>
-           <div className={style.service_details}>
-            <h1 className={style.selectedContent_name}>{selectedContent.name}</h1>
-            <h2  className={style.selectedContent_heading}>{selectedContent.heading}</h2>
-            <p  className={style.selectedContent_para}>{selectedContent.para}</p>
-            <button  className={style.selectedContent_btn}> Plan Your Website With Us</button>
-           </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+    <div>
+<Dynamic  selectedContent = {selectedContent}/>
+    </div>
+  )
 }
 
-export default Page;
+export default page
