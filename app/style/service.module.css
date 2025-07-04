@@ -1,6 +1,6 @@
 .service_page{
     min-height: 100vh;
-    background: linear-gradient(257.07deg, #16191c 0, #040404 100%);
+    background: linear-gradient(257.07deg, #101214 0, #060606 100%);
 color: white;
 max-width: 95vw;
 margin:1rem auto;
@@ -25,10 +25,16 @@ border-radius: 10px;
     display: flex;
     padding: 5rem;
     justify-content: flex-start;
-    flex-direction: row-reverse;
-    /* flex-wrap: wrap; */
+   max-width: 100%;
 }
-.service_para{
-    margin-top: 2rem;
-    font-size: 1.2rem;
+
+.service_content_img{
+    width: 40%;
+}
+.service_details{
+    width: 60%;
+}
+.selectedContent.img{
+    width: 100%;
+    height: 100%;
 }
