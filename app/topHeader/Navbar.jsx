@@ -9,16 +9,23 @@ function Navbar() {
   const router  = useRouter()
   const [serv, setServ] = useState(false);
   const [nav,setNav] = useState(false)
+
   const handleServ = () => {
     setServ(!serv);
   };
   const handleNav = () => {
     setNav(!nav);
-    console.log("click")
+    // console.log("click")
   };
   const handleDynamic =(name)=>{
     const slug = name.toLowerCase().replace(/\s+/g, "-");
     router.push(`/service/${slug}`)
+    setNav(false);
+
+  }
+  const handleNavClose =()=>{
+    setNav(false);
+
   }
   return (
     <div>
@@ -28,8 +35,8 @@ function Navbar() {
         </label>
         <nav className={style.nav}>
           <ul className={`${style.nav_ul} ${nav ? style.active:""}`}>
-            <li className={style.nav_li}>Home</li>
-            <li className={style.nav_li}><Link href="/about">About</Link></li>
+            <li className={style.nav_li}onClick={handleNavClose} >Home</li>
+            <li className={style.nav_li}><Link href="/about" onClick={handleNavClose}>About</Link></li>
             <li className={style.nav_li}>Blogs</li>
             <li className={style.nav_li} onClick={handleServ}>
               <div className={style.service_flex_arrow}>
@@ -138,7 +145,7 @@ function Navbar() {
 
                 </div>
             </li>
-            <li className={style.nav_li}>Contact</li>
+            <li className={style.nav_li} onClick={handleNavClose}>Contact</li>
           </ul>
         </nav>
         <button className={style.bars_btn} onClick={handleNav}>
