@@ -124,7 +124,7 @@ function Navbar() {
                         />
                         <span>Google Ads / PPC</span>
                       </li>
-                      <li className={style.inner_service_content_child_li} onClick={()=> handleDynamic("Social Media Marketing")}>
+                      <li className={style.inner_service_content_child_li} onClick={()=> handleDynamic("Performance Marketing")}>
                         <Image
                           src="/performance.png"
                           alt=""

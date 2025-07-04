@@ -61,17 +61,17 @@ export async function generateMetadata({ params }) {
       id: 6,
       name: "Google Ads And PPC",
       heading: "Drive Instant Traffic & Sales with Google Ads & PPC",
-      para: "Grow your brand’s reach and engagement on social media. We create compelling content, run targeted ads, and help you connect with the right audience to drive real business results.",
-      img: "/serivceSocialMarketing.png",
-      btn:"Boost Your Social Presence"
+      para: "Reach your target audience instantly with high-converting Google Ads campaigns. Our PPC experts create and manage ads that maximize ROI, bring real traffic, and help your business grow faster online.",
+      img: "/goolgeAndPPC.png",
+      btn:"Launch Your Ad Campaign"
     },
     {
-      id: 5,
-      name: "Social Media Marketing",
-      heading: "urn Followers into Customers with Smart Social Marketing",
-      para: "Grow your brand’s reach and engagement on social media. We create compelling content, run targeted ads, and help you connect with the right audience to drive real business results.",
-      img: "/serivceSocialMarketing.png",
-      btn:"Boost Your Social Presence"
+      id: 7,
+      name: "Performance Marketing",
+      heading: "Maximize ROI with Smart Performance Marketing",
+      para: "Get measurable results and higher returns on every marketing rupee spent. Our performance marketing strategies focus on data, targeting, and optimization to drive real growth and valuable customer actions.",
+      img: "/servicePerformanceMarketing.png",
+      btn:"Start Growing Smarter"
     },
     {
 
