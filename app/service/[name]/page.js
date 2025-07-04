@@ -42,10 +42,10 @@ function Page() {
               <Image src={selectedContent.img} alt={selectedContent.name} width={500} height={500 } className={style.selectedContent.img} />
             </div>
            <div className={style.service_details}>
-            <h1>{selectedContent.name}</h1>
-            <h2>{selectedContent.heading}</h2>
-            <p>{selectedContent.para}</p>
-            <button>Plan Your Website With Us</button>
+            <h1 className={style.selectedContent_name}>{selectedContent.name}</h1>
+            <h2  className={style.selectedContent_heading}>{selectedContent.heading}</h2>
+            <p  className={style.selectedContent_para}>{selectedContent.para}</p>
+            <button  className={style.selectedContent_btn}> Plan Your Website With Us</button>
            </div>
           </div>
         </div>
