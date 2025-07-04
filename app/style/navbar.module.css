@@ -130,7 +130,7 @@
   background-color: black;
   display: block;
   padding: 10px;
-  transform: translateY(-20px);
+  transform: translateY(-100%);
   transition: 0.8s;
   z-index: -1;
   border-bottom: 0.5 solid rgb(89, 88, 88);

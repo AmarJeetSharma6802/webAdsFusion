@@ -67,3 +67,27 @@ background-color: rgb(255, 153, 0);
 cursor: pointer;
 font-weight: 600;
 }
+
+@media (max-width:850px) {
+    .service_content{
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .service_content_img ,.service_details{
+        width: 100%;
+    }
+    .selectedContent_name{
+    font-size: 1.8rem;
+}
+.selectedContent_heading{
+font-size: 1.2rem;
+}
+.selectedContent_para{
+font-size: 1.1rem;
+}
+.selectedContent_btn{
+font-size: 1.2rem;
+padding: 10px 20px;
+
+}
+}
