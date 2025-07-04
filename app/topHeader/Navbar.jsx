@@ -80,7 +80,7 @@ function Navbar() {
                         />
                         <span>Web Developement</span>
                       </li>
-                      <li className={style.inner_service_content_child_li} onClick={handleDynamic}>
+                      <li className={style.inner_service_content_child_li} onClick={()=> handleDynamic("Website Maintenance")}>
                         <Image
                           src="/Websitemaintance.png"
                           alt=""
@@ -97,7 +97,7 @@ function Navbar() {
                       Digital Marketing Services
                     </p>
                     <ul className={style.inner_service_content_child_ul}>
-                      <li className={style.inner_service_content_child_li}>
+                      <li className={style.inner_service_content_child_li} onClick={()=> handleDynamic("SearchBoost SEO")}>
                         <Image
                           src="/seo.png"
                           alt=""
@@ -106,7 +106,7 @@ function Navbar() {
                         />
                         <span>SEO (Search Engine Optimization)</span>
                       </li>
-                      <li className={style.inner_service_content_child_li}>
+                      <li className={style.inner_service_content_child_li} onClick={()=> handleDynamic("Social Media Marketing")}>
                         <Image
                           src="/social-media.png"
                           alt=""
@@ -115,7 +115,7 @@ function Navbar() {
                         />
                         <span>Social Media Marketing</span>
                       </li>
-                      <li className={style.inner_service_content_child_li}>
+                      <li className={style.inner_service_content_child_li} onClick={()=> handleDynamic("Google Ads and PPC")}>
                         <Image
                           src="/GoogleAds.png"
                           alt=""
@@ -124,7 +124,7 @@ function Navbar() {
                         />
                         <span>Google Ads / PPC</span>
                       </li>
-                      <li className={style.inner_service_content_child_li}>
+                      <li className={style.inner_service_content_child_li} onClick={()=> handleDynamic("Social Media Marketing")}>
                         <Image
                           src="/performance.png"
                           alt=""
