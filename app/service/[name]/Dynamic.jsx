@@ -6,9 +6,6 @@ import Image from "next/image";
 
 function Dynamic({selectedContent}) {
 
-
- 
-
   return (
     <>
       <div className={style.service_page}>

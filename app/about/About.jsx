@@ -1,10 +1,23 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import style from "../style/about.module.css";
 import Image from "next/image";
 import AboutSecond from "./AboutSecond";
 function About() {
+  const [loading ,setLoding] = useState()
+
+  useEffect(()=>{
+    setLoding(false)
+  },[])
+
   return (
-    <>
+   <>
+
+   {
+    loading ?(
+      <p>Page loading wait a few second</p>
+    ):(
+       <>
       <div className={style.about}>
         <div className={style.about_page}>
           <div className={style.center_about}>
@@ -101,6 +114,9 @@ function About() {
       </div>
       <AboutSecond />
     </>
+    )
+   }
+   </>
   );
 }
 

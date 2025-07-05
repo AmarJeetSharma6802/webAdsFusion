@@ -97,7 +97,7 @@ export async function generateMetadata({ params }) {
 function page({params}) {
 
  
-  const name = params?.name;
+  const name =  params?.name; 
 
   const slugify = (name) =>
     name
