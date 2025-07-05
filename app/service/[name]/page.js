@@ -94,10 +94,12 @@ export async function generateMetadata({ params }) {
 
     },
   ];
-function page({params}) {
+async function page({params}) {
 
  
-  const name =  params?.name; 
+  // const name =  params?.name; 
+   const { name } = await params;
+
 
   const slugify = (name) =>
     name
