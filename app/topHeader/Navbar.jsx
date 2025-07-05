@@ -27,10 +27,14 @@ function Navbar() {
     setNav(false);
 
   }
+  const handleHome =()=>{
+    router.push("/")
+
+  }
   return (
     <div>
       <header className={style.header}>
-        <label htmlFor="">
+        <label htmlFor="" onClick={handleHome}>
           <img src="/newLogo.png" alt="" className={style.Logo_img} />
         </label>
         <nav className={style.nav}>
