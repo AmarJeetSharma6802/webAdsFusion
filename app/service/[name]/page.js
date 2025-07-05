@@ -31,7 +31,22 @@ export async function generateMetadata({ params }) {
       heading: "Craft High-Performance Websites That Drive Results",
       para: "We build modern, fast, and secure websites tailored to your business. From unique designs to smooth functionality, our websites help attract customers, boost engagement, and strengthen your brand online.",
       img: "/webDevelopmentservice.png",
-      btn:"Start Your Website Project"
+      btn:"Start Your Website Project",
+
+      boxes:{
+        normal:{
+          price:"5k - 6k",
+          section:"5 section only ",
+          Reponsive:"no",
+
+        },
+        business:{
+          price:"10k - 15k",
+          section:"5 pages ",
+          Reponsive:"Yes",
+          Backend:"Yes"
+        }
+      }
     },
     {
       id: 3,

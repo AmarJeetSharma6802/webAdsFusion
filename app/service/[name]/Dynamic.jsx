@@ -26,6 +26,7 @@ function Dynamic({selectedContent}) {
            </div>
           </div>
         </div>
+        {/* <div>{selectedContent.boxes.normal.price}</div> */}
       </div>
     </>
   );
