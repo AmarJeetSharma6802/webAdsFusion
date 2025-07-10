@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { type } from "os";
 
 const SignSchema = new mongoose.Schema({
 name:{
@@ -7,6 +8,10 @@ name:{
 },
 email:{
      type:String,
+    required:true,
+},
+password:{
+    type:String,
     required:true,
 },
 phone:{
