@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import signInUser from "../../model/signIn.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+
 export async function POST(req) {
   await DBconnect();
 
@@ -17,9 +18,7 @@ export async function POST(req) {
   const user = await signInUser.findOne({ email });
 
   if (!user) {
-    return (
-      NextResponse.json({ message: "user does not exist" }), { status: 401 }
-    );
+    return NextResponse.json({ message: "user does not exist" }, { status: 401 });
   }
 
   const matchPassword = await bcrypt.compare(password, user.password);
