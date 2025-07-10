@@ -9,7 +9,7 @@ import jwt from "jsonwebtoken";
 
 export const runtime = "nodejs";
 
-export async function GET(req) {
+export async function GET() {
   await DBconnect();
 
   const foundSignUser = await signInUser.find();
