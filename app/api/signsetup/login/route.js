@@ -1,6 +1,6 @@
-import DBconnect from "../../Db/DBconnect.js";
+import DBconnect from "@/app/api/Db/DBconnect.js";
 import { NextResponse } from "next/server";
-import signInUser from "../../model/signIn.model.js";
+import signInUser from "@/app/api/model/signIn.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -10,22 +10,27 @@ export async function POST(req) {
   const { email, password } = await req.json();
 
   if (!email || !password) {
-   return NextResponse.json(
-  { message: "All fields are required" },
-  { status: 400 }
-);
+    return NextResponse.json(
+      { message: "All fields are required" },
+      { status: 400 }
+    );
   }
+
   const user = await signInUser.findOne({ email });
 
   if (!user) {
-    return NextResponse.json({ message: "user does not exist" }, { status: 401 });
+    return NextResponse.json(
+      { message: "User does not exist" },
+      { status: 401 }
+    );
   }
 
   const matchPassword = await bcrypt.compare(password, user.password);
 
   if (!matchPassword) {
-    return (
-      NextResponse.json({ message: "user password not match" }), { status: 401 }
+    return NextResponse.json(
+      { message: "User password does not match" },
+      { status: 401 }
     );
   }
 
@@ -37,7 +42,7 @@ export async function POST(req) {
 
   const refreshToken = jwt.sign(
     { user_id: user._id, email: user.email },
-    process.env.REFRESH_TOEKN,
+    process.env.REFRESH_TOKEN,
     { expiresIn: "5d" }
   );
 
@@ -59,6 +64,7 @@ export async function POST(req) {
     secure: true,
     path: "/",
   });
+
   response.cookies.set("refreshToken", refreshToken, {
     httpOnly: true,
     secure: true,
@@ -66,5 +72,4 @@ export async function POST(req) {
   });
 
   return response;
-
 }
