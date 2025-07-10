@@ -1,29 +1,34 @@
 import mongoose from "mongoose";
 import { type } from "os";
 
-const SignSchema = new mongoose.Schema({
-name:{
-    type:String,
-    required:true,
-},
-email:{
-     type:String,
-    required:true,
-},
-password:{
-    type:String,
-    required:true,
-},
-phone:{
- type:Number,
-    required:true,
-    index:true
-},
-refreshToken:String
-},{timestamps:true}
-)
+const SignSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    image:{
+        type:String
+    },
+    phone: {
+      type: Number,
+      required: true,
+      index: true,
+    },
+    refreshToken: String,
+  },
+  { timestamps: true }
+);
 
+const signInUser =
+  mongoose.models.signInUser || mongoose.model("signInUser", SignSchema);
 
-const signInUser =  mongoose.models.signInUser || mongoose.model("signInUser",SignSchema)
-
-export default signInUser
+export default signInUser;

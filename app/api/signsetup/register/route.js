@@ -41,7 +41,7 @@ export async function POST(req) {
 
     console.log("formData:", formData);
 
-    if (!name || !email || !phone || !file ,ComfirmPassword ,password) {
+    if (!name || !email || !phone || !file ,!ComfirmPassword ,!password) {
       return NextResponse.json(
         { message: "All fields are required" },
         { status: 400 }
