@@ -14,15 +14,23 @@ const SignSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    image:{
-        type:String
+    image: {
+      type: String,
     },
     phone: {
       type: Number,
       required: true,
       index: true,
     },
-    refreshToken: String,
+    refreshToken: {
+      type: String,
+      default: "",
+    },
+    provider: {
+      type: String,
+      enum: ["credentials", "google"],
+      default: "credentials",
+    },
   },
   { timestamps: true }
 );
