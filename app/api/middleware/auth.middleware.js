@@ -27,9 +27,11 @@ export async function authUser(req) {
 
     return {user};
   } catch (error) {
+     console.log(error)
     return NextResponse.json(
       { message: "Internal Server Error" },
       { status: 500 }
+     
     );
   }
 }
