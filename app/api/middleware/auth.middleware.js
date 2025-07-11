@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import signInUser from "../model/signIn.model";
 import { NextResponse } from "next/server";
 
-async function authUser(req) {
+export async function authUser(req) {
   try {
     const token =
       req.cookies.get("accessToken")?.value ||
