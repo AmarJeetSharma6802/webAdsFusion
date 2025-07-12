@@ -86,6 +86,7 @@ export async function PUT(req) {
       if (uploaded?.secure_url) {
         uploadedUrl = uploaded.secure_url;
       }
+      
       if (fs.existsSync(tempImagePath)) {
               fs.unlinkSync(tempImagePath);
             }
