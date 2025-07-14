@@ -11,15 +11,15 @@ export async function PUT(req) {
   await DBconnect();
   const { user, error } = await authUser(req);
   if (error) {
-  return error;
-}
+    return error;
+  }
 
   try {
     const formData = await req.formData();
     const name = formData.get("name");
     const email = formData.get("email");
     const phone = formData.get("phone");
-    const file = formData.get("file");
+    const file = formData.get("image");
     const currentPassword = formData.get("currentPassword");
 
     if (!name || !email) {
@@ -40,7 +40,6 @@ export async function PUT(req) {
     const provider = foundUser.provider || "credentials";
 
     if (provider === "google") {
-      console.log("foundUser.provider:", foundUser.provider);
       if (email !== foundUser.email) {
         return NextResponse.json(
           {
@@ -73,23 +72,34 @@ export async function PUT(req) {
       }
     }
 
-    // ✅ check if file exists
+    // ✅ handle file
     let uploadedUrl = foundUser.image;
+    let phoneData = foundUser.phone;
 
-    if (file && file.size > 0) {
+    if (phone !== null && phone !== "") {
+      phoneData = phone;
+    }
+
+    if (file && file.name) {
       const buffer = Buffer.from(await file.arrayBuffer());
-      const tempDir = await mkdir("/tmp", { recursive: true });
+      const tempDir = "/tmp";
+      await mkdir(tempDir, { recursive: true });
       const tempImagePath = `${tempDir}/${file.name}`;
       await writeFile(tempImagePath, buffer);
 
-      const uploaded = await uploadOnCloudinary(tempImagePath);
-      if (uploaded?.secure_url) {
-        uploadedUrl = uploaded.secure_url;
+      const uploaded = await uploadOnCloudinary(tempImagePath, "image");
+      if (!uploaded) {
+        return NextResponse.json(
+          { error: "Cloudinary image upload failed" },
+          { status: 500 }
+        );
       }
-      
+
+      uploadedUrl = uploaded.secure_url;
+
       if (fs.existsSync(tempImagePath)) {
-              fs.unlinkSync(tempImagePath);
-            }
+        fs.unlinkSync(tempImagePath);
+      }
     }
 
     const updateUser = await signInUser
@@ -98,7 +108,7 @@ export async function PUT(req) {
         {
           name,
           email,
-          phone,
+          phone: phoneData,
           image: uploadedUrl,
         },
         { new: true }
@@ -107,7 +117,7 @@ export async function PUT(req) {
 
     return NextResponse.json(
       {
-        message: "Account update successfully",
+        message: "Account updated successfully",
         user: updateUser,
       },
       { status: 200 }
@@ -120,3 +130,4 @@ export async function PUT(req) {
     );
   }
 }
+
