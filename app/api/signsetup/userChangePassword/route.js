@@ -12,6 +12,12 @@ export async function POST(req) {
     return error;
   }
 
+  if (user.provider === "google") {
+      return NextResponse.json({
+        message: "Google accounts cannot change password",
+      }, { status: 403 });
+    }
+
   const { password, confirmPassword, newPassword } = await req.json();
 
   if ((!password, !confirmPassword, !newPassword)) {
