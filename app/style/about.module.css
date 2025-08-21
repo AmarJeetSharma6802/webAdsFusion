@@ -1,22 +1,118 @@
 .about{
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 .about_page{
-    text-align: center;
-    padding: 3.5rem;
-    height: 450px;
+    height: 400px;
     color: white;
     position: relative;
+    background:url(/aboutBg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     /* background-color: rgb(15, 14, 14); */
+    padding: 2rem 4rem;
 }
-.about_video{
-    position: absolute;
-    left: 0;
-    top: 0;
-    object-fit: cover;
+.about_img_content_top{
+    display: flex;justify-content: space-between;
+    align-items: flex-start;
+}
+.about_content{
+    padding: 1rem;
+}
+
+.about_content_heading{
+    font-size: 2rem;
+    max-width:90%;
+    font-weight: 600;
+}
+.about_content_para{
+    max-width:80%;
+}
+.about_IMAGE{
     width: 100%;
-    height: 100%;
-    z-index: -1;
+}
+.span_orange{
+    color: #F86E3F;
+}
+.about_top_btns{
+    display: flex;
+    gap: 1rem;
+}
+.btn_call {
+  padding: 12px 24px;
+  background: #111;          
+  color: #fff;
+  border: 1px solid #ff6600; 
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.btn_call:hover {
+  background: #ff6600;   
+  color: #000;           
+  transform: translateY(-2px);
+}
+
+.btn_call:active {
+  transform: translateY(0);
+  background: #e65c00;  
+
+}
+.how_we_are{
+    margin: 2rem auto;
+    max-width: 70vw ;
+    text-align: center;
+
+}
+.how_we_are_para{
+    font-size: 1.2rem;
+}
+.how_we_are_heading{
+    text-align: center;
+    font-size: 3rem;
+    
+}
+.Our_mission_Our_Vision{
+    max-width: 75vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+
+}
+.Our_mission,.Our_Vision{
+    padding: 20px;
+    border: 1px solid ;
+    border-radius: 12px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin-top: 1rem;
+}
+.Our_mission:hover,.Our_Vision:hover{
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.Our_mission_Our_Vision_heading{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #F86E3F;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.Our_mission_Our_Vision_heading::after{
+content: "";
+position: absolute;
+bottom: -3px;
+left: 0;
+width:20%;
+height: 3px;
+background-color: #000;
 }
 .center_about{
     padding: 1rem;

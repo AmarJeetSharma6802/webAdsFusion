@@ -5,105 +5,57 @@ import Image from "next/image";
 import AboutSecond from "./AboutSecond";
 function About() {
 
+ const phoneNumber = "8882532282"; 
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    // Simple device check
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Mobile → Direct Dialer
+      window.location.href = `tel:+${phoneNumber}`;
+    } else {
+      // Desktop → WhatsApp Web
+      window.open(`https://web.whatsapp.com/send?phone=${phoneNumber}`, "_blank");
+    }
+  };
 
 
   return (
    <>
-
-   
-      
       <div className={style.about}>
         <div className={style.about_page}>
-          <div className={style.center_about}>
-            <p>ABOUT</p>{" "}
+          <div className={style.about_img_content_top}>
+            <div className={style.about_content}>
+              <p className={style.about_content_heading}>Web-Ads-Fusion: Creative <span className={style.span_orange}>web development meets strategic performance marketing </span> in one seamless platform</p>
+              <p className={style.about_content_para}>Web-Ads-Fusion delivers powerful websites and impactful social media strategies, combining creativity with technology to boost online visibility, strengthen brands, and achieve measurable business growth.</p>
+              <div className={style.about_top_btns}>
+                <button className={style.btn_call}>Contact us</button>
+                <button className={style.btn_call} onClick={handleClick}>Get a Free Call</button>
+              </div>
+            </div>
+            <div className={style.about_content_img}>
+            <Image src="/ab.png" alt="" width={300} height={300} className={style.about_IMAGE} />
+            </div>
           </div>
-          <div className={style.dreamAbout}>
-            <p className={style.dreamAbout_content}>
-              The dream team of <br></br>web & digital marketing
-            </p>
-            <p>We Grow Businesses online . period.</p>
-          </div>
-          <video
-            src="https://res.cloudinary.com/futurecoder/video/upload/v1751554138/gaaqeobrwm77ujsrxclu.mp4"
-            muted
-            loop
-            autoPlay
-            playsInline
-            className={style.about_video}
-          />
         </div>
 
-        <div className={style.about_img_content}>
-          <div className={style.about_img_First_content}>
-            <Image
-              src="/aboutImageFirst.png"
-              alt=""
-              width={300}
-              height={250}
-              className={style.aboutImage}
-            />
-            <div className={style.about_img_First_content_paraHeading}>
-              <p className={style.about_count}>01</p>
-              <div className={style.warp_para}>
-                <p className={style.about_img_First_content_para_heading}>
-                  Custom Web Serive
-                </p>
-                <p className={style.about_img_First_content_para}>
-                  We provide custom web development services tailored to your
-                  brand—delivering fast, responsive, and user-friendly websites
-                  that drive results and conversions.
-                </p>
-              </div>
-            </div>
-          </div>
+    <div className={style.how_we_are}>
+      <h1 className={style.how_we_are_heading}>How <span className={style.span_orange}>we</span> are</h1>
+      <p className={style.how_we_are_para}>At WebAdsFusion, we combine best-in-class web development with results-driven digital marketing. Using tools like React, Next.js, Meta Ads, Google Ads, and performance strategies, our mission is to amplify your online presence, generate quality leads, and scale your brand.</p>
+    </div>
+      </div>
 
-          <div
-            className={`${style.about_img_First_content} ${style.about_img_First_content_top} `}
-          >
-            <Image
-              src="/about_imageSecond.png"
-              alt=""
-              width={350}
-              height={300}
-              className={style.aboutImage}
-            />
-            <div className={style.about_img_First_content_paraHeading}>
-              <p className={style.about_count}>02</p>
-              <div className={style.warp_para}>
-                <p className={style.about_img_First_content_para_heading}>
-                  Performance marketing
-                </p>
-                <p className={style.about_img_First_content_para}>
-                  We deliver result-focused performance marketing that drives
-                  real sales, leads, and ROI through Google, Meta, and Shopping
-                  Ads.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className={style.about_img_First_content}>
-            <Image
-              src="/about_imageThird.png"
-              alt=""
-              width={300}
-              height={250}
-              className={style.aboutImage}
-            />
-            <div className={style.about_img_First_content_paraHeading}>
-              <p className={style.about_count}>01</p>
-              <div className={style.warp_para}>
-                <p className={style.about_img_First_content_para_heading}>
-                  Custom Seo Service
-                </p>
-                <p className={style.about_img_First_content_para}>
-                  We offer tailored SEO services designed to boost your search
-                  rankings, increase website traffic, and drive high-intent
-                  leads specific to your business goals.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div className={style.Our_mission_Our_Vision}>
+        <div className={style.Our_mission}>
+          <p className={style.Our_mission_Our_Vision_heading}>Our Mission</p>
+          <p className={style.Our_mission_Our_Vision_para}>Our mission is to provide exceptional digital services that help businesses thrive in a competitive world. We focus on creativity, technology, and performance to deliver effective solutions. By understanding client needs, we create customized strategies that maximize online presence, improve brand value, and ensure lasting impact with continuous innovation.</p>
+        </div>
+        <div className={style.Our_Vision}>
+           <p className={style.Our_mission_Our_Vision_heading}>Our Vision</p>
+           <p className={style.Our_mission_Our_Vision_para}>Our vision is to empower businesses and individuals with modern digital solutions, making growth accessible and sustainable. We aim to become a trusted partner by delivering innovative strategies, impactful designs, and measurable results that transform ideas into success stories while maintaining excellence, creativity, and long-term relationships with our clients.</p>
         </div>
       </div>
       <AboutSecond />
