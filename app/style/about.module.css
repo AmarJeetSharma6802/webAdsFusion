@@ -4,9 +4,10 @@
 .about_page{
     text-align: center;
     padding: 3.5rem;
-    height: 350px;
+    height: 450px;
     color: white;
     position: relative;
+    /* background-color: rgb(15, 14, 14); */
 }
 .about_video{
     position: absolute;

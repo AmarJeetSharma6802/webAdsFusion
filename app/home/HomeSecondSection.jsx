@@ -129,6 +129,7 @@ function HomeSecondSection() {
               key={message[currentIndex].video}
               src={message[currentIndex].video}
               style={{width:"100%"}}
+              
             ></video>
           </div>
         </div>
