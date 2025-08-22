@@ -5,7 +5,7 @@ import Image from "next/image";
 import AboutSecond from "./AboutSecond";
 function About() {
 
- const phoneNumber = "8882532282"; 
+ const phoneNumber = "88825****"; 
 
   const handleClick = (e) => {
     e.preventDefault();

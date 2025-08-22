@@ -11,6 +11,7 @@ function HomeSecondSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const textRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
   const textElement = gsap.fromTo(
@@ -53,6 +54,13 @@ function HomeSecondSection() {
     }, 8000)
 
     return () => clearInterval(interval)
+  }, [currentIndex]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.src = message[currentIndex].video;
+      videoRef.current.play();
+    }
   }, [currentIndex]);
 
   const message = [
@@ -120,16 +128,17 @@ function HomeSecondSection() {
         </div>
         <div className={style.right_HomeSecondSection}>
           <div className={style.right_HomeSecondSection_video}>
-            <video
+             <video
+              ref={videoRef}
               autoPlay
               loop
               muted
               playsInline
-              className={style.rightvideo}
-              key={message[currentIndex].video}
-              src={message[currentIndex].video}
-              style={{width:"100%"}}
-              
+              className={`${style.rightvideo} ${fade ? "fade-in" : "fade-out"}`}
+              style={{
+                width: "100%",
+                transition: "opacity 0.5s ease-in-out",
+              }}
             ></video>
           </div>
         </div>
