@@ -107,7 +107,7 @@ function HomeThirdSection() {
               <div className={style.homeFourthSection_flex_child_img}>
                 <Image
                   alt="Amarjeet Sharma"
-                  src="/amarjeetSharma.png"
+                  src="/AmarjeetSharma.png"
                   width={80}
                   height={80}
                   className={style.fourthSection_img}

@@ -207,6 +207,14 @@ background-color: #000;
   100% { transform: translateX(0);     }
 }
 
+/* AboutDetails */
+
+.AboutDetails{
+    max-width: 80vw;
+    margin: auto;
+}
+
+
 @media (max-width:850px) {
     .about_img_content,.aboutValue{
     flex-wrap: wrap;

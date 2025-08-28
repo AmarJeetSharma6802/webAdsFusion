@@ -1,7 +1,7 @@
 import React from 'react'
 import style from "../style/about.module.css"
 import Image from "next/image";
-
+import AboutDetails from "../about/AboutDetails"
 function AboutSecond() {
     const tags = [
     "Founding BDR's",
@@ -37,7 +37,9 @@ function AboutSecond() {
             </div>
         </div>
 
- <div className={style.about_img_content}>
+        <AboutDetails/>
+
+     <div className={style.about_img_content}>
           <div className={style.about_img_First_content}>
             <Image
               src="/aboutImageFirst.png"
