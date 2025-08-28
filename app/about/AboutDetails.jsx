@@ -148,8 +148,8 @@ WebAdsFusion</h1>
             <Image
               src="/anandSharma.jpg"
               alt=""
-              width={140}
-              height={140}
+              width={130}
+              height={130}
               className={style.anand_img}
             />
             <div className={style.name}>
@@ -221,10 +221,10 @@ WebAdsFusion</h1>
              <div className={style.image_name_fullstack}></div>
           <div className={style.flex_name_img}>
             <Image
-              src="/AmarjeetSharma.png"
+              src="/Amarjeet_Sharma.png"
               alt=""
-              width={140}
-              height={140}
+              width={130}
+              height={130}
               className={style.anand_img}
             />
             <div className={style.name}>
