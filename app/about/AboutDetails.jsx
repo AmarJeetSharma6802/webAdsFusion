@@ -1,9 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import style from "../style/about.module.css";
 import Image from "next/image";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 function AboutDetails() {
-    const logo = [
+  const [selected, setSelected] = useState(null);
+
+  const logo = [
     {
       id: 1,
       img: "/HTML.svg",
@@ -74,16 +79,15 @@ function AboutDetails() {
       img: "/mongoose.png",
       name: "Mongoose",
     },
-    
+
     {
       id: 15,
       img: "/gsap.png",
       name: "Gsap",
     },
-    
   ];
 
-     const marketingLogo = [
+  const marketingLogo = [
     {
       id: 1,
       img: "/metaTags.webp",
@@ -134,17 +138,29 @@ function AboutDetails() {
       img: "/metaTags.webp",
       name: "Meta Ads ",
     },
-    
   ];
 
+  const handleForm = (Form) => {
+    setSelected(Form);
+  };
+  // const closeForm = () => {
+  //   setSelected(null);
+  // };
   return (
     <>
-    <h1 className={style.aboutMe_heading}>Meet the <span className={style.aboutMe_heading_span}> Mind </span> Behind <br />
-WebAdsFusion</h1>
+      <h1 className={style.aboutMe_heading}>
+        Meet the <span className={style.aboutMe_heading_span}> Mind </span>{" "}
+        Behind <br />
+        WebAdsFusion
+      </h1>
       <div className={style.webads_fusion}>
         <div className={style.webads_fusionDetails}>
           <div className={style.image_name}>
-            <img src="https://media.licdn.com/dms/image/v2/D5616AQGDQpIPsmMiqg/profile-displaybackgroundimage-shrink_350_1400/B56ZhUuPlgHkAo-/0/1753768066103?e=1759363200&v=beta&t=f5ptDLVWkxBPfcBdjVJeeJcVzV2kf1Lk4e7XH67c5hk" alt="" className={style.image_name_img} />
+            <img
+              src="https://media.licdn.com/dms/image/v2/D5616AQGDQpIPsmMiqg/profile-displaybackgroundimage-shrink_350_1400/B56ZhUuPlgHkAo-/0/1753768066103?e=1759363200&v=beta&t=f5ptDLVWkxBPfcBdjVJeeJcVzV2kf1Lk4e7XH67c5hk"
+              alt=""
+              className={style.image_name_img}
+            />
           </div>
           <div className={style.flex_name_img}>
             <Image
@@ -171,7 +187,7 @@ WebAdsFusion</h1>
               customers — using smart targeting, engaging creatives, optimized
               funnels, and continuous performance tracking.
             </p>
-             <h4>My Focus :- </h4>
+            <h4>My Focus :- </h4>
             <p className={style.owner_deatils_pThree}>
               My focus: Clarity, Results & Sustainable Growth for every brand I
               work with.
@@ -180,49 +196,59 @@ WebAdsFusion</h1>
           <div className={style.social_media}>
             <h4>Connect with me :- </h4>
             <div className={style.All_fonts}>
-            <div className="">
-              <i className="fa-brands fa-linkedin-in"></i>
-            </div>
-            <div className="">
-              <i className="fa-brands fa-facebook-f"></i>
-            </div>
-            <div className="">
-              <i className="fa-brands fa-instagram"></i>
-            </div>
-            <div className="">
-            <i className="fa-brands fa-x-twitter"></i>
-            </div>
-             </div>
-          </div>
-
-        <button  className={style.cta_btn}>Let’s Talk with Anand</button>
-
-        <div className={style.scrollerSection}>
-          <div className={style.scrollerWrapper}>
-           <div className={style.scoller_marketing}>
-              {[...marketingLogo, ...marketingLogo].map((item, index) => (
-                <div key={`${item.id}-${index}`} className={style.scroller_container}>
-                 <div className={style.scroller_container_Details}>
-                   <Image
-                    src={item.img}
-                    alt="Logo"
-                    width={40}
-                    height={40}
-                    className={style.scoller_logo_img}
-                  />
-                  <p>{item.name}</p>
-                 </div>
-                </div>
-              ))}
+              <div className="">
+                <i className="fa-brands fa-linkedin-in"></i>
+              </div>
+              <div className="">
+                <i className="fa-brands fa-facebook-f"></i>
+              </div>
+              <div className="">
+                <i className="fa-brands fa-instagram"></i>
+              </div>
+              <div className="">
+                <i className="fa-brands fa-x-twitter"></i>
+              </div>
             </div>
           </div>
-        </div>
 
+          <button className={style.cta_btn} onClick={() => handleForm("anand")}>
+            Let’s Talk with Anand
+          </button>
+
+          <div className={style.scrollerSection}>
+            <div className={style.scrollerWrapper}>
+              <div className={style.scoller_marketing}>
+                {[...marketingLogo, ...marketingLogo].map((item, index) => (
+                  <div
+                    key={`${item.id}-${index}`}
+                    className={style.scroller_container}
+                  >
+                    <div className={style.scroller_container_Details}>
+                      <Image
+                        src={item.img}
+                        alt="Logo"
+                        width={40}
+                        height={40}
+                        className={style.scoller_logo_img}
+                      />
+                      <p>{item.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
         <div className={style.webads_fusionDetails_right}>
-             <div className={style.image_name_fullstack}>
-              <Image src="/about_skill.png" alt="" width={350} height={200} className={style.image_name_img}/>
-             </div>
+          <div className={style.image_name_fullstack}>
+            <Image
+              src="/about_skill.png"
+              alt=""
+              width={350}
+              height={200}
+              className={style.image_name_img}
+            />
+          </div>
           <div className={style.flex_name_img}>
             <Image
               src="/Amarjeet_Sharma.png"
@@ -233,61 +259,183 @@ WebAdsFusion</h1>
             />
             <div className={style.name}>
               <p className={style.name_name}>Amarjeet Sharma</p>
-              <p className={style.name_Profomance}>Full stack developer /MERN stack developer</p>
+              <p className={style.name_Profomance}>
+                Full stack developer /MERN stack developer
+              </p>
             </div>
           </div>
           <div className={style.owner_deatils}>
             <h4>Professional Summary :- </h4>
             <p className={style.owner_deatils_pOne}>
-              I’m a certified Full-Stack Developer passionate about crafting modern, scalable, and SEO-friendly web applications using the MERN stack and Next.js framework.
+              I’m a certified Full-Stack Developer passionate about crafting
+              modern, scalable, and SEO-friendly web applications using the MERN
+              stack and Next.js framework.
             </p>
             <p className={style.owner_deatils_pTwo}>
-              From intuitive frontends to robust backends, I deliver performance-driven digital solutions that enhance user experiences and help brands grow with confidence.
+              From intuitive frontends to robust backends, I deliver
+              performance-driven digital solutions that enhance user experiences
+              and help brands grow with confidence.
             </p>
             <h4>My Focus :- </h4>
             <p className={style.owner_deatils_pThree}>
-             Building high-performance, SEO-friendly applications with MERN stack and Next.js, delivering seamless user experiences globally.
+              Building high-performance, SEO-friendly applications with MERN
+              stack and Next.js, delivering seamless user experiences globally.
             </p>
           </div>
           <div className={style.social_media}>
             <h4>Connect with me :- </h4>
             <div className={style.All_fonts}>
-            <div className="">
-              <i className="fa-brands fa-linkedin-in"></i>
-            </div>
-            <div className="">
-              <i className="fa-brands fa-instagram"></i>
-            </div>
-            <div className="">
-            <i className="fa-brands fa-x-twitter"></i>
-            </div>
-             </div>
-          </div>
-
-        <button  className={style.cta_btn}>Let’s Talk with Amarjeet</button>
-
-        <div className={style.scrollerSection}>
-          <div className={style.scrollerWrapper}>
-           <div className={style.scoller}>
-              {[...logo, ...logo].map((item, index) => (
-                <div key={`${item.id}-${index}`} className={style.scroller_container}>
-                 <div className={style.scroller_container_Details}>
-                   <Image
-                    src={item.img}
-                    alt="Logo"
-                    width={40}
-                    height={40}
-                    className={style.scoller_logo_img}
-                  />
-                  <p>{item.name}</p>
-                 </div>
-                </div>
-              ))}
+              <div className="">
+                <i className="fa-brands fa-linkedin-in"></i>
+              </div>
+              <div className="">
+                <i className="fa-brands fa-instagram"></i>
+              </div>
+              <div className="">
+                <i className="fa-brands fa-x-twitter"></i>
+              </div>
             </div>
           </div>
-        </div>
+
+          <button
+            className={style.cta_btn}
+            onClick={() => handleForm("amarjeet")}
+          >
+            Let’s Talk with Amarjeet
+          </button>
+
+          <div className={style.scrollerSection}>
+            <div className={style.scrollerWrapper}>
+              <div className={style.scoller}>
+                {[...logo, ...logo].map((item, index) => (
+                  <div
+                    key={`${item.id}-${index}`}
+                    className={style.scroller_container}
+                  >
+                    <div className={style.scroller_container_Details}>
+                      <Image
+                        src={item.img}
+                        alt="Logo"
+                        width={40}
+                        height={40}
+                        className={style.scoller_logo_img}
+                      />
+                      <p>{item.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      {selected && (
+        <div className={style.overlay_form}>
+          <div className={style.overlay_form_flex}>
+            <div className={style.overlay_form_flex_img}>
+              {selected === "anand" ? (
+                <Image
+                  src="https://cdn.prod.website-files.com/645258dee17c72222bca47d8/65d346622c0a46badbce6422_ac9eb786-6d47-497c-b6e0-a3d8cd47410b.png"
+                  alt=""
+                  width={300}
+                  height={200}
+                  className={style.overlay_form_Image}
+                />
+              ) : (
+                <Image
+                  src="https://www.syncfusion.com/blogs/wp-content/uploads/2020/07/Top-6-Front-End-Web-Development-Tools-to-Increase-Your-Productivity-in-2020-1.jpg"
+                  alt=""
+                  width={300}
+                  height={200}
+                  className={style.overlay_form_Image}
+                />
+              )}
+            </div>
+            <div className={style.formWrapper}>
+              <h2>
+                Talk with{" "}
+                {selected === "anand" ? "Anand Sharma" : "Amarjeet Sharma"}
+              </h2>
+
+              <form className={style.form}>
+                <div className={style.label_input}>
+                  <label htmlFor="" className={style.label}>
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    // value={formData.name}
+                    // onChange={handleChange}
+                    required
+                    className={style.forminput}
+                  />
+                </div>
+                <div className={style.label_input}>
+                  <label htmlFor="" className={style.label}>
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    // value={formData.email}
+                    // onChange={handleChange}
+                    required
+                    className={style.forminput}
+                  />
+                </div>
+                <div className={style.label_input}>
+                  <label htmlFor="" className={style.label}>
+                    Phone *
+                  </label>
+                  <PhoneInput
+                    country={"in"}
+                    inputStyle={{
+                      width: "94%",
+                      height: "40px",
+                      padding: "8px",
+                      marginLeft:"2rem"
+                    }}
+                    containerStyle={{ width: "100%" }}
+                    type="Number"
+                    name="number"
+                    placeholder="Your Email"
+                    // value={formData.email}
+                    // onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className={style.label_input}>
+                  <label htmlFor="" className={style.label}>
+                    Message *
+                  </label>
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    // value={formData.message}
+                    // onChange={handleChange}
+                    required
+                    rows={5}
+                  ></textarea>
+                </div>
+
+                {/* Hidden Field - kis se baat karni hai */}
+                <input type="hidden" name="talkWith" value={selected} />
+
+               <div className={style.overlay_form_btn_flex}>
+                 <button type="submit" className={style.overlay_form_btn}>Send</button>
+                <button type="button" className={style.overlay_form_btn} onClick={() => setSelected(null)}>
+                  Close
+                </button>
+               </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

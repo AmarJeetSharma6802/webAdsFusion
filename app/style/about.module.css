@@ -391,6 +391,78 @@ background: linear-gradient(90deg, #ff6a00, #ee0979);
   }
 }
 
+/*overlay   */
+.overlay_form{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+.overlay_form_Image{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 10px;
+
+}
+.overlay_form_flex{
+  display: flex;
+  width: 100%;
+  max-width: 65vw;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  height:480px;
+
+}
+.overlay_form_flex_img,.formWrapper{
+  width: 50%;
+  height: 100%;
+}
+.formWrapper{
+  padding: 1rem;
+}
+.label_input{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 0.5rem;
+}
+.forminput{
+  padding: 10px;
+  border-radius: 4px;
+  border: 0.5px solid rgb(209, 209, 209);
+}
+.forminput:focus,
+.forminput:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: rgb(209, 209, 209) !important; /* same as normal border */
+}
+.forminput:hover {
+  border-color: #888 !important; /* halka sa dark hover */
+}
+.overlay_form_btn_flex{
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.overlay_form_btn{
+  padding: 10px 20px;
+   background: linear-gradient(90deg, #ff6a00, #ee0979);
+   border: none;
+   color: white;
+   font-size: 1.1rem;
+   cursor: pointer;
+   border-radius: 4px;
+}
+
 @media (max-width:850px) {
     .about_img_content,.aboutValue{
     flex-wrap: wrap;
@@ -480,5 +552,17 @@ width: 100%;
 }
 .aboutMe_heading{
   font-size: 2.5rem;
+}
+.overlay_form_flex {
+flex-direction: column;
+height: auto;
+}
+.overlay_form_flex{
+  max-width: 95vw;
+  height:700px;
+
+}
+.overlay_form_flex_img,.formWrapper{
+  width: 100%;
 }
 }
