@@ -209,11 +209,53 @@ background-color: #000;
 
 /* AboutDetails */
 
-.AboutDetails{
-    max-width: 80vw;
-    margin: auto;
+.webads_fusion{
+    max-width: 75vw;
+    margin:2rem auto;
+    display: flex;
+    width: 100%;
+    height: 800px;
+    gap: 1rem;
 }
+.webads_fusionDetails,.webads_fusionDetails_right{
+    width: 50%;
+    height: 100%;
+    border: 0.5px solid rgb(230, 228, 228);
+    border-radius: 8px;
+    padding: 5px;
+}
+.image_name{
+    border-bottom: 0.5px solid rgb(231, 228, 228);
+    background:url(https://media.licdn.com/dms/image/v2/D5616AQGDQpIPsmMiqg/profile-displaybackgroundimage-shrink_350_1400/B56ZhUuPlgHkAo-/0/1753768066103?e=1759363200&v=beta&t=f5ptDLVWkxBPfcBdjVJeeJcVzV2kf1Lk4e7XH67c5hk) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+}
+.flex_name_img{
+ display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 5px;
 
+}
+.anand_img{
+    border-radius: 50%;
+}
+.name_name{
+    font-size:1.8rem;
+    font-weight: 500;
+
+}
+.name_Profomance{
+    font-size: 1.5rem;
+}
+.owner_deatils{
+    margin-top: 0.8rem;
+}
+.owner_deatils_pOne,.owner_deatils_pTwo,.owner_deatils_pThree{
+    padding: 5px;
+}
 
 @media (max-width:850px) {
     .about_img_content,.aboutValue{
