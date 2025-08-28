@@ -108,9 +108,12 @@
 .Our_mission_Our_Vision_heading{
     font-size: 1.8rem;
     font-weight: 600;
-    color: #F86E3F;
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
     position: relative;
+    display: inline-block;
 }
 .Our_mission_Our_Vision_heading::after{
 content: "";
@@ -247,18 +250,22 @@ background-color: #000;
 }
 .image_name{
     border-bottom: 0.5px solid rgb(231, 228, 228);
-    background:url(https://media.licdn.com/dms/image/v2/D5616AQGDQpIPsmMiqg/profile-displaybackgroundimage-shrink_350_1400/B56ZhUuPlgHkAo-/0/1753768066103?e=1759363200&v=beta&t=f5ptDLVWkxBPfcBdjVJeeJcVzV2kf1Lk4e7XH67c5hk) ;
+    /* background:url(https://media.licdn.com/dms/image/v2/D5616AQGDQpIPsmMiqg/profile-displaybackgroundimage-shrink_350_1400/B56ZhUuPlgHkAo-/0/1753768066103?e=1759363200&v=beta&t=f5ptDLVWkxBPfcBdjVJeeJcVzV2kf1Lk4e7XH67c5hk) ;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
     height: 200px;
+}
+.image_name_img{
+  width: 100%;
+  height: 100%;
 }
 .image_name_fullstack{
      border-bottom: 0.5px solid rgb(231, 228, 228);
-    background:url(/about_skill.png) ;
+    /* background:url(/about_skill.png) ;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
     height: 200px;
 }
 .flex_name_img{
@@ -456,7 +463,7 @@ width: 100%;
     padding: 5px;
 }
 .image_name,.image_name_fullstack{
-    height: 100px;
+    height: 150px;
 }
 .anand_img{
     height: 120px;
@@ -470,5 +477,8 @@ width: 100%;
 }
 .name_Profomance{
     font-size: 1.2rem;
+}
+.aboutMe_heading{
+  font-size: 2.5rem;
 }
 }

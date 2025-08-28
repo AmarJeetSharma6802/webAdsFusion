@@ -143,7 +143,9 @@ function AboutDetails() {
 WebAdsFusion</h1>
       <div className={style.webads_fusion}>
         <div className={style.webads_fusionDetails}>
-          <div className={style.image_name}></div>
+          <div className={style.image_name}>
+            <img src="https://media.licdn.com/dms/image/v2/D5616AQGDQpIPsmMiqg/profile-displaybackgroundimage-shrink_350_1400/B56ZhUuPlgHkAo-/0/1753768066103?e=1759363200&v=beta&t=f5ptDLVWkxBPfcBdjVJeeJcVzV2kf1Lk4e7XH67c5hk" alt="" className={style.image_name_img} />
+          </div>
           <div className={style.flex_name_img}>
             <Image
               src="/anandSharma.jpg"
@@ -218,7 +220,9 @@ WebAdsFusion</h1>
 
         </div>
         <div className={style.webads_fusionDetails_right}>
-             <div className={style.image_name_fullstack}></div>
+             <div className={style.image_name_fullstack}>
+              <Image src="/about_skill.png" alt="" width={350} height={200} className={style.image_name_img}/>
+             </div>
           <div className={style.flex_name_img}>
             <Image
               src="/Amarjeet_Sharma.png"
