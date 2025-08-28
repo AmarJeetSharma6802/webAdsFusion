@@ -3,6 +3,85 @@ import style from "../style/about.module.css";
 import Image from "next/image";
 
 function AboutDetails() {
+    const logo = [
+    {
+      id: 1,
+      img: "/HTML.svg",
+      name: "Html",
+    },
+    {
+      id: 2,
+      img: "/CSS3.svg",
+      name: "CSS",
+    },
+    {
+      id: 14,
+      img: "/Nextjs.png",
+      name: "Next js",
+    },
+    {
+      id: 3,
+      img: "/bootstrap.svg",
+      name: "Html",
+    },
+    {
+      id: 4,
+      img: "/HTML.svg",
+      name: "Html",
+    },
+    {
+      id: 5,
+      img: "/javascript.svg",
+      name: "Javascript",
+    },
+    {
+      id: 6,
+      img: "/React.svg",
+      name: "React js",
+    },
+    {
+      id: 7,
+      img: "/typescript.svg",
+      name: "TypeScript",
+    },
+    {
+      id: 8,
+      img: "/nodejs.png",
+      name: "Node js",
+    },
+    {
+      id: 9,
+      img: "/express.svg",
+      name: "Express js",
+    },
+    {
+      id: 10,
+      img: "/mongodb.svg",
+      name: "MongoDB",
+    },
+    {
+      id: 11,
+      img: "/postman.png",
+      name: "Postman",
+    },
+    {
+      id: 12,
+      img: "/git.svg",
+      name: "Git",
+    },
+    {
+      id: 13,
+      img: "/mongoose.png",
+      name: "Mongoose",
+    },
+    
+    {
+      id: 15,
+      img: "/gsap.png",
+      name: "Gsap",
+    },
+    
+  ];
 
      const marketingLogo = [
     {
@@ -88,6 +167,7 @@ function AboutDetails() {
               customers — using smart targeting, engaging creatives, optimized
               funnels, and continuous performance tracking.
             </p>
+             <h4>My Focus :- </h4>
             <p className={style.owner_deatils_pThree}>
               My focus: Clarity, Results & Sustainable Growth for every brand I
               work with.
@@ -146,25 +226,21 @@ function AboutDetails() {
               className={style.anand_img}
             />
             <div className={style.name}>
-              <p className={style.name_name}>Anand Sharma</p>
-              <p className={style.name_Profomance}>Profomance Marketer</p>
+              <p className={style.name_name}>Amarjeet Sharma</p>
+              <p className={style.name_Profomance}>Full stack developer /MERN stack developer</p>
             </div>
           </div>
           <div className={style.owner_deatils}>
             <h4>Professional Summary :- </h4>
             <p className={style.owner_deatils_pOne}>
-              Performance Marketer & Sales Strategist with 2+ years of
-              experience scaling businesses through high-converting Meta
-              (Facebook & Instagram) and Google Ads campaigns.
+              I’m a certified Full-Stack Developer passionate about crafting modern, scalable, and SEO-friendly web applications using the MERN stack and Next.js framework.
             </p>
             <p className={style.owner_deatils_pTwo}>
-              I build predictable ad systems that turn cold traffic into loyal
-              customers — using smart targeting, engaging creatives, optimized
-              funnels, and continuous performance tracking.
+              From intuitive frontends to robust backends, I deliver performance-driven digital solutions that enhance user experiences and help brands grow with confidence.
             </p>
+            <h4>My Focus :- </h4>
             <p className={style.owner_deatils_pThree}>
-              My focus: Clarity, Results & Sustainable Growth for every brand I
-              work with.
+             Building high-performance, SEO-friendly applications with MERN stack and Next.js, delivering seamless user experiences globally.
             </p>
           </div>
           <div className={style.social_media}>
@@ -189,8 +265,8 @@ function AboutDetails() {
 
         <div className={style.scrollerSection}>
           <div className={style.scrollerWrapper}>
-           <div className={style.scoller_marketing}>
-              {[...marketingLogo, ...marketingLogo].map((item, index) => (
+           <div className={style.scoller}>
+              {[...logo, ...logo].map((item, index) => (
                 <div key={`${item.id}-${index}`} className={style.scroller_container}>
                  <div className={style.scroller_container_Details}>
                    <Image
