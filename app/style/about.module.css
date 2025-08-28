@@ -318,6 +318,7 @@ background: linear-gradient(90deg, #ff6a00, #ee0979);
   width: 200%;
   animation: scroll 18s linear infinite;
 }
+
 .scroller_container {
   margin-right: 15px;
 }
@@ -337,6 +338,10 @@ background: linear-gradient(90deg, #ff6a00, #ee0979);
   width: fit-content;
   width: 200%;
   animation: scrollMarketing 20s linear infinite;
+}
+.scoller:hover ,.scoller_marketing:hover {
+  animation-play-state: paused;
+  cursor: pointer;
 }
 @keyframes scroll {
   0% {
@@ -413,5 +418,34 @@ width: 100%;
     gap: 1rem;
     max-width: 95%;
     flex-direction: column;
+}
+/* about me */
+.webads_fusion{
+    max-width:95vw;
+    margin:1rem auto;
+    flex-direction: column;
+}
+.webads_fusionDetails,.webads_fusionDetails_right{
+    width: 100%;
+    height: 100%;
+    border: 0.5px solid rgb(230, 228, 228);
+    border-radius: 8px;
+    padding: 5px;
+}
+.image_name,.image_name_fullstack{
+    height: 100px;
+}
+.anand_img{
+    height: 120px;
+    width: 120px;
+}
+.flex_name_img{
+    margin-top: 0.5rem;
+}
+.name_name{
+    font-size: 1.5rem;
+}
+.name_Profomance{
+    font-size: 1.2rem;
 }
 }
