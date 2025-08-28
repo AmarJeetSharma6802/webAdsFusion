@@ -139,6 +139,8 @@ function AboutDetails() {
 
   return (
     <>
+    <h1 className={style.aboutMe_heading}>Meet the <span className={style.aboutMe_heading_span}> Mind </span> Behind <br />
+WebAdsFusion</h1>
       <div className={style.webads_fusion}>
         <div className={style.webads_fusionDetails}>
           <div className={style.image_name}></div>
@@ -250,9 +252,6 @@ function AboutDetails() {
               <i className="fa-brands fa-linkedin-in"></i>
             </div>
             <div className="">
-              <i className="fa-brands fa-facebook-f"></i>
-            </div>
-            <div className="">
               <i className="fa-brands fa-instagram"></i>
             </div>
             <div className="">
@@ -261,7 +260,7 @@ function AboutDetails() {
              </div>
           </div>
 
-        <button  className={style.cta_btn}>Let’s Talk with Anand</button>
+        <button  className={style.cta_btn}>Let’s Talk with Amarjeet</button>
 
         <div className={style.scrollerSection}>
           <div className={style.scrollerWrapper}>
