@@ -7,13 +7,13 @@ import "react-phone-input-2/lib/style.css";
 
 function AboutDetails() {
   const [selected, setSelected] = useState(null);
-  const [form ,setForm] = useState({
-    name:"",
-    aboutName:"",
-    email:"",
-    phone:"",
-    message:"",
-  })
+  const [form, setForm] = useState({
+    name: "",
+    aboutName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
   const logo = [
     {
@@ -150,22 +150,25 @@ function AboutDetails() {
   const handleForm = (Form) => {
     setSelected(Form);
   };
- 
-const handleAboutForm = async(e)=>{
-  e.preventDefault()
 
-  const res = await fetch("/api/aboutForm",{
-  method:'POST',
-  headers:{
-     "Content-Type": "application/json",
+  const handleAboutForm = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch("/api/aboutForm", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-  body:{
-    name:form.name,
-  }
-  })
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+        aboutName: selected,
+      }),
+    });
 
-
-  const data = await res.json();
+    const data = await res.json();
     if (res.status === 201) {
       alert("Form submitted successfully");
       setForm({
@@ -173,17 +176,16 @@ const handleAboutForm = async(e)=>{
         email: "",
         phone: "",
         message: "",
-        aboutName:selected
+        aboutName: selected,
       });
       // console.log(data);
     } else {
       alert(data.message || data.error || "Failed to submit query");
     }
-
-}
-const handleChange =(e)=>{
- setForm({ ...form, [e.target.name]: e.target.value });
-}
+  };
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   return (
     <>
@@ -436,14 +438,14 @@ const handleChange =(e)=>{
                       width: "94%",
                       height: "40px",
                       padding: "8px",
-                      marginLeft:"2rem"
+                      marginLeft: "2rem",
                     }}
                     containerStyle={{ width: "100%" }}
                     type="Number"
                     name="phone"
                     placeholder="Your Email"
                     value={form.phone}
-                    onChange={handleChange}
+                    onChange={(phone) => setForm({ ...form, phone })}
                     required
                   />
                 </div>
@@ -458,18 +460,25 @@ const handleChange =(e)=>{
                     onChange={handleChange}
                     required
                     rows={5}
+                  className={style.forminput}
                   ></textarea>
                 </div>
 
                 {/* Hidden Field - kis se baat karni hai */}
                 <input type="hidden" name="talkWith" value={selected} />
 
-               <div className={style.overlay_form_btn_flex}>
-                 <button type="submit" className={style.overlay_form_btn}>Send</button>
-                <button type="button" className={style.overlay_form_btn} onClick={() => setSelected(null)}>
-                  Close
-                </button>
-               </div>
+                <div className={style.overlay_form_btn_flex}>
+                  <button type="submit" className={style.overlay_form_btn}>
+                    Send
+                  </button>
+                  <button
+                    type="button"
+                    className={style.overlay_form_btn}
+                    onClick={() => setSelected(null)}
+                  >
+                    Close
+                  </button>
+                </div>
               </form>
             </div>
           </div>
