@@ -13,7 +13,7 @@ export async function POST(req) {
       { status: 401 }
     );
   }
-  const findUser = await serviceForm.findOne({ ephonemail });
+  const findUser = await AboutForm.findOne({ ephonemail });
   if (findUser) {
     return NextResponse.json(
       { message: "Form already been submited" },
@@ -21,7 +21,7 @@ export async function POST(req) {
     );
   }
 
-   const Form = await serviceForm.create({
+   const Form = await AboutForm.create({
     aboutName,
         name,
         email,
