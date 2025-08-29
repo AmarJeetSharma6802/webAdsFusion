@@ -34,16 +34,30 @@ function Contact() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const handleSubmit =async (e)=>{
-    e.preventDefault()
 
-    const res = await axios.post("/api/contactForm",{
-      name:formData.name,
-      email:formData.email,
-      phone:formData.phone,
-      interest:formData.interestWebsite,
-    })
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await axios.post("/api/contactForm", {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      interest: formData.interestWebsite,
+      message: formData.message,
+    });
+
+    if (res.status === 201) {
+      alert("Form submitted successfully");
+      setFormData({ name: "", email: "", phone: "", interestWebsite: "", message: "" });
+    } else {
+      alert(res.data.message || "Failed to submit query");
+    }
+  } catch (err) {
+    alert(err.response?.data?.message || "Something went wrong");
   }
+};
+
 
   return (
     <div>
@@ -123,13 +137,13 @@ function Contact() {
                 <textarea name="message" rows={5} className={style.Contact_message} value={formData.message} onChange={handleChange}></textarea>
               </div>
 
-              <button type="submit">Send</button>
+              <button type="submit" className={style.Contact_btn}>Send</button>
             </form>
           </div>
         </div>
       </div>
     </div>
   );
-}
 
+}
 export default Contact;

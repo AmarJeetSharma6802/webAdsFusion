@@ -15,7 +15,7 @@ export async function POST(req){
 
     const findUser = await contactForm.findOne({email})
     if(findUser){
-        return NextResponse.json({message:"Form already been submited"}, {status:404})
+        return NextResponse.json({message:"Form already been submited"}, {status:409})
     }
 
     const Form = await contactForm.create({
