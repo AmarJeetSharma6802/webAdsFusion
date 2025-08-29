@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./topHeader/Navbar.jsx"
 import Footer from "./footer/Footer.jsx"
 import SessionProviderWrapper from "./SessionProviderWrapper.js"
+import GoUp from "./goUp/GoUp"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <SessionProviderWrapper>
         <Navbar/>
+        <GoUp/>
         {children}
         <Footer/>
         </SessionProviderWrapper>

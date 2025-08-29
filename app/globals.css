@@ -16,6 +16,84 @@ body {
 }
 
 
+.circle {
+  position: fixed;
+  bottom: -80px; /* start hidden below */
+  right: 2rem;
+  background-color: white;
+  color: black;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 3px solid transparent;
+  border-image: linear-gradient(90deg, #ff6a00, #ee0979) 1;
+  transition: bottom 0.5s ease-in-out, transform 0.3s ease;
+  overflow: hidden;
+  z-index: 999;
+}
+
+/* When visible, button slides up */
+.circle {
+  animation: slideUp 0.5s forwards;
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -80px;
+  }
+  to {
+    bottom: 5rem;
+  }
+}
+
+.arrow {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ee0979;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-text {
+  position: absolute;
+  opacity: 0;
+  left: -8px;
+  font-size: 11px;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #ee0979;
+  transition: opacity 0.3s, transform 0.3s;
+  text-align: center;
+  line-height: 1;
+  transform: translateY(20%);
+  overflow: hidden;
+}
+
+/* Hover Effect */
+.circle:hover .fa-arrow-up {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.circle:hover .back-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Hover Effect */
+.circle:hover .fa-arrow-up {
+  opacity: 0;
+}
+
+.circle:hover .back-text {
+  opacity: 1;
+}
 
 
 /* .loader {
