@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "../style/about.module.css";
 import Image from "next/image";
 import PhoneInput from "react-phone-input-2";
@@ -7,6 +7,13 @@ import "react-phone-input-2/lib/style.css";
 
 function AboutDetails() {
   const [selected, setSelected] = useState(null);
+  const [form ,setForm] = useState({
+    name:"",
+    aboutName:"",
+    email:"",
+    phone:"",
+    message:"",
+  })
 
   const logo = [
     {
@@ -143,9 +150,41 @@ function AboutDetails() {
   const handleForm = (Form) => {
     setSelected(Form);
   };
-  // const closeForm = () => {
-  //   setSelected(null);
-  // };
+ 
+const handleAboutForm = async(e)=>{
+  e.preventDefault()
+
+  const res = await fetch("/api/aboutForm",{
+  method:'POST',
+  headers:{
+     "Content-Type": "application/json",
+      },
+  body:{
+    name:form.name,
+  }
+  })
+
+
+  const data = await res.json();
+    if (res.status === 201) {
+      alert("Form submitted successfully");
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        aboutName:selected
+      });
+      // console.log(data);
+    } else {
+      alert(data.message || data.error || "Failed to submit query");
+    }
+
+}
+const handleChange =(e)=>{
+ setForm({ ...form, [e.target.name]: e.target.value });
+}
+
   return (
     <>
       <h1 className={style.aboutMe_heading}>
@@ -358,7 +397,7 @@ function AboutDetails() {
                 {selected === "anand" ? "Anand Sharma" : "Amarjeet Sharma"}
               </h2>
 
-              <form className={style.form}>
+              <form className={style.form} onSubmit={handleAboutForm}>
                 <div className={style.label_input}>
                   <label htmlFor="" className={style.label}>
                     Name *
@@ -367,8 +406,8 @@ function AboutDetails() {
                     type="text"
                     name="name"
                     placeholder="Your Name"
-                    // value={formData.name}
-                    // onChange={handleChange}
+                    value={form.name}
+                    onChange={handleChange}
                     required
                     className={style.forminput}
                   />
@@ -381,8 +420,8 @@ function AboutDetails() {
                     type="email"
                     name="email"
                     placeholder="Your Email"
-                    // value={formData.email}
-                    // onChange={handleChange}
+                    value={form.email}
+                    onChange={handleChange}
                     required
                     className={style.forminput}
                   />
@@ -401,10 +440,10 @@ function AboutDetails() {
                     }}
                     containerStyle={{ width: "100%" }}
                     type="Number"
-                    name="number"
+                    name="phone"
                     placeholder="Your Email"
-                    // value={formData.email}
-                    // onChange={handleChange}
+                    value={form.phone}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -415,8 +454,8 @@ function AboutDetails() {
                   <textarea
                     name="message"
                     placeholder="Your Message"
-                    // value={formData.message}
-                    // onChange={handleChange}
+                    value={form.message}
+                    onChange={handleChange}
                     required
                     rows={5}
                   ></textarea>
