@@ -169,16 +169,19 @@ function AboutDetails() {
     });
 
     const data = await res.json();
+
     if (res.status === 201) {
-      alert("Form submitted successfully");
+      alert("Form submitted successfully ");
+
       setForm({
         name: "",
         email: "",
         phone: "",
         message: "",
-        aboutName: selected,
+        aboutName: "",
       });
-      // console.log(data);
+
+      setSelected(null);
     } else {
       alert(data.message || data.error || "Failed to submit query");
     }
@@ -445,7 +448,13 @@ function AboutDetails() {
                     name="phone"
                     placeholder="Your Email"
                     value={form.phone}
-                    onChange={(phone) => setForm({ ...form, phone })}
+                    onChange={
+                      (phone, country, e, formattedValue) =>
+                        setForm({ ...form, phone: formattedValue }) 
+                    }
+                    enableSearch={true}
+                    countryCodeEditable={false}
+                    withCountryCallingCode={true}
                     required
                   />
                 </div>
@@ -460,7 +469,7 @@ function AboutDetails() {
                     onChange={handleChange}
                     required
                     rows={5}
-                  className={style.forminput}
+                    className={style.forminput}
                   ></textarea>
                 </div>
 

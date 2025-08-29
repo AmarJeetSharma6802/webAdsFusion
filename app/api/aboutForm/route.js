@@ -13,7 +13,7 @@ export async function POST(req) {
       { status: 401 }
     );
   }
-  const findUser = await AboutForm.findOne({ ephonemail });
+  const findUser = await AboutForm.findOne({ phone });
   if (findUser) {
     return NextResponse.json(
       { message: "Form already been submited" },
