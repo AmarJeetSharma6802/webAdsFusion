@@ -18,7 +18,7 @@ body {
 
 .circle {
   position: fixed;
-  bottom: -80px; /* start hidden below */
+  bottom: -80px; 
   right: 2rem;
   background-color: white;
   color: black;
