@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import style from "../style/navbar.module.css";
 import Image from "next/image";
+import {  useRouter } from "next/navigation";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-
+import { usePathname } from "next/navigation";
 function Navbar() {
+  const pathname = usePathname();
   const router  = useRouter()
   const [serv, setServ] = useState(false);
   const [nav,setNav] = useState(false)
@@ -39,8 +40,8 @@ function Navbar() {
         </label>
         <nav className={style.nav}>
           <ul className={`${style.nav_ul} ${nav ? style.active:""}`}>
-            <li className={style.nav_li}onClick={handleNavClose} >Home</li>
-            <li className={style.nav_li}><Link href="/about" onClick={handleNavClose}>About</Link></li>
+            <li className={style.nav_li}onClick={handleNavClose} ><Link href="/" className={`${style.linkTag} ${pathname === "/" ? style.active :""}`} >Home</Link></li>
+            <li className={style.nav_li} onClick={handleNavClose} ><Link href="/about" className={`${style.linkTag} ${pathname === "/about" ? style.active :""}`} >About</Link></li>
             <li className={style.nav_li}>Blogs</li>
             <li className={style.nav_li} onClick={handleServ}>
               <div className={style.service_flex_arrow}>
@@ -149,7 +150,7 @@ function Navbar() {
 
                 </div>
             </li>
-            <li className={style.nav_li} onClick={handleNavClose}>Contact</li>
+            <li className={style.nav_li} onClick={handleNavClose}><Link href="/contact" className={`${style.linkTag} ${pathname === "/contact" ? style.active :""}`} >Contact</Link></li>
           </ul>
         </nav>
         <button className={style.bars_btn} onClick={handleNav}>

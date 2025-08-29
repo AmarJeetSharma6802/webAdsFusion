@@ -50,6 +50,14 @@
 .nav{
   /* position: relative; */
 }
+.linkTag{
+  color: white;
+}
+.linkTag.active{
+  padding: 5px;
+ border: 1px solid white;
+ border-radius: 2px;
+}
 .bars_btn{
   display: none;
 }
