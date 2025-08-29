@@ -149,3 +149,9 @@ body {
     left: 0;
   }
 } */
+@media (max-width:750px) {
+  .circle {
+  bottom: -60px; 
+  right: 1.5rem;
+}
+}
