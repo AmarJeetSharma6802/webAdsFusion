@@ -1,4 +1,4 @@
-import serviceForm from "../model/Form.model.js";
+import contactForm from "../model/Form.model.js";
 import DBconnect from "../Db/DBconnect.js"
 import { NextResponse } from "next/server";
 
@@ -7,21 +7,23 @@ export async function POST(req){
     
     await DBconnect()
 
-    const {name,email,phone} = await req.json()
+    const {name,email,phone,interest ,message} = await req.json()
 
-    if(!name || !email || !phone){
+    if(!name || !email || !phone || !interest || ! message){
         return NextResponse.json({message:"all fileds required"}, {status:401})
     }
 
-    const findUser = await serviceForm.findOne({email})
+    const findUser = await contactForm.findOne({email})
     if(findUser){
         return NextResponse.json({message:"Form already been submited"}, {status:404})
     }
 
-    const Form = await serviceForm.create({
+    const Form = await contactForm.create({
         name,
         email,
-        phone
+        phone,
+        interest,
+        message
     })
 if(!Form){
         return NextResponse.json({message:"Form is missing"}, {status:404})

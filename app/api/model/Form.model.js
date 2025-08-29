@@ -14,10 +14,18 @@ const formSchema = new Schema({
         type:String,
         required:true
     },
+    message:{
+        type:String,
+        required:true
+    },
+    interest:{
+        type:String,
+        required:true
+    },
 },
 {timestamps:true}
 )
 
-const serviceForm = mongoose.models.serviceForm || mongoose.model("serviceForm",formSchema)
+const contactForm = mongoose.models.contactForm || mongoose.model("contactForm",formSchema)
 
-export default serviceForm
+export default contactForm
