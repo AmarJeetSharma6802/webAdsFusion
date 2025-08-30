@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import style from "../style/contact.module.css";
 import Image from "next/image";
 import axios from "axios";
+import toast from 'react-hot-toast';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -49,13 +50,13 @@ function Contact() {
     // console.log(res)
 
     if (res.status === 201) {
-      alert("Form submitted successfully");
+       toast.success("Form submitted successfully!");
       setFormData({ name: "", email: "", phone: "", interestWebsite: "", message: "" });
     } else {
       alert(res.data.message || "Failed to submit query");
     }
   } catch (err) {
-    alert(err.response?.data?.message || "Something went wrong");
+   toast.error(err.response?.data?.message || "Something went wrong");
   }
 };
 
