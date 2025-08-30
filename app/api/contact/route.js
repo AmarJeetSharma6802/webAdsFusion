@@ -1,4 +1,4 @@
-import contactForm from "../model/Form.model.js";
+import contactForm from "../model/Form.model.js"
 import DBconnect from "../Db/DBconnect.js"
 import { NextResponse } from "next/server";
 
