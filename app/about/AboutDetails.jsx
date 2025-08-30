@@ -440,10 +440,10 @@ function AboutDetails() {
                   <PhoneInput
                     country={"in"}
                     inputStyle={{
-                      width: "94%",
+                      width: "100%",
                       height: "40px",
-                      padding: "8px",
-                      marginLeft: "2rem",
+                      // padding: "8px",
+                      // marginLeft: "2rem",
                     }}
                     containerStyle={{ width: "100%" }}
                     type="Number"
