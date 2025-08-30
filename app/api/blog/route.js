@@ -12,8 +12,9 @@ export async function GET(){
     const foundblog = await blogData.find()
 
     if(!foundblog){
-        
-
+        return NextResponse.json({message:"blog data not found"},{status:404})
     }
+    return NextResponse.json({message:"blog data found succefully", foundblog},{status:201})
 }
+
 export async function POST(req){}
