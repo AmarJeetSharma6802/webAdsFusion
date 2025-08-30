@@ -4,6 +4,8 @@ import style from "../style/about.module.css";
 import Image from "next/image";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import toast from 'react-hot-toast';
+
 
 function AboutDetails() {
   const [selected, setSelected] = useState(null);
@@ -171,7 +173,7 @@ function AboutDetails() {
     const data = await res.json();
 
     if (res.status === 201) {
-      alert("Form submitted successfully ");
+      toast.success("Form submitted successfully!");
 
       setForm({
         name: "",
@@ -183,7 +185,7 @@ function AboutDetails() {
 
       setSelected(null);
     } else {
-      alert(data.message || data.error || "Failed to submit query");
+       toast.error(res.data.message || "Failed to submit query"); 
     }
   };
   const handleChange = (e) => {
