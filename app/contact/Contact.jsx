@@ -126,7 +126,7 @@ function Contact() {
                   containerStyle={{ width: "100%" }}
                   type="Number"
                   name="phone"
-                  placeholder="Your Email"
+                  placeholder="Your phone "
                   value={formData.phone}
                   onChange={(phone, country, e, formattedValue) =>
                     setFormData({ ...formData, phone: formattedValue })
