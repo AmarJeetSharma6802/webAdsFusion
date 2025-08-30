@@ -39,7 +39,7 @@ function Contact() {
   e.preventDefault();
 
   try {
-    const res = await axios.post("/api/contactForm", {
+    const res = await axios.post("/api/contact", {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
