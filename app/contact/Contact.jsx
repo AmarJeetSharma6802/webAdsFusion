@@ -46,7 +46,7 @@ function Contact() {
       interest: formData.interestWebsite,
       message: formData.message,
     });
-    console.log(res)
+    // console.log(res)
 
     if (res.status === 201) {
       alert("Form submitted successfully");
