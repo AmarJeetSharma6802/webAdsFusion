@@ -71,3 +71,18 @@ export async function POST(req, { params }) {
   });
 }
 
+export async function DELETE(params) {
+    await DBconnect()
+
+    const { id} = params.id
+
+    const deleteBlog = await blogData.findByIdAndDelete(id)
+
+    if(!deleteBlog){
+        return NextResponse.json({ message: "Blog not deleted" }, { status: 404 });
+    }
+    return NextResponse.json({
+    message: "blog deleted successfully",
+    deletedItem,
+  }, { status: 200 });
+}
