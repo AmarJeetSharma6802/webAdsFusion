@@ -25,13 +25,13 @@ export async function GET() {
 export async function POST(req) {
   await DBconnect();
 
-  const formData = req.formData();
-  const heading = formData.get("name");
+  const formData = await req.formData();
+  const heading = formData.get("heading");
   const title = formData.get("title");
   const LongPara = formData.get("LongPara");
   const image = formData.get("image");
 
-  if (!heading || !title || !title || !LongPara) {
+  if (!heading || !title || !LongPara) {
     return NextResponse.json({ message: "All field reuired" }, { status: 404 });
   }
   if (!image) {
@@ -54,7 +54,7 @@ export async function POST(req) {
     );
   }
 
-  const createBlog = blogData.create({
+  const createBlog = await blogData.create({
     heading,
     title,
     LongPara,
