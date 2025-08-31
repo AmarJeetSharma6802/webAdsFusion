@@ -8,7 +8,7 @@ import { writeFile, mkdir } from "fs/promises";
 export async function GET(req, { params }) {
   await DBconnect();
 
-  const { id } = params.id;
+  const { id } = params
 
   const FindBlogById = await blogData.findById(id);
 
@@ -25,7 +25,7 @@ export async function POST(req, { params }) {
 
   await DBconnect();
 
-  const {id} = params.id
+  const {id} = params
 
   const formData = await req.formData();
   const heading = formData.get("heading");
@@ -35,11 +35,11 @@ export async function POST(req, { params }) {
 
   let updateData = { heading, title, LongPara };
 
-  if (image || image.name) {
+  if (image && image.name) {
     const buffer = Buffer.from(await image.arrayBuffer());
     const tempDir = "/tmp";
     await mkdir(tempDir, { recursive: true });
-    const tmpfilePath = `${tempDir},/${image.name}`;
+   const tmpfilePath = `${tempDir}/${image.name}`;
     await writeFile(tmpfilePath, buffer);
 
     const uploaded = await uploadOnCloudinary(tmpfilePath, "image");
@@ -67,14 +67,15 @@ export async function POST(req, { params }) {
 
   return NextResponse.json({
     message: "blog updated successfully",
-    updatedItem,
+    updateBlog,
   });
 }
 
-export async function DELETE(params) {
+export async function DELETE(req,{params}) {
     await DBconnect()
 
-    const { id} = params.id
+    const { id} = params
+    // const id = params.id
 
     const deleteBlog = await blogData.findByIdAndDelete(id)
 
@@ -83,6 +84,6 @@ export async function DELETE(params) {
     }
     return NextResponse.json({
     message: "blog deleted successfully",
-    deletedItem,
+    deleteBlog,
   }, { status: 200 });
 }
