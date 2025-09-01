@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
+import  style from "../../style/blog.module.css"
 
 export default function BlogDetailPage({read}) {
   const [blog, setBlog] = useState(null);
@@ -31,13 +31,16 @@ export default function BlogDetailPage({read}) {
   if (!blog) return <p>No blog found!</p>;
 
   return (
-    <div>
-      <h1>{blog.heading}</h1>
-      <p>{blog.blogType}</p>
-      
-      <Image src={blog.image} alt={blog.heading} width={600} height={300} />
+    <div className={style.blog_page}>
+      <div className={style.blog_content_content}>
+        <h1>{blog.heading}</h1>
       <h3>{blog.title}</h3>
-      <p>{blog.LongPara}</p>
+     <div className={style.blog_content_content_image}>
+         <Image src={blog.image} alt={blog.heading} width={400} height={300} className={style.blog_content_content_img} />
+     </div>
+      
+      <p className={style.blog_content_content_long_para}>{blog.LongPara}</p>
+      </div>
     </div>
   );
 }

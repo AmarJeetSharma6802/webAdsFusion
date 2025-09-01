@@ -144,7 +144,29 @@ font-weight: 600;
   text-align: center;
   margin: 5rem;
 }
-
+.blog_page{
+  max-width: 75vw;
+  margin:2rem auto;
+  padding: 2rem;
+  border: 1px solid rgb(225, 224, 224);
+  border-radius: 4px;
+}
+.blog_content_content{
+  padding: 2rem;
+}
+.blog_content_content_image{
+  height: 600px;
+  width: 100%;
+  padding: 2rem;
+}
+.blog_content_content_img{
+  height: 100%;
+  width: 100%;
+  /* object-fit: cover; */
+}
+.blog_content_content_long_para{
+  line-height:28px;
+}
 @media (max-width:800px) {
   .blog-module__J_zEKW__blog_head {
     text-align: center;
