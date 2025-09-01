@@ -28,12 +28,13 @@ export async function POST(req, { params }) {
   const {id} = params
 
   const formData = await req.formData();
+  const blogType = formData.get("blogType");
   const heading = formData.get("heading");
   const title = formData.get("title");
   const LongPara = formData.get("LongPara");
   const image = formData.get("image");
 
-  let updateData = { heading, title, LongPara };
+  let updateData = { blogType,heading, title, LongPara };
 
   if (image && image.name) {
     const buffer = Buffer.from(await image.arrayBuffer());

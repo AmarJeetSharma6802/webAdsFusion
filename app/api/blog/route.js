@@ -26,6 +26,7 @@ export async function POST(req) {
   await DBconnect();
 
   const formData = await req.formData();
+  const blogType = formData.get("blogType");
   const heading = formData.get("heading");
   const title = formData.get("title");
   const LongPara = formData.get("LongPara");
@@ -55,6 +56,7 @@ export async function POST(req) {
   }
 
   const createBlog = await blogData.create({
+    blogType,
     heading,
     title,
     LongPara,

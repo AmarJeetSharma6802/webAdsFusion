@@ -42,7 +42,7 @@ function Navbar() {
           <ul className={`${style.nav_ul} ${nav ? style.active:""}`}>
             <li className={style.nav_li}onClick={handleNavClose} ><Link href="/" className={`${style.linkTag} ${pathname === "/" ? style.active :""}`} >Home</Link></li>
             <li className={style.nav_li} onClick={handleNavClose} ><Link href="/about" className={`${style.linkTag} ${pathname === "/about" ? style.active :""}`} >About</Link></li>
-            <li className={style.nav_li}>Blogs</li>
+            <li className={style.nav_li}><Link href="/blogs" className={`${style.linkTag} ${pathname === "/blogs" ? style.active :""}`} >Blogs</Link></li>
             <li className={style.nav_li} onClick={handleServ}>
               <div className={style.service_flex_arrow}>
                 Service
