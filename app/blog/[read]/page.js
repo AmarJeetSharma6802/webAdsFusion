@@ -2,7 +2,9 @@ import React from 'react'
 
 function route() {
   return (
-    <div>blog page</div>
+    <div>
+      
+    </div>
   )
 }
 

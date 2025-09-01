@@ -94,6 +94,7 @@ export async function generateMetadata({ params }) {
 
     },
   ];
+  
 async function page({params}) {
 
  

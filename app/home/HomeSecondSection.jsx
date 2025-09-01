@@ -53,7 +53,7 @@ function HomeSecondSection() {
       }, 2000)
     }, 8000)
 
-    console.log("render")
+    // console.log("render")
     return () => clearInterval(interval)
   }, [currentIndex]);
 
