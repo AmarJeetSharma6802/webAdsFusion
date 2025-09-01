@@ -1,9 +1,10 @@
 import React from 'react'
-
+import BlogDetailPage from "../[read]/DynamicBlogPage"
 function page() {
+  
   return (
     <div>
-      <p></p>
+      <BlogDetailPage/>
     </div>
   )
 }

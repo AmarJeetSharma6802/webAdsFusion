@@ -18,15 +18,13 @@ function Blog() {
       const res = await fetch("/api/blog", { next: { revalidate: 10 } });
       const data = await res.json();
       
-      // Latest blog first
-      const sortedBlogs = [...data.foundblog].reverse(); // newest first
+      const sortedBlogs = [...data.foundblog].reverse(); 
       setDt(sortedBlogs);
     };
     fetchData();
     setLoading(false)
   }, [loading,dt]);
 
-  // Scroll to blog list
   const handleScroll = () => {
     blogRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -36,10 +34,8 @@ function Blog() {
   const indexOfFirstBlog = (page - 1) * blogsPerPage;
   const currentBlogs = dt.slice(indexOfFirstBlog, indexOfLastBlog);
 
-  // Total pages
   const totalPages = Math.ceil(dt.length / blogsPerPage);
 
-  // Page click
   const handlePageClick = (pageNum) => {
     setPage(pageNum);
     handleScroll();
