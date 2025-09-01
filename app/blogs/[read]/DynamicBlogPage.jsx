@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import  style from "../../style/blog.module.css"
+import Link from "next/link";
 
 export default function BlogDetailPage({read}) {
   const [blog, setBlog] = useState(null);
@@ -32,6 +33,11 @@ export default function BlogDetailPage({read}) {
 
   return (
     <>
+    <div className={style.blog_links}>
+        <Link href="/">Home</Link> {"/"}
+        <Link href="/about">About</Link> {"/"}
+        <Link href="/blogs">Blogs</Link>
+    </div>
     <div className={style.blog_page}>
       <div className={style.blog_content_content}>
         <h1>{blog.heading}</h1>
