@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 function Blog() {
   const router = useRouter();
   const [dt, setDt] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const blogsPerPage = 6;
   const blogRef = useRef(null);
@@ -22,7 +23,8 @@ function Blog() {
       setDt(sortedBlogs);
     };
     fetchData();
-  }, []);
+    setLoading(false)
+  }, [loading,dt]);
 
   // Scroll to blog list
   const handleScroll = () => {
@@ -49,6 +51,9 @@ function Blog() {
     router.push(`/blogs/${slug}`);
   };
 
+  if(loading){
+    return <p className={style.loading}>loading ....</p>
+  }
   return (
     <div>
       <div className={style.blog_head}>

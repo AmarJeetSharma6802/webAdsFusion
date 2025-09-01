@@ -139,6 +139,11 @@ color: #ff3c00;
 font-weight: 600;
 
 }
+.loading{
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 5rem;
+}
 
 @media (max-width:800px) {
   .blog-module__J_zEKW__blog_head {
