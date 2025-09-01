@@ -68,7 +68,10 @@ function HomeThirdSection() {
                 <div className={style.boxes_key_para}>
                   <p>{item.para}</p>
                 </div>
-                <button className={style.boxes_key_btn}>Read more</button>
+                <div className={style.btn_arrow}>
+                <a className={style.boxes_key_btn}>Read more</a>
+                <p ><i className="fa-solid fa-arrow-right"></i></p>
+                </div>
               </div>
             </div>
           ))}
