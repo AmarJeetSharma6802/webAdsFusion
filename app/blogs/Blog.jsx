@@ -64,28 +64,24 @@ function Blog() {
            <div className={style.blog_details}>
                <h3 className={style.blog_details_heading}  >{item.heading}</h3>
             <p className={style.blog_details_title}>{item.title}</p>
+             <div className={style.btn_arrow}>
             <a href="" className={style.blog_details_btn}>Read more</a>
+            <p ><i className="fa-solid fa-arrow-right"></i></p>
+            </div>
            </div>
           </div>
         ))}
       </div>
 
 </div>
+
       {/* Page Numbers */}
-      <div style={{ marginTop: "20px", textAlign: "center" }}>
+      <div className={style.pageNumber}>
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => (
           <button
             key={num}
             onClick={() => handlePageClick(num)}
-            style={{
-              margin: "0 5px",
-              padding: "5px 10px",
-              backgroundColor: num === page ? "#0070f3" : "#eee",
-              color: num === page ? "#fff" : "#000",
-              border: "none",
-              borderRadius: "4px",
-              cursor: "pointer",
-            }}
+            className={`${style.pageNumber_btn} ${ num === page ? style.active :""}`}
           >
             {num}
           </button>

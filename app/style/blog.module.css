@@ -106,3 +106,34 @@ font-size: 15px;
 ;
     align-items: center;
  }
+ .btn_arrow{
+  display: flex;
+  gap: 5px;
+  color: #ff3c00;
+ }
+ .btn_arrow p{
+    transition: transform 0.3s;
+
+}
+.btn_arrow:hover p{ 
+transform: translateX(5px);
+}
+.pageNumber{
+  padding: 2rem;
+  text-align: center;
+}
+.pageNumber_btn{
+padding: 8px 16px;
+margin: 0 5px;
+border-radius: 4px;
+border: none;
+font-size: 1rem;
+cursor: pointer;
+background-color: #ccc;
+}
+.pageNumber_btn.active{
+background-color: #1a1a1a;
+color: #ff3c00;
+font-weight: 600;
+
+}
