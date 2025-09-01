@@ -11,7 +11,7 @@ export default function BlogDetailPage({read}) {
   
   useEffect(() => {
     const fetchBlog = async () => {
-      const res = await fetch("/api/blog", { next: { revalidate: 10 } });
+      const res = await fetch("/api/blog");
       const data = await res.json();
 
 
