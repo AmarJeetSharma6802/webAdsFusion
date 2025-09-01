@@ -139,3 +139,34 @@ color: #ff3c00;
 font-weight: 600;
 
 }
+
+@media (max-width:800px) {
+  .blog-module__J_zEKW__blog_head {
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(#000000b3, #000000b3), url(https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80) center / cover no-repeat;
+    height: 400px;
+    margin-bottom: 40px;
+    padding: 100px 0;
+    position: relative;
+  }
+.blog_head_details_heading {
+    font-size: 1.6rem;
+}
+.blog_head_details_para {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    font-size: 1rem;
+}
+  .blog_box{
+  max-width: 95vw;
+  margin: auto;
+ }
+
+ .blog{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  place-content: center;
+  gap: 30px;
+ }
+}
