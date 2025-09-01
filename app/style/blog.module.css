@@ -76,6 +76,7 @@ text-align: center;
     overflow: hidden;
     transition: transform 0.3s;
     color: white;
+    cursor: pointer;
  }
  .blog_key:hover {
 transform: translateY(-5px);
@@ -110,6 +111,7 @@ font-size: 15px;
   display: flex;
   gap: 5px;
   color: #ff3c00;
+  cursor: pointer;
  }
  .btn_arrow p{
     transition: transform 0.3s;

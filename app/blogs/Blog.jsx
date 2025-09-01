@@ -2,9 +2,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import style from "../style/blog.module.css";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 
 function Blog() {
+  const router = useRouter()
   const [dt, setDt] = useState([]);
   const [page, setPage] = useState(1);
   const blogsPerPage = 6;
@@ -39,6 +40,10 @@ function Blog() {
     handleScroll();
   };
 
+  const handleClick =(heading)=>{
+    const slug = heading.toLowerCase().replace(/\s+/g, "-")
+    router.push(`/blogs/${slug}`)
+  }
   return (
     <div>
       <div className={style.blog_head}>
@@ -57,15 +62,15 @@ function Blog() {
   <h1  className={style.blog_box_heading}>Featured Articles</h1>
       <div className={style.blog} ref={blogRef}>
         {currentBlogs.map((item) => (
-          <div key={item._id} className={style.blog_key}>
+          <div key={item._id} className={style.blog_key} onClick={()=> handleClick(item.heading)}>
             <div className={style.blog_wrap}>
               <Image src={item.image} alt={item.heading} width={200} height={100} className={style.blog_image} />
             </div>
            <div className={style.blog_details}>
                <h3 className={style.blog_details_heading}  >{item.heading}</h3>
             <p className={style.blog_details_title}>{item.title}</p>
-             <div className={style.btn_arrow}>
-            <a href="" className={style.blog_details_btn}>Read more</a>
+             <div className={style.btn_arrow} >
+            <p  className={style.blog_details_btn}>Read more</p>
             <p ><i className="fa-solid fa-arrow-right"></i></p>
             </div>
            </div>
