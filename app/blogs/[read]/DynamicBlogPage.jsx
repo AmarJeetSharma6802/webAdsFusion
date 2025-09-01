@@ -31,6 +31,7 @@ export default function BlogDetailPage({read}) {
   if (!blog) return <p>No blog found!</p>;
 
   return (
+    <>
     <div className={style.blog_page}>
       <div className={style.blog_content_content}>
         <h1>{blog.heading}</h1>
@@ -42,5 +43,6 @@ export default function BlogDetailPage({read}) {
       <p className={style.blog_content_content_long_para}>{blog.LongPara}</p>
       </div>
     </div>
+    </>
   );
 }
