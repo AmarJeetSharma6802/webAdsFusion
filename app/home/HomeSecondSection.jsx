@@ -3,8 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import style from "../style/home.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HomeThirdSection from "../home/HomeThirdSection.js"
-
+import HomeThirdSection from "../home/HomeThirdSection.js";
 
 gsap.registerPlugin(ScrollTrigger);
 function HomeSecondSection() {
@@ -14,47 +13,45 @@ function HomeSecondSection() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-  const textElement = gsap.fromTo(
-    textRef.current,
-    {
-      scale: 0.8,
-      y: 80,
-      opacity: 0,
-    },
-    {
-      scale: 1,
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: textRef.current,
-        start: "top 80%",
-        toggleActions: "play none none none",
-        // markers: true, 
+    const textElement = gsap.fromTo(
+      textRef.current,
+      {
+        scale: 0.8,
+        y: 80,
+        opacity: 0,
       },
-    }
-  );
+      {
+        scale: 1,
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+          // markers: true,
+        },
+      }
+    );
 
-  return () => {
-    textElement.kill();
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  };
-}, []);
-
+    return () => {
+      textElement.kill();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   useEffect(() => {
-
     const interval = setInterval(() => {
-      setFade(false)
+      setFade(false);
       setTimeout(() => {
-        setCurrentIndex(prevIndex => (prevIndex + 1) % message.length)
-        setFade(true)
-      }, 2000)
-    }, 8000)
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % message.length);
+        setFade(true);
+      }, 2000);
+    }, 8000);
 
-    // console.log("render")
-    return () => clearInterval(interval)
+    console.log("render")
+    return () => clearInterval(interval);
   }, [currentIndex]);
 
   useEffect(() => {
@@ -122,30 +119,31 @@ function HomeSecondSection() {
                 <h2 className={style.changing_text_h2}>
                   {message[currentIndex].title}
                 </h2>
-                <p className={style.changing_text_p}>{message[currentIndex].para}</p>
+                <p className={style.changing_text_p}>
+                  {message[currentIndex].para}
+                </p>
               </span>
             </div>
           </div>
         </div>
         <div className={style.right_HomeSecondSection}>
           <div className={style.right_HomeSecondSection_video}>
-             <video
-              ref={videoRef}
+            <video
+              key={currentIndex}
               autoPlay
               loop
               muted
               playsInline
               className={`${style.rightvideo} ${fade ? "fade-in" : "fade-out"}`}
-              style={{
-                width: "100%",
-                transition: "opacity 0.5s ease-in-out",
-              }}
-            ></video>
+              style={{ width: "100%", transition: "opacity 0.5s ease-in-out" }}
+            >
+              <source src={message[currentIndex].video} type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>
 
-<HomeThirdSection/>
+      <HomeThirdSection />
     </div>
   );
 }
