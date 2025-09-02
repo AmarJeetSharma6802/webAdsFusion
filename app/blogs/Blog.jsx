@@ -2,7 +2,7 @@ import BlogsList from "../blogs/BlogSec.jsx";
 import style from "../style/blog.module.css";
 
 async function getBlogs() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`, {
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL, {
     next: { revalidate: 10 }, 
   });
   return res.json();
