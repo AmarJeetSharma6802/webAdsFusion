@@ -140,9 +140,12 @@ font-weight: 600;
 
 }
 .loading{
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-align: center;
-  margin: 5rem;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;  
 }
 .blog_page{
   max-width: 75vw;

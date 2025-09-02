@@ -70,7 +70,6 @@
 }
 
 .inner_service_content {
-  display: flex;
   position: absolute;
   right: 1rem;
   background-color: rgb(229, 231, 232);
@@ -90,7 +89,7 @@
 .inner_service_content.active {
   transform: translateY(0);
   opacity: 1;
-  display: block;
+  display: flex;
 
   z-index: 1;
 }

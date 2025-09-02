@@ -28,14 +28,14 @@ export default function BlogDetailPage({read}) {
     fetchBlog();
   }, [read]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className={style.loading}>Blog Loading...</p>;
   if (!blog) return <p>No blog found!</p>;
 
   return (
     <>
     <div className={style.blog_links}>
+        <Link href="/"><i className="fa-solid fa-angle-left"></i> Back</Link> {"/"}
         <Link href="/">Home</Link> {"/"}
-        <Link href="/about">About</Link> {"/"}
         <Link href="/blogs">Blogs</Link>
     </div>
     <div className={style.blog_page}>
