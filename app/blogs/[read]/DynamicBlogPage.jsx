@@ -3,11 +3,12 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import  style from "../../style/blog.module.css"
 import Link from "next/link";
+import { useRouter } from "next/navigation"; 
 
 export default function BlogDetailPage({read}) {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
-
+const router = useRouter(); 
   
   useEffect(() => {
     const fetchBlog = async () => {
@@ -34,7 +35,7 @@ export default function BlogDetailPage({read}) {
   return (
     <>
     <div className={style.blog_links}>
-        <Link href="/"><i className="fa-solid fa-angle-left"></i> Back</Link> {"/"}
+        <a onClick={() => router.back()}><i className="fa-solid fa-angle-left"></i> Back</a> {"/"}
         <Link href="/">Home</Link> {"/"}
         <Link href="/blogs">Blogs</Link>
     </div>
