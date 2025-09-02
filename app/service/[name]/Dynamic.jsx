@@ -1,7 +1,5 @@
-"use client";
 import React from "react";
 import style from "../../style/service.module.css";
-import { useParams } from "next/navigation";
 import Image from "next/image";
 
 function Dynamic({selectedContent}) {
