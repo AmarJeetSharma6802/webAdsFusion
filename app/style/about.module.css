@@ -12,6 +12,8 @@
      
     padding: 2rem 4rem;
      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000;
+       background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .about_img_content_top{
