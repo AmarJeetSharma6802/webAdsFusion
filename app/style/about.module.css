@@ -5,10 +5,11 @@
     height: 400px;
     color: white;
     position: relative;
-    background:url(/aboutBg.png);
+    /* background:url(/aboutBg.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    /* background-color: rgb(15, 14, 14); */
+    background-size: cover; */
+    background-color: rgb(15, 14, 14);
+     
     padding: 2rem 4rem;
 }
 .about_img_content_top{
@@ -566,13 +567,3 @@ height: auto;
   width: 100%;
 }
 }
- /* background: linear-gradient(
-    to bottom right,
-    #1a1a1a,  
-    #0d0d1a,   
-    #1a0033,   
-    #33001a,   
-    #001a33    
-  ); */
-  /* background-repeat: no-repeat;
-  background-attachment: fixed; */

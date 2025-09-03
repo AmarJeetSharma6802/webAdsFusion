@@ -164,7 +164,18 @@
   min-height: 100vh;
   background-repeat: no-repeat;
   padding: 20px;
-   background:#171717;
+   /* background:#171717; */
+   background-color: rgb(15, 14, 14);
+     background: linear-gradient(
+    to bottom right,
+    #1a1a1a,  
+    #0d0d1a,   
+    #171717,   
+    #260114,   
+    #001a33    
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .HomeThidSection_boxe_wrap_h1 {
   text-align: center;
