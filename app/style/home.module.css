@@ -166,14 +166,7 @@
   padding: 20px;
    /* background:#171717; */
    background-color: rgb(15, 14, 14);
-     background: linear-gradient(
-    to bottom right,
-    #1a1a1a,  
-    #0d0d1a,   
-    #171717,   
-    #260114,   
-    #001a33    
-  );
+     background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
