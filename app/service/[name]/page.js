@@ -25,7 +25,9 @@ export async function generateMetadata({ params }) {
       heading: "Modern Web Design: Trends, Tools & Timeless Principles",
       para: "We craft beautiful, user-friendly web designs that reflect your brand’s identity. Our creative approach ensures your website stands out, engages visitors, and delivers a seamless experience across all devices.",
       img: "/serviceWebDesign.png",
-      btn:"Plan Your Website With Us"
+      btn:"Plan Your Website With Us",
+      secHeading:"WEBSITE DESIGN SERVICES, WE OFFER",
+      ThirdHeading:"WEBSITE DESIGN SERVICES, WE OFFER"
     },
     {
       id: 2,
