@@ -166,7 +166,7 @@
   padding: 20px;
    /* background:#171717; */
    /* background-color: rgb(15, 14, 14); */
-     background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000;
+     background: radial-gradient(ellipse 80% 70% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
