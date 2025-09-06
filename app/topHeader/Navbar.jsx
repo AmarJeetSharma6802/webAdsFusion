@@ -25,7 +25,9 @@ function Navbar() {
 
   }
   const handleNavClose =()=>{
-    setNav(false);
+    setTimeout(()=>{
+      setNav(false);
+    },800)
 
   }
   const handleHome =()=>{
