@@ -1,6 +1,6 @@
-.about{
-    /* min-height: 100vh; */
-}
+/* .about{
+    min-height: 100vh;
+} */
 .about_page{
     height: 400px;
     color: white;
@@ -40,8 +40,9 @@
     width: 100%;
 }
 .span_orange{
-     background: linear-gradient(90deg, #ff6a00, #ee0979);
-  -webkit-background-clip: text;
+ background: linear-gradient(90deg, #ff6a00, #ee0979);
+  background-clip: text;             
+  -webkit-background-clip: text;      
   -webkit-text-fill-color: transparent;
 }
 .about_top_btns{
@@ -114,7 +115,8 @@
     font-size: 1.8rem;
     font-weight: 600;
     background: linear-gradient(90deg, #ff6a00, #ee0979);
-  -webkit-background-clip: text;
+  background-clip: text;             
+  -webkit-background-clip: text;      
   -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
     position: relative;
@@ -226,9 +228,11 @@ background-color: #000;
     font-size: 3rem;
 }
 .aboutMe_heading_span{
-    background: linear-gradient(90deg, #ff6a00, #ee0979);
-  -webkit-background-clip: text;
+   background: linear-gradient(90deg, #ff6a00, #ee0979);
+  background-clip: text;             
+  -webkit-background-clip: text;      
   -webkit-text-fill-color: transparent;
+  color: transparent;    
 }
 .webads_fusion{
     max-width: 75vw;
@@ -565,9 +569,19 @@ height: auto;
 .overlay_form_flex {
         flex-direction: column;
         max-width: 95vw;
-        height: 95%;
+        height: 85%;
 }
 .overlay_form_flex_img,.formWrapper{
   width: 100%;
 }
+.overlay_form_Image,.overlay_form_flex_img{
+  height: 100%;
+
+}
+.formWrapper_h2{
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
 }

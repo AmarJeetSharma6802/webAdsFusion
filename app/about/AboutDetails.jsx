@@ -399,7 +399,7 @@ function AboutDetails() {
               )}
             </div>
             <div className={style.formWrapper}>
-              <h2>
+              <h2 className={style.formWrapper_h2} >
                 Talk with{" "}
                 {selected === "anand" ? "Anand Sharma" : "Amarjeet Sharma"}
               </h2>
