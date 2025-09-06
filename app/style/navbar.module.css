@@ -139,18 +139,19 @@
   left: 0;
   height: auto;
   background-color: black;
-  display: block;
+  display: none;
   padding: 10px;
-  transform: translateY(-100%);
   transition: 0.8s;
   z-index: -1;
   border-bottom: 0.5 solid rgb(89, 88, 88);
   /* display: none; */
-
+  opacity: 0;
 }
 .nav_ul.active{
-  transform: translateY(0%);
+  opacity: 1;
+  display: block;
   z-index: 1;
+
 }
 
 
