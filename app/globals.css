@@ -158,7 +158,7 @@ body {
 
 .caroucel_home{
   margin: auto;
-  max-width: 90vw;
+  max-width: 92vw;
   padding: 2rem;
 }
 .caroucel_home_h1{
@@ -192,33 +192,17 @@ body {
   
   .carousel-item-3 {
     flex: 0 0 auto;
-    width: 500px; 
+    width: 580px; 
     scroll-snap-align: start;
     position: relative;
     overflow: hidden;
+    height: 400px;
   }
   
   .carousel-image-2 {
     width: 100%;
     border-radius: 0px;
-  }
-  
-  .carousel-text-2 {
-    position: absolute;
-    bottom: 20px;
-    left: 16px;
-    /* right: 16px; */
-    color: white;
-    padding: 8px;
-  }
-  
-  .carousel-p-2 {
-    font-size: 18px;
-    background-color: #f2f1f1;
-    border-radius: 20px;
-    color: black;
-    padding: 8px 12px;
-    margin-top: 10px;
+    height: 100%;
   }
   
   .scroll-button-2 {
@@ -239,10 +223,13 @@ body {
     align-items: center;
     margin: 0px 20px;
     z-index: 111;
+     background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
   }
   
+  
   .scroll-button-2.left-2 {
-    /* right: 65px; */
+    left: -15px;
     overflow: hidden;
     transform: none;
     background-color: rgba(237, 235, 235, 0.868);
@@ -251,7 +238,7 @@ body {
 .scroll-button-2.right-2 {
     background-color: rgba(237, 235, 235, 0.868);
       overflow: hidden;
-    right: 10px;
+    right: -15px;
     transform: none;
   }
   

@@ -6,7 +6,7 @@ function ThirdSectionCaroucel() {
   const itemMember = [
     { id: 1, img: "/caroucel_img.png" },
     { id: 2, img: "/caroucel_img2.jpeg" },
-    { id: 3, img: "/caroucel_img.png" },
+    { id: 3, img: "/thirdCaroucel3.png" },
     { id: 4, img: "/caroucel_img2.jpeg" },
     { id: 5, img: "/caroucel_img.png" },
   ];
