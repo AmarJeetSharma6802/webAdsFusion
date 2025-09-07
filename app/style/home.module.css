@@ -531,7 +531,7 @@ transform: translateX(5px);
   transform: rotate(180deg);
 }
 
-
+/* swiper */
 
 @media (max-width: 850px) {
   .home_content {

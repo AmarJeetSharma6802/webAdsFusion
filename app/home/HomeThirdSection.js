@@ -2,6 +2,7 @@ import React from "react";
 import style from "../style/home.module.css";
 import Image from "next/image";
 import HomeFivethSection from "./HomeFivthSection.js"
+import ThirdSectionCaroucel from "./ThirdSectionCaroucel"
 
 function HomeThirdSection() {
   const boxes = [
@@ -77,6 +78,8 @@ function HomeThirdSection() {
           ))}
         </div>
       </div>
+    <ThirdSectionCaroucel/>
+
 
       <div className={style.homeFourthSection_wrap}>
         <div className={style.homeFourthSection}>
