@@ -73,10 +73,11 @@ function ThirdSectionCaroucel() {
           {itemMember.map((item) => (
             <div key={item.id} className="carousel-item-3">
               <a href="#">
-                <img
+                <Image
                   src={item.img}
                   alt={`carousel-item-${item.id}`}
                   className="carousel-image-2"
+                  width={350} height={100}
                 />
               </a>
             </div>
