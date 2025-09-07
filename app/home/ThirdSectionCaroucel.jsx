@@ -49,7 +49,7 @@ function ThirdSectionCaroucel() {
 } else {
   carousel.scrollBy({ left: 300, behavior: "smooth" });
 }
-    }, 4000); 
+    }, 5000); 
 
     return () => clearInterval(interval);
   }, []);
