@@ -92,13 +92,16 @@ font-weight: 600;
     
 }
 .webCard{
-     background: #1a1a1a;
+     /* background: #1a1a1a; */
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s;
     color: white;
     cursor: pointer;
     padding: 1rem;
+     background: radial-gradient(ellipse 80% 90% at 50% 30%, rgba(120, 180, 255, 0.25), transparent 70%), #000000;
+       background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .webCard_title{
     margin-top: 0.5rem;
@@ -143,6 +146,7 @@ font-size: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 
               0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
 }
 
 .serve_key:hover {

@@ -1,6 +1,8 @@
 .footer{
     min-height: 40vh;
-    background-color: black;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000;
+       background-repeat: no-repeat;
+  background-attachment: fixed;
     color: white;
 }
 .footer_flex{
