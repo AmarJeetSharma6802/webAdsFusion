@@ -26,7 +26,7 @@ function Dynamic({selectedContent}) {
     {selectedContent.name === "Website Design" && (
   <div className={style.webDesign_section}>
     {/* Section Heading */}
-    <h1 className={style.secHeading}>{selectedContent.secHeading}</h1>
+    <h1 className={style.secHeading}>Services We Offer <br /> Designed Just for You</h1>
 
     {/* Web Design Services List */}
     <div className={style.webDesign_services}>

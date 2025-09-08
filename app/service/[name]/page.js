@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
       para: "We craft beautiful, user-friendly web designs that reflect your brand’s identity. Our creative approach ensures your website stands out, engages visitors, and delivers a seamless experience across all devices.",
       img: "/serviceWebDesign.png",
       btn:"Plan Your Website With Us",
-      secHeading:"Services We Offer – Designed Just for You",
+  
       ThirdHeading:"WEBSITE DESIGN SERVICES, WE OFFER",
       web:[
         {
@@ -38,19 +38,19 @@ export async function generateMetadata({ params }) {
         {
           id:2,
           img:"/Webdevelopment.png",
-          title:"Website Design",
+          title:"Web development",
           desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
         },
         {
           id:3,
-          img:"",
-          title:"Website Design",
+          img:"/shopify.png",
+          title:"Shopify",
           desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
         },
         {
           id:4,
-          img:"/web-design.png",
-          title:"Website Design",
+          img:"/dynamicweb-maintenance.png",
+          title:"Web maintenance",
           desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
         },
         {
