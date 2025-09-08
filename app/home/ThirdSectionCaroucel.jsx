@@ -4,17 +4,16 @@ import React, { useRef, useState, useEffect } from 'react';
 
 function ThirdSectionCaroucel() {
   const itemMember = [
-    { id: 1, img: "/caroucel_img.png" },
-    { id: 2, img: "/caroucel_img2.jpeg" },
-    { id: 3, img: "/thirdCaroucel3.png" },
-    { id: 4, img: "/caroucel_img2.jpeg" },
-    { id: 5, img: "/caroucel_img.png" },
-  ];
+  { id: 1, img: "/caroucel_img.png" },
+  { id: 2, img: "/caroucel_img2.jpeg" },
+  { id: 3, img: "/thirdCaroucel3.png" },
+];;
 
   const carouselRef = useRef(null);
 
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const scrollCarousel = (direction) => {
     const carousel = carouselRef.current;
@@ -33,6 +32,10 @@ function ThirdSectionCaroucel() {
 
     setCanScrollLeft(carousel.scrollLeft > 0);
     setCanScrollRight(carousel.scrollLeft < maxScrollLeft);
+
+    // 🔹 Active index calculate
+    const index = Math.round(carousel.scrollLeft / 300);
+    setActiveIndex(index);
   };
 
   // 🔹 Auto scroll useEffect
@@ -41,15 +44,14 @@ function ThirdSectionCaroucel() {
       const carousel = carouselRef.current;
       if (!carousel) return;
 
-      const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-
-    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-  // last tak pahunch gaya → direct reset
-  carousel.scrollTo({ left: 0, behavior: "smooth" });
-} else {
-  carousel.scrollBy({ left: 300, behavior: "smooth" });
-}
-    }, 5000); 
+      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+        carousel.scrollTo({ left: 0, behavior: "smooth" });
+        setActiveIndex(0);
+      } else {
+        carousel.scrollBy({ left: 300, behavior: "smooth" });
+        setActiveIndex((prev) => (prev + 1) % itemMember.length);
+      }
+    }, 7000);
 
     return () => clearInterval(interval);
   }, []);
@@ -77,7 +79,8 @@ function ThirdSectionCaroucel() {
                   src={item.img}
                   alt={`carousel-item-${item.id}`}
                   className="carousel-image-2"
-                  width={350} height={100}
+                  width={350}
+                  height={100}
                 />
               </a>
             </div>
@@ -91,6 +94,21 @@ function ThirdSectionCaroucel() {
         >
           <Image src="/right-arrow.png" alt="" width={25} height={25} />
         </button>
+      </div>
+
+      {/* 🔹 Dot Bullets */}
+      <div className="carousel-dots">
+        {itemMember.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${activeIndex === index ? "active" : ""}`}
+            onClick={() => {
+              const carousel = carouselRef.current;
+              carousel.scrollTo({ left: index * 300, behavior: "smooth" });
+              setActiveIndex(index);
+            }}
+          ></span>
+        ))}
       </div>
     </div>
   );

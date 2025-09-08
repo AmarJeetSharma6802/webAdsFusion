@@ -183,7 +183,25 @@ body {
     right: -15px;
     transform: none;
   }
-  
+  .carousel-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
 
 @media (max-width:750px) {
   .circle {
@@ -204,7 +222,7 @@ body {
 .scroll-button-2 {
   display: none;
 }
- .carousel-2 {
+ /* .carousel-2 {
     scrollbar-width: thin;         
     -webkit-overflow-scrolling: touch;
   }
@@ -221,7 +239,7 @@ body {
 
   .carousel-2::-webkit-scrollbar-thumb:hover {
     background: #555;
-  }
+  } */
   .carousel-item-3 {
     flex: 0 0 auto;
     width: 100%; 
