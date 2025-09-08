@@ -55,8 +55,8 @@ export async function generateMetadata({ params }) {
         },
         {
           id:5,
-          img:"/web-design.png",
-          title:"Website Design",
+          img:"/dynamic.png",
+          title:"Dynamic & Static websites",
           desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
         },
         {
