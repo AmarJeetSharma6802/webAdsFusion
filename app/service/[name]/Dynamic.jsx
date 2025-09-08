@@ -4,7 +4,7 @@ import style from "../../style/service.module.css";
 import Image from "next/image";
 
 function Dynamic({selectedContent}) {
-  const [active ,setActive] = useState( selectedContent.qeustion?.[0]?.ques)
+  const [active ,setActive] = useState( null)
   
   const  handleClick =(ques)=>{
 setActive(ques === active ? null : ques )

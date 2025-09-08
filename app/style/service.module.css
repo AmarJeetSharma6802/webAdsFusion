@@ -273,5 +273,18 @@ padding: 10px 20px;
 .serve_key{
     height: 200px;
 }
+.qeustion {
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100vw;
+    margin: auto;
+    padding: 10px;
+}
+.webDesign_section_three{
+    padding: 1.5rem 0px;
+}
+.qeustion_key{
+    padding: 10px;
+}
 }
 
