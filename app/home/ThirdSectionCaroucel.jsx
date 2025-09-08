@@ -4,13 +4,14 @@ import React, { useRef, useState, useEffect } from 'react';
 
 function ThirdSectionCaroucel() {
   const itemMember = [
-  { id: 1, img: "/caroucel_img.png" },
-  { id: 2, img: "/caroucel_img2.jpeg" },
-  { id: 3, img: "/thirdCaroucel3.png" },
-  { id: 4, img: "/blogForuth_img.avif" },
-];;
+    { id: 1, img: "/caroucel_img.png" },
+    { id: 2, img: "/caroucel_img2.jpeg" },
+    { id: 3, img: "/thirdCaroucel3.png" },
+    { id: 4, img: "/blogForuth_img.avif" },
+  ];
 
   const carouselRef = useRef(null);
+  const timerRef = useRef(null);
 
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -34,14 +35,14 @@ function ThirdSectionCaroucel() {
     setCanScrollLeft(carousel.scrollLeft > 0);
     setCanScrollRight(carousel.scrollLeft < maxScrollLeft);
 
-    // 🔹 Active index calculate
     const index = Math.round(carousel.scrollLeft / 300);
     setActiveIndex(index);
   };
 
-  // 🔹 Auto scroll useEffect
-  useEffect(() => {
-    const interval = setInterval(() => {
+  // 🔹 Auto scroll function with resettable timeout
+  const startAutoScroll = () => {
+    clearTimeout(timerRef.current); // pehle ka timer clear
+    timerRef.current = setTimeout(() => {
       const carousel = carouselRef.current;
       if (!carousel) return;
 
@@ -52,10 +53,21 @@ function ThirdSectionCaroucel() {
         carousel.scrollBy({ left: 300, behavior: "smooth" });
         setActiveIndex((prev) => (prev + 1) % itemMember.length);
       }
-    }, 7000);
 
-    return () => clearInterval(interval);
+      startAutoScroll(); 
+    }, 6000); 
+  };
+
+  useEffect(() => {
+    startAutoScroll();
+    return () => clearTimeout(timerRef.current);
   }, []);
+
+  // Jab bhi user manually scroll kare, timer reset ho jaye
+  const handleUserScroll = () => {
+    handleScroll();
+    startAutoScroll();
+  };
 
   return (
     <div className="caroucel_home">
@@ -66,13 +78,13 @@ function ThirdSectionCaroucel() {
       <div className="carousel-container-2">
         <button
           className="scroll-button-2 left-2"
-          onClick={() => scrollCarousel("left")}
+          onClick={() => { scrollCarousel("left"); startAutoScroll(); }}
           disabled={!canScrollLeft}
         >
           <Image src="/left-arrow.png" alt="" width={25} height={25} />
         </button>
 
-        <div className="carousel-2" ref={carouselRef} onScroll={handleScroll}>
+        <div className="carousel-2" ref={carouselRef} onScroll={handleUserScroll}>
           {itemMember.map((item) => (
             <div key={item.id} className="carousel-item-3">
               <a href="#">
@@ -90,14 +102,13 @@ function ThirdSectionCaroucel() {
 
         <button
           className="scroll-button-2 right-2"
-          onClick={() => scrollCarousel("right")}
+          onClick={() => { scrollCarousel("right"); startAutoScroll(); }}
           disabled={!canScrollRight}
         >
           <Image src="/right-arrow.png" alt="" width={25} height={25} />
         </button>
       </div>
 
-      {/* 🔹 Dot Bullets */}
       <div className="carousel-dots">
         {itemMember.map((_, index) => (
           <span
@@ -107,6 +118,7 @@ function ThirdSectionCaroucel() {
               const carousel = carouselRef.current;
               carousel.scrollTo({ left: index * 300, behavior: "smooth" });
               setActiveIndex(index);
+              startAutoScroll();
             }}
           ></span>
         ))}
