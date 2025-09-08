@@ -87,7 +87,7 @@ function ThirdSectionCaroucel() {
         <div className="carousel-2" ref={carouselRef} onScroll={handleUserScroll}>
           {itemMember.map((item) => (
             <div key={item.id} className="carousel-item-3">
-              <a href="#">
+              <div>
                 <Image
                   src={item.img}
                   alt={`carousel-item-${item.id}`}
@@ -95,7 +95,7 @@ function ThirdSectionCaroucel() {
                   width={350}
                   height={100}
                 />
-              </a>
+              </div>
             </div>
           ))}
         </div>
