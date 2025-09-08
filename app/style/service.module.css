@@ -91,17 +91,38 @@ font-weight: 600;
      gap: 30px;
     
 }
-.webCard{
-     /* background: #1a1a1a; */
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s;
-    color: white;
-    cursor: pointer;
-    padding: 1rem;
-     background: radial-gradient(ellipse 80% 90% at 50% 30%, rgba(120, 180, 255, 0.25), transparent 70%), #000000;
-       background-repeat: no-repeat;
+.webCard {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+  background: radial-gradient(
+      ellipse 80% 90% at 50% 30%,
+      rgba(120, 180, 255, 0.25),
+      transparent 70%
+    ),
+    #000000;
+  background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.webCard:hover {
+  transform: scale(1.05);
+}
+
+.image_wrap {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image_wrap img {
+  transition: transform 0.4s ease-in-out;
+}
+
+.webCard:hover .image_wrap img {
+  transform: scale(1.1); 
 }
 .webCard_title{
     margin-top: 0.5rem;
