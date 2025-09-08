@@ -26,8 +26,46 @@ export async function generateMetadata({ params }) {
       para: "We craft beautiful, user-friendly web designs that reflect your brand’s identity. Our creative approach ensures your website stands out, engages visitors, and delivers a seamless experience across all devices.",
       img: "/serviceWebDesign.png",
       btn:"Plan Your Website With Us",
-      secHeading:"WEBSITE DESIGN SERVICES, WE OFFER",
-      ThirdHeading:"WEBSITE DESIGN SERVICES, WE OFFER"
+      secHeading:"Services We Offer – Designed Just for You",
+      ThirdHeading:"WEBSITE DESIGN SERVICES, WE OFFER",
+      web:[
+        {
+          id:1,
+          img:"/web-design.png",
+          title:"Website Design",
+          desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
+        },
+        {
+          id:2,
+          img:"/Webdevelopment.png",
+          title:"Website Design",
+          desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
+        },
+        {
+          id:3,
+          img:"",
+          title:"Website Design",
+          desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
+        },
+        {
+          id:4,
+          img:"/web-design.png",
+          title:"Website Design",
+          desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
+        },
+        {
+          id:5,
+          img:"/web-design.png",
+          title:"Website Design",
+          desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
+        },
+        {
+          id:6,
+          img:"/web-design.png",
+          title:"Website Design",
+          desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
+        },
+      ]
     },
     {
       id: 2,

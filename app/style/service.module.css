@@ -70,7 +70,41 @@ background-color: rgb(255, 153, 0);
 cursor: pointer;
 font-weight: 600;
 }
+/* dynamic contetn */
 
+.webDesign_section{
+    max-width: 80vw;
+    margin: auto;
+    padding: 1rem;
+
+}
+.webDesign_services{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    padding: 1rem;
+     gap: 30px;
+    
+}
+.webCard{
+     background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+}
+.webCard_title{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+.webCard_desc{
+    color: #ccc;
+font-size: 16px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
 @media (max-width:850px) {
     .service_content{
         flex-direction: column;

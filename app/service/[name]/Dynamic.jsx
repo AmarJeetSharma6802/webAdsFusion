@@ -21,8 +21,37 @@ function Dynamic({selectedContent}) {
            </div>
           </div>
         </div>
-        {/* <div>{selectedContent.boxes.normal.price}</div> */}
+     
       </div>
+    {selectedContent.name === "Website Design" && (
+  <div className={style.webDesign_section}>
+    {/* Section Heading */}
+    <h1 className={style.secHeading}>{selectedContent.secHeading}</h1>
+
+    {/* Web Design Services List */}
+    <div className={style.webDesign_services}>
+      {selectedContent.web.map((item) => (
+        <div key={item.id} className={style.webCard}>
+         <div className={style.image_wrap}>
+           <Image 
+            src={item.img} 
+            alt={`Web Design Service ${item.id}`} 
+            width={100} 
+            height={100} 
+            className={style.webCard_img}
+          />
+         </div>
+          <h3 className={style.webCard_title}>
+            {item.title || "Custom Web Design"}
+          </h3>
+          <p className={style.webCard_desc}>
+            {item.desc || "We create responsive, modern, and user-friendly designs tailored for your business."}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
     </>
   );
 }
