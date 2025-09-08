@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
           id:2,
           img:"/Webdevelopment.png",
           title:"Web development",
-          desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
+          desc:"We develop modern, secure, and high-performing websites with clean code, responsive design, and smooth functionality to help your business grow, engage customers, and build trust online. ",
         },
         {
           id:3,
@@ -61,8 +61,8 @@ export async function generateMetadata({ params }) {
         },
         {
           id:6,
-          img:"/web-design.png",
-          title:"Website Design",
+          img:"/dynamic-coustom-website.png",
+          title:"Custom Website",
           desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
         },
       ]
