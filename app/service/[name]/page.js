@@ -26,8 +26,7 @@ export async function generateMetadata({ params }) {
       para: "We craft beautiful, user-friendly web designs that reflect your brand’s identity. Our creative approach ensures your website stands out, engages visitors, and delivers a seamless experience across all devices.",
       img: "/serviceWebDesign.png",
       btn:"Plan Your Website With Us",
-  
-      ThirdHeading:"WEBSITE DESIGN SERVICES, WE OFFER",
+
       web:[
         {
           id:1,
@@ -64,6 +63,65 @@ export async function generateMetadata({ params }) {
           img:"/dynamic-coustom-website.png",
           title:"Custom Website",
           desc:"Your website is the first impression of your business. We design modern, professional, and user-friendly websites that reflect your brand’s identity, build trust, and leave a lasting impact on your visitors.",
+        },
+      ],
+      serve:[
+        {
+          id:1,
+          heading:"Portfolio website",
+          img:"/businessman.png"
+        },
+        {
+          id:2,
+          heading:"Schools & education wesbites",
+          img:"/textbook.png"
+        },
+        {
+          id:3,
+          heading:"tour & travels",
+          img:"/world-tour.png"
+        },
+        {
+          id:4,
+          heading:"Business website",
+          img:"/planning.png"
+        },
+        {
+          id:5,
+          heading:"e - commerce ",
+          img:"/online-shop.png"
+        },
+        {
+          id:6,
+          heading:"Real state ",
+          img:"/estate-agent.png"
+        },
+      ],
+      qeustion:[
+        {
+          id:1,
+          ques:"How long does it take to design and develop a website?",
+          ans:"A standard website usually takes 2–4 weeks, depending on complexity, design preferences, features, and content availability. Larger custom projects may require additional planning and development time."
+        },
+        {
+          id:2,
+          ques:"Do you create mobile-friendly and responsive websites?",
+          ans:"Yes, every website we build is fully responsive, ensuring it looks great and functions smoothly on mobiles, tablets, laptops, and desktops. A responsive website improves user experience and search engine ranking."
+        },
+        {
+          id:3,
+          ques:"Can I update and manage my website after launch?",
+          ans:"Absolutely! We build websites with user-friendly content management systems (CMS) like WordPress or custom panels. You can easily add, edit, or update text, images, and blog posts anytime."
+        },
+        {
+          id:4,
+          ques:"What information do you need from me to start?",
+          ans:"We’ll need your business details, goals, preferred design style, branding materials, content, and any references. This helps us build a website that perfectly reflects your identity and vision."
+        },
+        {
+          id:5,
+          ques:"Will my website be SEO optimized?",
+          ans:"Yes, we implement SEO-friendly structure, fast loading speed, mobile responsiveness, and optimized content. Basic SEO is included so your website ranks better and attracts more visitors from search engines."
         },
       ]
     },
