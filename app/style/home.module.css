@@ -128,7 +128,16 @@
 .rightvideo {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   display: block;
+  transition: opacity 0.8s ease-in-out;
+}
+.rightvideo.fade-in {
+  opacity: 1;
+}
+
+.rightvideo.fade-out {
+  opacity: 0;
 }
 
 .changing-text {

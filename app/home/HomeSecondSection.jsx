@@ -6,60 +6,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HomeThirdSection from "../home/HomeThirdSection.js";
 
 gsap.registerPlugin(ScrollTrigger);
+
 function HomeSecondSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const textRef = useRef(null);
   const videoRef = useRef(null);
-
-  useEffect(() => {
-    const textElement = gsap.fromTo(
-      textRef.current,
-      {
-        scale: 0.8,
-        y: 80,
-        opacity: 0,
-      },
-      {
-        scale: 1,
-        y: 0,
-        opacity: 1,
-        duration: 1.2,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: textRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-          // markers: true,
-        },
-      }
-    );
-
-    return () => {
-      textElement.kill();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % message.length);
-        setFade(true);
-      }, 2000);
-    }, 8000);
-
-    console.log("render")
-    return () => clearInterval(interval);
-  }, [currentIndex]);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.src = message[currentIndex].video;
-      videoRef.current.play();
-    }
-  }, [currentIndex]);
 
   const message = [
     {
@@ -92,6 +44,49 @@ function HomeSecondSection() {
     },
   ];
 
+  useEffect(() => {
+    const textElement = gsap.fromTo(
+      textRef.current,
+      { scale: 0.8, y: 80, opacity: 0 },
+      {
+        scale: 1,
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    return () => {
+      textElement.kill();
+      ScrollTrigger.killAll();
+    };
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false); 
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % message.length);
+        setFade(true); 
+      }, 800); 
+    }, 8000); 
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.src = message[currentIndex].video;
+      videoRef.current.play().catch(() => {});
+    }
+  }, [currentIndex]);
+
   return (
     <div>
       <div className={style.HomeSecondSection_heading}>
@@ -101,6 +96,7 @@ function HomeSecondSection() {
       </div>
 
       <div className={style.HomeSecondSection_video_para}>
+        {/* Left Side Text */}
         <div className={style.left_HomeSecondSection}>
           <div className={style.two_para}>
             <div className={style.left_HomeSecondSection_First_para}>
@@ -126,19 +122,22 @@ function HomeSecondSection() {
             </div>
           </div>
         </div>
+
+        {/* Right Side Video */}
         <div className={style.right_HomeSecondSection}>
           <div className={style.right_HomeSecondSection_video}>
             <video
-              key={currentIndex}
+              ref={videoRef}
               autoPlay
               loop
               muted
               playsInline
-              className={`${style.rightvideo} ${fade ? "fade-in" : "fade-out"}`}
+              preload="auto"
+              className={`${style.rightvideo} ${
+                fade ? "fade-in" : "fade-out"
+              }`}
               style={{ width: "100%", transition: "opacity 0.5s ease-in-out" }}
-            >
-              <source src={message[currentIndex].video} type="video/mp4" />
-            </video>
+            />
           </div>
         </div>
       </div>
