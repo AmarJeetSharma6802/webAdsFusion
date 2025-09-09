@@ -43,7 +43,7 @@ function About() {
         </div>
 
     <div className={style.how_we_are}>
-      <h1 className={style.how_we_are_heading}>How <span className={style.span_orange}>we</span> are</h1>
+      <h1 className={style.how_we_are_heading}>How we are</h1>
       <p className={style.how_we_are_para}>At WebAdsFusion, we combine best-in-class web development with results-driven digital marketing. Using tools like React, Next.js, Meta Ads, Google Ads, and performance strategies, our mission is to amplify your online presence, generate quality leads, and scale your brand.</p>
     </div>
       </div>
