@@ -245,6 +245,78 @@ display: block;
 opacity: 1;
 }
 
+/* proformance marketing */
+.lead{
+  padding: 1.5rem
+}
+.lead_heading{
+  text-align: center;
+margin-bottom: 2rem;
+}
+.lead_services{
+  max-width: 80vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  text-align: center;
+  gap: 30px;
+  overflow: hidden;
+  padding: 1rem;
+}
+.lead_card {
+  border: 0.5px solid rgb(225, 225, 225);
+  padding: 1rem;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+   display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+}
+
+.lead_card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2); 
+}
+
+.lead_card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px; 
+  height: 4px; 
+  background-color: #000; 
+  border-radius: 2px;
+}
+
+.lead_img {
+  margin-bottom: 1.5rem;
+  width: 80px;
+  height: 80px;
+  object-fit: contain; /* ensure image doesn't stretch */
+}
+
+.lead_title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.lead_desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 250px; /* keep content compact */
+}
 @media (max-width:850px) {
     .service_content{
         flex-direction: column;

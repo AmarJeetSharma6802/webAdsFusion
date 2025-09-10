@@ -132,8 +132,6 @@ export async function generateMetadata({ params }) {
       para: "We build modern, fast, and secure websites tailored to your business. From unique designs to smooth functionality, our websites help attract customers, boost engagement, and strengthen your brand online.",
       img: "/webDevelopmentservice.png",
       btn:"Start Your Website Project",
-
-    h:"Sources We Use to Generate Leads",
     qeustion:[
         {
           id:1,
@@ -205,7 +203,71 @@ export async function generateMetadata({ params }) {
       para: "Get measurable results and higher returns on every marketing rupee spent. Our performance marketing strategies focus on data, targeting, and optimization to drive real growth and valuable customer actions.",
       img: "/servicePerformanceMarketing.png",
       btn:"Start Growing Smarter",
-      qeustion: []
+      serve:[
+       {
+    id:1,
+    img:"/ServicesocialMedia.png",
+    title:"Social Media Ads",
+    desc:"Reach your audience on Facebook, Instagram, LinkedIn with laser targeting."
+  },
+  {
+    id:2,
+    img:"/Homeseo.png",
+    title:"SEO & SEM",
+    desc:"Drive organic traffic and maximize visibility on search engines."
+  },
+  {
+    id:3,
+    img:"/Homeseo.png",
+    title:"SEO & SEM",
+    desc:"Drive organic traffic and maximize visibility on search engines."
+  },
+  {
+    id:4,
+    img:"/Homeseo.png",
+    title:"SEO & SEM",
+    desc:"Drive organic traffic and maximize visibility on search engines."
+  },
+  {
+    id:5,
+    img:"/Homeseo.png",
+    title:"SEO & SEM",
+    desc:"Drive organic traffic and maximize visibility on search engines."
+  },
+  {
+    id:6,
+    img:"/Homeseo.png",
+    title:"SEO & SEM",
+    desc:"Drive organic traffic and maximize visibility on search engines."
+  },
+      ],
+     qeustion:[
+        {
+          id:1,
+          ques:"What is lead generation in digital marketing?",
+          ans:"Lead generation in digital marketing is the process of attracting potential customers and connecting them with sales teams. It helps identify qualified prospects who show interest in products or services and may eventually convert into paying clients."
+        },
+        {
+          id:2,
+          ques:"Why is lead generation important for businesses?",
+          ans:"Lead generation is crucial because it ensures a steady flow of qualified prospects for the sales team. Without leads, businesses struggle to generate revenue, convert clients, or sustain long-term growth in competitive digital markets."
+        },
+        {
+          id:3,
+          ques:"What are common methods used for lead generation?",
+          ans:"Businesses use multiple methods for lead generation including video advertising, organic search, referrals, telephone marketing, email campaigns, and events. These approaches attract potential clients, build relationships, and increase opportunities to convert prospects into sales effectively."
+        },
+        {
+          id:4,
+          ques:"How are leads converted into opportunities?",
+          ans:"Once a salesperson receives a lead, they review and qualify it to determine its potential. If it fits the business requirements, the lead is converted into an opportunity, then moved through different sales stages before a deal is finalized."
+        },
+        {
+          id:5,
+          ques:"Why do some leads fail to convert into sales?",
+          ans:"Many leads fail to convert because they are unqualified, lack real interest, or don’t match the business’s target audience. Without proper nurturing and follow-ups, these leads remain inactive, preventing businesses from achieving consistent sales growth."
+        },
+      ]
     },
     {
 

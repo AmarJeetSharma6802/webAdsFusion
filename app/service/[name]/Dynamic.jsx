@@ -29,10 +29,10 @@ setActive(ques === active ? null : ques )
         </div>
      
       </div>
+
     {selectedContent.name === "Website Design" && (
       <div className={style.allWebsite_details}>
   <div className={style.webDesign_section}>
-    {/* Section Heading */}
     <h1 className={style.secHeading}>Services We Offer <br /> Designed Just for You</h1>
 
     <div className={style.webDesign_services}>
@@ -94,6 +94,42 @@ setActive(ques === active ? null : ques )
   </div>
 )}
 
+{
+  selectedContent.name === "Performance Marketing" &&(
+    <>
+ <div className={style.lead}>
+  <h1 className={style.lead_heading}>
+    Sources We Use to Generate Leads
+  </h1>
+
+  <div className={style.lead_services}>
+    {selectedContent.serve.map((item) => (
+      <div key={item.id} className={style.lead_card}>
+        <Image 
+          src={item.img} 
+          alt={item.title || "Lead Source"} 
+          width={100} 
+          height={100} 
+          className={style.lead_img}
+        />
+        <div className={style.lead_content}>
+          <h3 className={style.lead_title}>
+            {item.title || "Lead Source"}
+          </h3>
+          <p className={style.lead_desc}>
+            {item.desc || "We use advanced strategies to generate quality leads that drive growth."}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+    </>
+  )
+}
+
 <div className={style.webDesign_section_three}>
   <h1 className={style.webDesign_section_two_heading}>FAQ</h1>
   <div className={style.qeustion}>
@@ -112,6 +148,7 @@ setActive(ques === active ? null : ques )
     ))}
   </div>
 </div>
+
     </>
   );
 }
