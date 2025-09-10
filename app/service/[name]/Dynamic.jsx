@@ -73,7 +73,28 @@ setActive(ques === active ? null : ques )
       }
       </div>
     </div>
-  <div className={style.webDesign_section_three}>
+  {/* <div className={style.webDesign_section_three}>
+  <h1 className={style.webDesign_section_two_heading}>FAQ</h1>
+  <div className={style.qeustion}>
+    {selectedContent.qeustion.map((item) => (
+      <div key={item.id} className={style.qeustion_key}>
+        <div className={style.qeustion_flex} onClick={()=> handleClick(item.ques)}>
+          <p className={style.qeustion_title}>{item.ques}</p>
+          <span className={style.icon} >
+            {
+              active === item.ques ?<i className="fa-solid fa-angle-up"></i>: <i className="fa-solid fa-angle-down"></i>
+            }
+          </span>
+        </div>
+        <p className={`${style.qeustion_ans} ${active === item.ques ?style.active :""}`}>{item.ans}</p>
+      </div>
+    ))}
+  </div>
+</div> */}
+  </div>
+)}
+
+<div className={style.webDesign_section_three}>
   <h1 className={style.webDesign_section_two_heading}>FAQ</h1>
   <div className={style.qeustion}>
     {selectedContent.qeustion.map((item) => (
@@ -91,8 +112,6 @@ setActive(ques === active ? null : ques )
     ))}
   </div>
 </div>
-  </div>
-)}
     </>
   );
 }

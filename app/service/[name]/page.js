@@ -133,20 +133,34 @@ export async function generateMetadata({ params }) {
       img: "/webDevelopmentservice.png",
       btn:"Start Your Website Project",
 
-      boxes:{
-        normal:{
-          price:"5k - 6k",
-          section:"5 section only ",
-          Reponsive:"no",
-
+    h:"Sources We Use to Generate Leads",
+    qeustion:[
+        {
+          id:1,
+          ques:"What is lead generation in digital marketing?",
+          ans:"Lead generation in digital marketing is the process of attracting potential customers and connecting them with sales teams. It helps identify qualified prospects who show interest in products or services and may eventually convert into paying clients."
         },
-        business:{
-          price:"10k - 15k",
-          section:"5 pages ",
-          Reponsive:"Yes",
-          Backend:"Yes"
-        }
-      }
+        {
+          id:2,
+          ques:"Why is lead generation important for businesses?",
+          ans:"Lead generation is crucial because it ensures a steady flow of qualified prospects for the sales team. Without leads, businesses struggle to generate revenue, convert clients, or sustain long-term growth in competitive digital markets."
+        },
+        {
+          id:3,
+          ques:"What are common methods used for lead generation?",
+          ans:"Businesses use multiple methods for lead generation including video advertising, organic search, referrals, telephone marketing, email campaigns, and events. These approaches attract potential clients, build relationships, and increase opportunities to convert prospects into sales effectively."
+        },
+        {
+          id:4,
+          ques:"How are leads converted into opportunities?",
+          ans:"Once a salesperson receives a lead, they review and qualify it to determine its potential. If it fits the business requirements, the lead is converted into an opportunity, then moved through different sales stages before a deal is finalized."
+        },
+        {
+          id:5,
+          ques:"Why do some leads fail to convert into sales?",
+          ans:"Many leads fail to convert because they are unqualified, lack real interest, or don’t match the business’s target audience. Without proper nurturing and follow-ups, these leads remain inactive, preventing businesses from achieving consistent sales growth."
+        },
+      ]
     },
     {
       id: 3,
@@ -154,7 +168,8 @@ export async function generateMetadata({ params }) {
       heading: "Keep Your Website Running Smoothly with Expert Maintenance",
       para: "Focus on growing your business while we keep your website secure, updated, and error-free. From routine checks to emergency fixes, our maintenance services ensure your site performs reliably every day.",
       img: "/serviceWebMaintance.png",
-      btn:"Secure Your Website Today"
+      btn:"Secure Your Website Today",
+      qeustion: []
     },
     {
       id: 4,
@@ -162,7 +177,8 @@ export async function generateMetadata({ params }) {
       heading: "Boost Your Online Visibility with Smart SEO Strategies",
       para: "Rank higher and reach the right audience with our SEO services. We optimize your website, create valuable content, and drive targeted traffic to help your business grow online.",
       img: "/serviceSeo.png",
-      btn:"Book Your SEO Audit"
+      btn:"Book Your SEO Audit",
+      qeustion: []
     },
     {
       id: 5,
@@ -170,7 +186,8 @@ export async function generateMetadata({ params }) {
       heading: "turn Followers into Customers with Smart Social Marketing",
       para: "Grow your brand’s reach and engagement on social media. We create compelling content, run targeted ads, and help you connect with the right audience to drive real business results.",
       img: "/serivceSocialMarketing.png",
-      btn:"Boost Your Social Presence"
+      btn:"Boost Your Social Presence",
+      qeustion: []
     },
     {
       id: 6,
@@ -178,7 +195,8 @@ export async function generateMetadata({ params }) {
       heading: "Drive Instant Traffic & Sales with Google Ads & PPC",
       para: "Reach your target audience instantly with high-converting Google Ads campaigns. Our PPC experts create and manage ads that maximize ROI, bring real traffic, and help your business grow faster online.",
       img: "/goolgeAndPPC.png",
-      btn:"Launch Your Ad Campaign"
+      btn:"Launch Your Ad Campaign",
+      qeustion: []
     },
     {
       id: 7,
@@ -186,7 +204,8 @@ export async function generateMetadata({ params }) {
       heading: "Maximize ROI with Smart Performance Marketing",
       para: "Get measurable results and higher returns on every marketing rupee spent. Our performance marketing strategies focus on data, targeting, and optimization to drive real growth and valuable customer actions.",
       img: "/servicePerformanceMarketing.png",
-      btn:"Start Growing Smarter"
+      btn:"Start Growing Smarter",
+      qeustion: []
     },
     {
 
