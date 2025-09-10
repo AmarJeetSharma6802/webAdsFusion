@@ -208,13 +208,13 @@ export async function generateMetadata({ params }) {
     id:1,
     img:"/ServicesocialMedia.png",
     title:"Social Media Ads",
-    desc:"Reach your audience on Facebook, Instagram, LinkedIn with laser targeting."
+    desc:"Lead generation identifies potential customers showing interest in products or services. By connecting them with sales teams"
   },
   {
     id:2,
     img:"/Homeseo.png",
     title:"SEO & SEM",
-    desc:"Drive organic traffic and maximize visibility on search engines."
+    desc:"Optimize your website to rank higher on search engines, attract targeted traffic, and increase visibility, engagement, and conversions efficiently."
   },
   {
     id:3,

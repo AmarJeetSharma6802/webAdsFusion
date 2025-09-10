@@ -296,11 +296,13 @@ margin-bottom: 2rem;
   background-color: #000; 
   border-radius: 2px;
 }
-
+.lead_content{
+  padding: 10px;
+}
 .lead_img {
   margin-bottom: 1.5rem;
-  width: 80px;
-  height: 80px;
+  /* width: 100px;
+  height: 100px; */
   object-fit: contain; /* ensure image doesn't stretch */
 }
 
