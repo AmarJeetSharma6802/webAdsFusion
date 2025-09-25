@@ -58,7 +58,7 @@ export default function BlogsList({ blogs }) {
             </div>
             <div className={style.blog_details}>
               <h3 className={style.blog_details_heading}>{item.heading}</h3>
-              <p className={style.blog_details_title}>{item.title}</p>
+              <p className={style.blog_details_title}>{item.title}</p>  
               <div className={style.btn_arrow}>
                 <Link
                   href={`/blogs/${item.heading.toLowerCase().replace(/\s+/g, "-")}`}
