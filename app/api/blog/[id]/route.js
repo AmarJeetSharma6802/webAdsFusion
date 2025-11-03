@@ -21,7 +21,7 @@ export async function GET(req, { params }) {
   return NextResponse.json({ message: "blog data found succefully by ID " });
 }
 
-export async function POST(req, { params }) {
+export async function PUT(req, { params }) {
 
   await DBconnect();
 

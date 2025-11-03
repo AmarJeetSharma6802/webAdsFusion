@@ -173,7 +173,7 @@ function AboutDetails() {
     const data = await res.json();
 
     if (res.status === 201) {
-      toast.success("Form submitted successfully!");
+       toast.success("Form submitted successfully!");
 
       setForm({
         name: "",
@@ -188,6 +188,7 @@ function AboutDetails() {
        toast.error(res.data.message || "Failed to submit query"); 
     }
   };
+  
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
