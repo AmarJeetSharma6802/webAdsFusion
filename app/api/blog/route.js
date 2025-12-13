@@ -42,8 +42,16 @@ export async function POST(req) {
     );
   }
 
+  // const buffer = Buffer.from(await image.arrayBuffer());
+  // const tempFilePath = path.join("/tmp", image.name);
+  // await writeFile(tempFilePath, buffer);
+  
+   const tempDir = path.join(process.cwd(), "public", "uploads");
+  await fs.promises.mkdir(tempDir, { recursive: true });
+
+  // ✅ Create file locally
   const buffer = Buffer.from(await image.arrayBuffer());
-  const tempFilePath = path.join("/tmp", image.name);
+  const tempFilePath = path.join(tempDir, image.name);
   await writeFile(tempFilePath, buffer);
 
   const uploadImage = await uploadOnCloudinary(tempFilePath);
