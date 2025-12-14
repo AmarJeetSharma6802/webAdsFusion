@@ -40,7 +40,7 @@ export async function PUT(req, { params }) {
     const buffer = Buffer.from(await image.arrayBuffer());
     const tempDir = "/tmp";
     await mkdir(tempDir, { recursive: true });
-   const tmpfilePath = `${tempDir}/${image.name}`;
+    const tmpfilePath = `${tempDir}/${image.name}`;
     await writeFile(tmpfilePath, buffer);
 
     const uploaded = await uploadOnCloudinary(tmpfilePath, "image");
