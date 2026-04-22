@@ -18,7 +18,7 @@ export async function getAllBlogs() {
     await DBconnect();
 
     const blogs = await blogData
-      .find()
+      .find({ heading: { $ne: null } })
       .sort({ date: -1, createdAt: -1 })
       .lean();
 

@@ -17,7 +17,7 @@ const router = useRouter();
 
 
       const slugify = (heading) =>
-        heading.toLowerCase().replace(/\s+/g, "-");
+        (heading || "").toLowerCase().replace(/\s+/g, "-");
 
       const FoundBlog = data.foundblog.find(
         (item) => slugify(item.heading) === read
