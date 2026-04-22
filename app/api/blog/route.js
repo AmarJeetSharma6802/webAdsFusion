@@ -46,7 +46,7 @@ export async function POST(req) {
   // const tempFilePath = path.join("/tmp", image.name);
   // await writeFile(tempFilePath, buffer);
   
-   const tempDir = path.join(process.cwd(), "public", "uploads");
+  const tempDir = path.join(process.cwd(), "public", "uploads");
   await fs.promises.mkdir(tempDir, { recursive: true });
 
   // ✅ Create file locally

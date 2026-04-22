@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 function GoUp() {
   const [visible, setVisible] = useState(false);
 
-  // Scroll listener
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -17,7 +16,6 @@ function GoUp() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
