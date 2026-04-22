@@ -84,7 +84,7 @@ export default function Home() {
                   
           </div>
         </div> */}
-         <video src="https://res.cloudinary.com/futurecoder/video/upload/v1750603285/e52e0fz1kmibbjuwwcwl.mp4"  autoPlay
+         <video src="https://res.cloudinary.com/futurecoder/video/upload/v1776837406/jxxwitaeu2a6zr2ahqdh.mp4"  autoPlay
               loop
               muted
               playsInline 
