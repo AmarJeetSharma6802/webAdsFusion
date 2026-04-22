@@ -1,16 +1,11 @@
 import BlogsList from "../blogs/BlogSec.jsx"; 
+import { getAllBlogs } from "../lib/blogs.js";
 import style from "../style/blog.module.css";
 
-async function getBlogs() {
-  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL, {
-    next: { revalidate: 10 }, 
-  });
-  return res.json();
-}
+export const revalidate = 10;
 
 export default async function Blog() {
-  const data = await getBlogs();
-  const blogs = [...data.foundblog].reverse(); 
+  const blogs = await getAllBlogs();
 
   return (
     <div>

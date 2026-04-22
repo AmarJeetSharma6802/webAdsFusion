@@ -41,6 +41,16 @@ export default function BlogsList({ blogs }) {
     const sulg  = heading.toLowerCase().replace(/\s+/g, "-")
     router.push(`/blogs/${sulg}`)
   }
+
+  if (blogs.length === 0) {
+    return (
+      <div className={style.blog_box} id="blogs">
+        <h1 className={style.blog_box_heading}>Featured Articles</h1>
+        <p className={style.blog_details_title}>No blogs are available right now.</p>
+      </div>
+    );
+  }
+
   return (
     <div className={style.blog_box} id="blogs">
       <h1 className={style.blog_box_heading}>Featured Articles</h1>

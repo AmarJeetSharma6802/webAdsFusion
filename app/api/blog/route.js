@@ -2,15 +2,14 @@ import { NextResponse } from "next/server.js";
 import DBconnect from "../Db/DBconnect.js";
 import blogData from "../model/blog.model.js";
 import path from "path";
-import { writeFile } from "fs/promises";
+import { mkdir, writeFile } from "fs/promises";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
+import { getAllBlogs } from "../../lib/blogs.js";
 
 export async function GET() {
-  await DBconnect();
+  const foundblog = await getAllBlogs();
 
-  const foundblog = await blogData.find();
-
-  if (!foundblog) {
+  if (foundblog.length === 0) {
     return NextResponse.json(
       { message: "blog data not found" },
       { status: 404 }
@@ -18,7 +17,7 @@ export async function GET() {
   }
   return NextResponse.json(
     { message: "blog data found succefully", foundblog },
-    { status: 201 }
+    { status: 200 }
   );
 }
 
@@ -47,7 +46,7 @@ export async function POST(req) {
   // await writeFile(tempFilePath, buffer);
   
   const tempDir = path.join(process.cwd(), "public", "uploads");
-  await fs.promises.mkdir(tempDir, { recursive: true });
+  await mkdir(tempDir, { recursive: true });
 
   // ✅ Create file locally
   const buffer = Buffer.from(await image.arrayBuffer());
