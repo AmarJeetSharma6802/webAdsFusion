@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 export default function BlogsList({ blogs }) {
 
-    const router = useRouter()
+  const router = useRouter();
   const [page, setPage] = useState(1);
   const blogsPerPage = 6;
   const blogRef = useRef(null);
@@ -37,10 +37,10 @@ export default function BlogsList({ blogs }) {
     }
   };
 
-  const handleBlog = (heading)=>{
-    const sulg  = heading.toLowerCase().replace(/\s+/g, "-")
-    router.push(`/blogs/${sulg}`)
-  }
+  const handleBlog = (slug) => {
+    if (!slug) return;
+    router.push(`/blogs/${slug}`);
+  };
 
   if (blogs.length === 0) {
     return (
@@ -56,11 +56,15 @@ export default function BlogsList({ blogs }) {
       <h1 className={style.blog_box_heading}>Featured Articles</h1>
       <div className={style.blog} ref={blogRef}>
         {currentBlogs.map((item) => (
-          <div key={item._id} className={style.blog_key} onClick={()=>handleBlog(item.heading)}>
+          <div
+            key={item._id}
+            className={style.blog_key}
+            onClick={() => handleBlog(item.slug)}
+          >
             <div className={style.blog_wrap}>
               <Image
                 src={item.image}
-                alt={item.heading}
+                alt={item.heading || "Blog image"}
                 width={200}
                 height={100}
                 className={style.blog_image}
@@ -71,7 +75,7 @@ export default function BlogsList({ blogs }) {
               <p className={style.blog_details_title}>{item.title}</p>  
               <div className={style.btn_arrow}>
                 <Link
-                  href={`/blogs/${item.heading.toLowerCase().replace(/\s+/g, "-")}`}
+                  href={`/blogs/${item.slug}`}
                 >
                   <p className={style.blog_details_btn}>Read more</p>
                 </Link>
