@@ -5,6 +5,11 @@ import Link from "next/link";
 import style from "../style/blog.module.css";
 import { useRouter } from "next/navigation";
 
+function getBlogSlug(heading) {
+  if (typeof heading !== "string") return "";
+  return heading.toLowerCase().replace(/\s+/g, "-");
+}
+
 export default function BlogsList({ blogs }) {
 
   const router = useRouter();
@@ -55,11 +60,14 @@ export default function BlogsList({ blogs }) {
     <div className={style.blog_box} id="blogs">
       <h1 className={style.blog_box_heading}>Featured Articles</h1>
       <div className={style.blog} ref={blogRef}>
-        {currentBlogs.map((item) => (
+        {currentBlogs.map((item) => {
+          const slug = getBlogSlug(item.heading);
+
+          return (
           <div
             key={item._id}
             className={style.blog_key}
-            onClick={() => handleBlog(item.slug)}
+            onClick={() => handleBlog(slug)}
           >
             <div className={style.blog_wrap}>
               <Image
@@ -75,7 +83,7 @@ export default function BlogsList({ blogs }) {
               <p className={style.blog_details_title}>{item.title}</p>  
               <div className={style.btn_arrow}>
                 <Link
-                  href={`/blogs/${item.slug}`}
+                  href={slug ? `/blogs/${slug}` : "/blogs"}
                 >
                   <p className={style.blog_details_btn}>Read more</p>
                 </Link>
@@ -83,7 +91,8 @@ export default function BlogsList({ blogs }) {
               </div>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Pagination Controls */}

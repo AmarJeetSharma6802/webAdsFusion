@@ -1,28 +1,27 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import style from "../../style/blog.module.css";
+import  style from "../../style/blog.module.css"
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { createBlogSlug } from "../../lib/blog-slug.js";
+import { useRouter } from "next/navigation"; 
 
-export default function BlogDetailPage({ read }) {
+export default function BlogDetailPage({read}) {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
-
+const router = useRouter(); 
+  
   useEffect(() => {
     const fetchBlog = async () => {
       const res = await fetch("/api/blog");
       const data = await res.json();
 
-      const blogs = Array.isArray(data.foundblog) ? data.foundblog : [];
-      const FoundBlog = blogs.find((item) => {
-        return (
-          item.slug === read ||
-          (item.heading && createBlogSlug(item.heading) === read)
-        );
-      });
+
+      const slugify = (heading) =>
+        heading.toLowerCase().replace(/\s+/g, "-");
+
+      const FoundBlog = data.foundblog.find(
+        (item) => slugify(item.heading) === read
+      );
 
       setBlog(FoundBlog || null);
       setLoading(false);
@@ -35,33 +34,22 @@ export default function BlogDetailPage({ read }) {
 
   return (
     <>
-      <div className={style.blog_links}>
-        <a onClick={() => router.back()}>
-          <i className="fa-solid fa-angle-left"></i> Back
-        </a>{" "}
-        {"/"}
+    <div className={style.blog_links}>
+        <a onClick={() => router.back()}><i className="fa-solid fa-angle-left"></i> Back</a> {"/"}
         <Link href="/">Home</Link> {"/"}
         <Link href="/blogs">Blogs</Link>
-      </div>
-      <div className={style.blog_page}>
+    </div>
+    <div className={style.blog_page}>
         <div className={style.blog_content_content}>
-          <h1>{blog.heading}</h1>
-          <h3>{blog.title}</h3>
-          <div className={style.blog_content_content_image}>
-            <Image
-              src={blog.image}
-              alt={blog.heading}
-              width={400}
-              height={300}
-              className={style.blog_content_content_img}
-            />
-          </div>
-
-          <p className={style.blog_content_content_long_para}>
-            {blog.LongPara}
-          </p>
-        </div>
+        <h1>{blog.heading}</h1>
+      <h3>{blog.title}</h3>
+     <div className={style.blog_content_content_image}>
+         <Image src={blog.image} alt={blog.heading} width={400} height={300} className={style.blog_content_content_img} />
+     </div>
+      
+      <p className={style.blog_content_content_long_para}>{blog.LongPara}</p>
       </div>
+    </div>
     </>
   );
 }
