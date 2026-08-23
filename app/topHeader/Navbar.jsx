@@ -38,7 +38,7 @@ function Navbar() {
     <div>
       <header className={style.header}>
         <label htmlFor="" onClick={handleHome}>
-          <img src="/newLogo.png" alt="" className={style.Logo_img} />
+          <img src="/logo.png" alt="WebAdsFusion" className={style.Logo_img} />
         </label>
         <nav className={style.nav}>
           <ul className={`${style.nav_ul} ${nav ? style.active:""}`}>

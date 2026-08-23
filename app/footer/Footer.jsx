@@ -9,11 +9,12 @@ function Footer() {
         <div className={style.footer_spread_first}>
           <div className={style.logo_para}>
             <Image
-              src="/newLogo.png"
-              alt=""
-              height={100}
-              width={100}
+              src="/logo.png"
+              alt="WebAdsFusion"
+              width={608}
+              height={124}
               className={style.footer_img}
+              priority
             />
             <div className={style.footer_para}>
               WebAdsFusion is your trusted partner in digital growth, blending

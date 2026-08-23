@@ -5,7 +5,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["lh3.googleusercontent.com","cdn.prod.website-files.com","www.syncfusion.com","res.cloudinary.com"],
+    domains: ["lh3.googleusercontent.com","cdn.prod.website-files.com","www.syncfusion.com","res.cloudinary.com","anand-sharma.vercel.app"],
   },
 };
 

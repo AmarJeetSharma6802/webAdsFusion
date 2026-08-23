@@ -1,6 +1,7 @@
 import React from "react";
 import style from "../style/home.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import HomeFivethSection from "./HomeFivthSection.js"
 import ThirdSectionCaroucel from "./ThirdSectionCaroucel"
 
@@ -8,41 +9,88 @@ function HomeThirdSection() {
   const boxes = [
     {
       id: 1,
-      name: "Web Development",
-      img: "/thirdSecontionWebDevelopmetn.jpg",
-      para: "Web Development involves creating websites using tools like React and Next.js. It handles frontend logic, server-side rendering, APIs, and dynamic content for fast, scalable web applications.",
+      name: "Website Design",
+      img: "/serviceWebDesign.png",
+      slug: "website-design",
+      tag: "Design",
+      para: "Conversion-first layouts, clean typography and responsive UI built for real devices — interfaces that look sharp and guide visitors straight to the enquiry.",
     },
     {
       id: 2,
-      name: "Web Design",
-      img: "/HomeThirdSectionWebDesign.jpg",
-      para: "Web Design focuses on how a website looks and feels—layout, colors, and user experience. It ensures responsive, attractive interfaces that work well with React and Next.js frameworks.",
+      name: "Web Development",
+      img: "/webDevelopmentservice.png",
+      slug: "web-developement",
+      tag: "Development",
+      para: "Production-ready builds on Next.js and Node.js — server rendering, REST APIs, secure auth and admin tooling that stay fast as your traffic grows.",
     },
     {
       id: 3,
-      name: "SEO",
-      img: "/SeoHomeThirdSection.jpg",
-      para: "SEO improves website rankings on search engines like Google through keyword optimization, content creation, and link building. It increases organic traffic, enhances brand visibility, and drives long-term business growth.",
+      name: "SearchBoost SEO",
+      img: "/serviceSeo.png",
+      slug: "searchboost-seo",
+      tag: "Organic",
+      para: "Technical SEO, keyword intent mapping and content that earns rankings — dynamic metadata, clean structure and steady organic traffic month after month.",
     },
     {
       id: 4,
-      name: "Web Development",
-      img: "/thirdSecontionWebDevelopmetn.jpg",
-      para: "Web Development involves creating websites using tools like React and Next.js. It handles frontend logic, server-side rendering, APIs, and dynamic content for fast, scalable web applications.",
+      name: "Social Media Marketing",
+      img: "/serivceSocialMarketing.png",
+      slug: "social-media-marketing",
+      tag: "Meta Ads",
+      para: "Full-funnel Meta campaigns with audience segmentation, creative testing and retargeting — the same playbook that delivered 3.57x ROAS for D2C brands.",
     },
     {
       id: 5,
-      name: "Web Development",
-      img: "/thirdSecontionWebDevelopmetn.jpg",
-      para: "Web Development involves creating websites using tools like React and Next.js. It handles frontend logic, server-side rendering, APIs, and dynamic content for fast, scalable web applications.",
+      name: "Google Ads & PPC",
+      img: "/goolgeAndPPC.png",
+      slug: "google-ads-and-ppc",
+      tag: "Paid Search",
+      para: "Search, Shopping and Performance Max campaigns structured around buying intent — 65,000+ conversions driven across live client accounts.",
     },
     {
       id: 6,
-      name: "Web Development",
-      img: "/thirdSecontionWebDevelopmetn.jpg",
-      para: "Web Development involves creating websites using tools like React and Next.js. It handles frontend logic, server-side rendering, APIs, and dynamic content for fast, scalable web applications.",
+      name: "Performance Marketing",
+      img: "/servicePerformanceMarketing.png",
+      slug: "performance-marketing",
+      tag: "Growth",
+      para: "Budget pacing, ROAS optimisation and KPI reporting on spend, CPL, CPA — ₹1.42Cr in ad spend managed into ₹4.44Cr of tracked revenue.",
     },
   ];
+
+  const team = [
+    {
+      id: 1,
+      name: "Anand Sharma",
+      img: "/anandSharma.jpg",
+      role: "Performance Marketing Specialist | Meta & Google Ads 🚀",
+      description:
+        "₹1.42Cr ad spend managed into ₹4.44Cr revenue, with 3,000+ quality leads and a 4–10x ROAS range across 13 client accounts. Your business growth partner.",
+      ctaLabel: "View Case Studies",
+      ctaLink: "https://anand-sharma.vercel.app/",
+      links: [
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/anandsharma28" },
+        { label: "Email", href: "mailto:anandsharma28898@gmail.com" },
+      ],
+    },
+    {
+      id: 2,
+      name: "Amarjeet Sharma",
+      img: "/Amarjeet_Sharma.png",
+      role: "Full Stack Developer | MERN, Next.js & Automation",
+      description:
+        "Builds fast, scalable, production-ready web apps with the MERN stack, Next.js, AI integrations and n8n automation — from the first commit to live traffic.",
+      ctaLabel: "View Portfolio",
+      ctaLink: "https://portfolio-beta-dusky-34.vercel.app/",
+      links: [
+        {
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/in/amarjeet-sharma-full-stack/",
+        },
+        { label: "GitHub", href: "https://github.com/AmarJeetSharma6802" },
+      ],
+    },
+  ];
+
   return (
     <>
       <div className={style.HomeThidSection_boxe_wrap}>
@@ -50,17 +98,28 @@ function HomeThirdSection() {
           We’re Offering Creative,<br></br>
           Web Services
         </h1>
+        <p className={style.HomeThidSection_boxe_wrap_sub}>
+          One team for the whole funnel — the site that converts, and the ads
+          that fill it.
+        </p>
         <div className={style.HomeThidSection_boxes}>
           {boxes.map((item) => (
-            <div key={item.id} className={style.boxes_key}>
-              <div className={style.boxes_img}>
-                <Image
-                  src={item.img}
-                  alt={item.name}
-                  width={200}
-                  height={180}
-                  className={style.inner_boxes_img}
-                />
+            <Link
+              key={item.id}
+              href={`/service/${item.slug}`}
+              className={style.boxes_key}
+            >
+              <div className={style.boxes_head}>
+                <div className={style.boxes_img}>
+                  <Image
+                    src={item.img}
+                    alt={item.name}
+                    width={120}
+                    height={120}
+                    className={style.inner_boxes_img}
+                  />
+                </div>
+                <span className={style.boxes_tag}>{item.tag}</span>
               </div>
               <div className={style.boxes_key_details}>
                 <div className={style.boxes_key_name}>
@@ -70,11 +129,11 @@ function HomeThirdSection() {
                   <p>{item.para}</p>
                 </div>
                 <div className={style.btn_arrow}>
-                <a className={style.boxes_key_btn}>Read more</a>
-                <p ><i className="fa-solid fa-arrow-right"></i></p>
+                  <span className={style.boxes_key_btn}>Read more</span>
+                  <p><i className="fa-solid fa-arrow-right"></i></p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -85,51 +144,49 @@ function HomeThirdSection() {
         <div className={style.homeFourthSection}>
           <h1 className={style.homeFourthSection_h1}>Meet the Mind Behind<br />WebAdsFusion</h1>
           <div className={style.homeFourthSection_flex}>
-            <div className={style.homeFourthSection_flex_child}>
-              <div className={style.homeFourthSection_flex_child_img}>
-                <Image
-                  src="/anandSharma.jpg"
-                  alt="Anand Sharma"
-                  width={80}
-                  height={80}
-                  className={style.fourthSection_img}
-                />
-              </div>
-              <div className={style.homeFourthSection_flex_child_details}>
-                <div className={style.homeFourthSection_flex_child_details_wrap}>
-                  <p className={style.name}>Anand Sharma</p>
-                  <p className={style.role}>
-                    Performance Marketer | E-commerce Growth & Lead Gen Specialist 🚀
-                  </p>
-                  <p className={style.description}>
-                    ₹40L+ Revenue | 1000+ Good Quality Leads | ROAS 4–13 🌐 | Scaling brands with result-driven campaigns. I’m your Business Growth Partner.
-                  </p>
-                  <button className={style.cta}>Connect</button>
+            {team.map((member) => (
+              <div key={member.id} className={style.homeFourthSection_flex_child}>
+                <div className={style.homeFourthSection_flex_child_img}>
+                  <Image
+                    src={member.img}
+                    alt={member.name}
+                    width={80}
+                    height={80}
+                    className={style.fourthSection_img}
+                  />
                 </div>
-              </div>
-            </div>
+                <div className={style.homeFourthSection_flex_child_details}>
+                  <div className={style.homeFourthSection_flex_child_details_wrap}>
+                    <p className={style.name}>{member.name}</p>
+                    <p className={style.role}>{member.role}</p>
+                    <p className={style.description}>{member.description}</p>
 
-            <div className={style.homeFourthSection_flex_child}>
-              <div className={style.homeFourthSection_flex_child_img}>
-                <Image
-                  alt="Amarjeet Sharma"
-                  src="/Amarjeet_Sharma.png"
-                  width={80}
-                  height={80}
-                  className={style.fourthSection_img}
-                />
-              </div>
-              <div className={style.homeFourthSection_flex_child_details}>
-                <div className={style.homeFourthSection_flex_child_details_wrap}>
-                  <p className={style.name}>Amarjeet Sharma</p>
-                  <p className={style.role}>Certified Full-Stack Developer</p>
-                  <p className={style.description}>
-                    Passionate about creating dynamic web apps with exceptional user experiences. Mastered technologies to bring ideas to life through code.
-                  </p>
-                  <button className={style.cta}>Learn More</button>
+                    <a
+                      className={style.cta}
+                      href={member.ctaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {member.ctaLabel}
+                    </a>
+
+                    <div className={style.member_links}>
+                      {member.links.map((link) => (
+                        <a
+                          key={link.label}
+                          className={style.member_link}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -50,13 +50,13 @@ export default function Home() {
         <div className={style.home_video_bg}>
           <video
           className={style.home_video}
-            src="https://res.cloudinary.com/futurecoder/video/upload/q_auto,f_auto/v1776837406/jxxwitaeu2a6zr2ahqdh.mp4"
-            poster="https://res.cloudinary.com/futurecoder/video/upload/so_0,w_1280,q_auto,f_jpg/v1776837406/jxxwitaeu2a6zr2ahqdh.jpg"
+            src="https://res.cloudinary.com/futurecoder/video/upload/w_1280,q_auto,br_2000k,f_auto/v1776837406/jxxwitaeu2a6zr2ahqdh.mp4"
+            poster="https://res.cloudinary.com/futurecoder/video/upload/so_0,w_1280,q_80,f_jpg/v1776837406/jxxwitaeu2a6zr2ahqdh.jpg"
             loop
             muted
             autoPlay
             playsInline
-            preload="auto"
+            preload="metadata"
           ></video>
           <div className={style.rgba_bg_color}></div>
         </div>
@@ -86,15 +86,15 @@ export default function Home() {
                   
           </div>
         </div> */}
-         <video src="https://res.cloudinary.com/futurecoder/video/upload/q_auto,f_auto/v1750603285/e52e0fz1kmibbjuwwcwl.mp4"
-              poster="https://res.cloudinary.com/futurecoder/video/upload/so_0,w_1280,q_auto,f_jpg/v1750603285/e52e0fz1kmibbjuwwcwl.jpg"
+         <video src="https://res.cloudinary.com/futurecoder/video/upload/w_1280,q_auto,br_1500k,f_auto/v1750603285/e52e0fz1kmibbjuwwcwl.mp4"
+              poster="https://res.cloudinary.com/futurecoder/video/upload/so_0,w_1280,q_80,f_jpg/v1750603285/e52e0fz1kmibbjuwwcwl.jpg"
               autoPlay
               loop
               muted
               playsInline
-              preload="auto"
+              preload="none"
               className={style.bg_back_video}
-              ></video>   
+              ></video>
         </div>
       </div>
       <HomeSecondSection/>

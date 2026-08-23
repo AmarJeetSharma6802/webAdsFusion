@@ -1,129 +1,194 @@
-"use client"
-import Image from 'next/image';
-import React, { useRef, useState, useEffect } from 'react';
+"use client";
+import Image from "next/image";
+import React, { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination, Keyboard, A11y } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function ThirdSectionCaroucel() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   const itemMember = [
-    { id: 1, img: "/caroucel_img.png" },
-    { id: 2, img: "/caroucel_img2.jpeg" },
-    { id: 3, img: "/thirdCaroucel3.png" },
-    { id: 4, img: "/blogForuth_img.avif" },
+    {
+      id: 1,
+      tag: "Google Ads + Meta Ads",
+      title: "Scrap Uncle",
+      metric: "65,186 conversions",
+      para: "City-by-city campaign structure for a scrap pickup and recycling service — ₹1.11Cr managed spend at ₹100.98 cost per conversion.",
+      img: "https://anand-sharma.vercel.app/img/google-ads-campaign-dashboard-for-scrap-uncle.webp",
+      link: "https://anand-sharma.vercel.app/",
+    },
+    {
+      id: 2,
+      tag: "Google Ads + Meta Ads",
+      title: "PartsBaba",
+      metric: "107x Google ROAS",
+      para: "Search, Shopping and Performance Max working together to drive ₹3.66Cr conversion value for an electronic parts supply-chain brand.",
+      img: "https://anand-sharma.vercel.app/img/google-ads-overview-for-partsbaba.webp",
+      link: "https://anand-sharma.vercel.app/",
+    },
+    {
+      id: 3,
+      tag: "Meta Ads",
+      title: "TABBSZ",
+      metric: "7,863 purchases",
+      para: "Full-funnel prospecting, retargeting and conversion campaigns across 48 campaigns at a steady 3.03x average ROAS.",
+      img: "https://anand-sharma.vercel.app/img/meta-ads-manager-campaigns-for-tabbsz.webp",
+      link: "https://anand-sharma.vercel.app/",
+    },
+    {
+      id: 4,
+      tag: "Meta Ads",
+      title: "EcoFreaky",
+      metric: "3.57x average ROAS",
+      para: "Conversion-focused targeting across 21 campaigns — 3,579 purchases and ₹21.7L purchase value at a ₹170 acquisition cost.",
+      img: "https://anand-sharma.vercel.app/img/meta-ads-manager-ad-sets-for-ecofreaky.webp",
+      link: "https://anand-sharma.vercel.app/",
+    },
+    {
+      id: 5,
+      tag: "Google Ads",
+      title: "JK Stone",
+      metric: "13.06% CTR",
+      para: "B2B commercial stone and cladding enquiries across India — 189 lead form submissions at ₹892 cost per lead.",
+      img: "https://anand-sharma.vercel.app/img/google-ads-campaigns-for-jk-stone.webp",
+      link: "https://anand-sharma.vercel.app/",
+    },
+    {
+      id: 6,
+      tag: "Next.js + Node.js",
+      title: "Interiomate",
+      metric: "Voice AI enquiries",
+      para: "Interior design website with a dynamic gallery, technical SEO, Vapi voice AI for enquiries and Sentry, GTM and Clarity monitoring.",
+      img: "https://res.cloudinary.com/futurecoder/image/upload/v1786100343/baddmjwuu9mlabk0itzc.png",
+      link: "https://www.interiomate.com/",
+    },
+    {
+      id: 7,
+      tag: "Next.js + Clerk",
+      title: "Pal Engineering",
+      metric: "GSAP animations",
+      para: "Crane services website built on Next.js with Clerk auth, GSAP motion, backend APIs and per-page dynamic SEO.",
+      img: "https://res.cloudinary.com/futurecoder/image/upload/v1758814634/uof85hs7pzp6egzflq00.png",
+      link: "https://crane-website-woad.vercel.app/",
+    },
+    {
+      id: 8,
+      tag: "Next.js + NextAuth",
+      title: "Real Estate Platform",
+      metric: "Admin + automation",
+      para: "Production-ready platform on the Next.js App Router with NextAuth, an admin panel and Nodemailer-driven lead automation.",
+      img: "https://res.cloudinary.com/futurecoder/image/upload/v1767452654/yjslak8rmaw2msyx8csz.png",
+      link: "https://real-estate-eta-snowy.vercel.app/",
+    },
+    {
+      id: 9,
+      tag: "Next.js + Prisma",
+      title: "Rido Booking",
+      metric: "Role-based flows",
+      para: "Ride booking app with Leaflet maps, Prisma and PostgreSQL, and separate rider, driver and admin journeys.",
+      img: "https://res.cloudinary.com/futurecoder/image/upload/v1775979146/mxiyl8k0nckb11dwe6wc.png",
+      link: "https://rido-booking.vercel.app/",
+    },
   ];
 
-  const carouselRef = useRef(null);
-  const timerRef = useRef(null);
-
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const scrollCarousel = (direction) => {
-    const carousel = carouselRef.current;
-    const scrollAmount = 300;
-
-    if (direction === "left") {
-      carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    } else {
-      carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
-  const handleScroll = () => {
-    const carousel = carouselRef.current;
-    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-
-    setCanScrollLeft(carousel.scrollLeft > 0);
-    setCanScrollRight(carousel.scrollLeft < maxScrollLeft);
-
-    const index = Math.round(carousel.scrollLeft / 300);
-    setActiveIndex(index);
-  };
-
-  // 🔹 Auto scroll function with resettable timeout
-  const startAutoScroll = () => {
-    clearTimeout(timerRef.current); // pehle ka timer clear
-    timerRef.current = setTimeout(() => {
-      const carousel = carouselRef.current;
-      if (!carousel) return;
-
-      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-        carousel.scrollTo({ left: 0, behavior: "smooth" });
-        setActiveIndex(0);
-      } else {
-        carousel.scrollBy({ left: 300, behavior: "smooth" });
-        setActiveIndex((prev) => (prev + 1) % itemMember.length);
-      }
-
-      startAutoScroll(); 
-    }, 6000); 
-  };
-
-  useEffect(() => {
-    startAutoScroll();
-    return () => clearTimeout(timerRef.current);
-  }, []);
-
-  // Jab bhi user manually scroll kare, timer reset ho jaye
-  const handleUserScroll = () => {
-    handleScroll();
-    startAutoScroll();
-  };
-
   return (
-    <div className="caroucel_home">
-      <h1 className="caroucel_home_h1">
+    <section className="fusion_section">
+    <div className="fusion_caroucel">
+      <p className="fusion_eyebrow">Selected work</p>
+      <h1 className="fusion_caroucel_h1">
         Fusion of Ads &<br /> Innovation
       </h1>
+      <p className="fusion_caroucel_sub">
+        Real campaigns and real products we have shipped — performance marketing
+        that pays for itself, and web builds that carry the traffic.
+      </p>
 
-      <div className="carousel-container-2">
-        <button
-          className="scroll-button-2 left-2"
-          onClick={() => { scrollCarousel("left"); startAutoScroll(); }}
-          disabled={!canScrollLeft}
-        >
-          <Image src="/left-arrow.png" alt="" width={25} height={25} />
-        </button>
-
-        <div className="carousel-2" ref={carouselRef} onScroll={handleUserScroll}>
-          {itemMember.map((item) => (
-            <div key={item.id} className="carousel-item-3">
-              <div>
+      <div className="fusion_swiper_wrap">
+      <Swiper
+        className="fusion_swiper"
+        modules={[Autoplay, Navigation, Pagination, Keyboard, A11y]}
+        spaceBetween={24}
+        slidesPerView={1}
+        loop={true}
+        grabCursor={true}
+        keyboard={{ enabled: true }}
+        autoplay={{
+          delay: 4500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        navigation={{ prevEl: null, nextEl: null }}
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+        }}
+        pagination={{ clickable: true, dynamicBullets: true }}
+        breakpoints={{
+          640: { slidesPerView: 1.4, spaceBetween: 20 },
+          900: { slidesPerView: 2, spaceBetween: 24 },
+          1280: { slidesPerView: 3, spaceBetween: 28 },
+        }}
+      >
+        {itemMember.map((item) => (
+          <SwiperSlide key={item.id} className="fusion_slide">
+            <a
+              className="fusion_card"
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="fusion_card_media">
                 <Image
                   src={item.img}
-                  alt={`carousel-item-${item.id}`}
-                  className="carousel-image-2"
-                  width={350}
-                  height={100}
+                  alt={`${item.title} — ${item.tag}`}
+                  fill
+                  sizes="(max-width: 640px) 90vw, (max-width: 1280px) 45vw, 30vw"
+                  className="fusion_card_img"
                 />
+                <span className="fusion_card_tag">{item.tag}</span>
               </div>
-            </div>
-          ))}
-        </div>
 
-        <button
-          className="scroll-button-2 right-2"
-          onClick={() => { scrollCarousel("right"); startAutoScroll(); }}
-          disabled={!canScrollRight}
-        >
-          <Image src="/right-arrow.png" alt="" width={25} height={25} />
-        </button>
-      </div>
-
-      <div className="carousel-dots">
-        {itemMember.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${activeIndex === index ? "active" : ""}`}
-            onClick={() => {
-              const carousel = carouselRef.current;
-              carousel.scrollTo({ left: index * 300, behavior: "smooth" });
-              setActiveIndex(index);
-              startAutoScroll();
-            }}
-          ></span>
+              <div className="fusion_card_body">
+                <div className="fusion_card_top">
+                  <h3 className="fusion_card_title">{item.title}</h3>
+                  <span className="fusion_card_metric">{item.metric}</span>
+                </div>
+                <p className="fusion_card_para">{item.para}</p>
+                <span className="fusion_card_link">
+                  View case study
+                  <i className="fa-solid fa-arrow-right"></i>
+                </span>
+              </div>
+            </a>
+          </SwiperSlide>
         ))}
+
+      </Swiper>
+
+      <button
+        ref={prevRef}
+        className="fusion_nav_btn fusion_nav_prev"
+        type="button"
+        aria-label="Previous slide"
+      >
+        <Image src="/left-arrow.png" alt="" width={20} height={20} />
+      </button>
+      <button
+        ref={nextRef}
+        className="fusion_nav_btn fusion_nav_next"
+        type="button"
+        aria-label="Next slide"
+      >
+        <Image src="/right-arrow.png" alt="" width={20} height={20} />
+      </button>
       </div>
     </div>
+    </section>
   );
 }
 

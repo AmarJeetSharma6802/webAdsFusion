@@ -13,7 +13,9 @@
 }
 
 .footer_img{
-    width: 50%;
+    width: 100%;
+    max-width: 230px;
+    height: auto;
 }
 .footer_spread_first{
     width: 25%;
