@@ -396,11 +396,11 @@ padding: 10px 20px;
 
 
 /* ==========================================================
-   Website Maintenance - dedicated section
+   Shared service-page sections (all services)
    Monochrome, matches the black/white theme used on the home page.
    ========================================================== */
 
-.maint {
+.svc {
   background-color: #000000;
   background-image: radial-gradient(
     ellipse 70% 50% at 50% 0%,
@@ -413,7 +413,7 @@ padding: 10px 20px;
 }
 
 /* --- stats strip --- */
-.maint_stats {
+.svc_stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   max-width: min(1100px, 90vw);
@@ -424,37 +424,37 @@ padding: 10px 20px;
   overflow: hidden;
 }
 
-.maint_stat {
+.svc_stat {
   padding: 1.6rem 1.25rem;
   text-align: center;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.maint_stat:last-child {
+.svc_stat:last-child {
   border-right: none;
 }
 
-.maint_stat_value {
+.svc_stat_value {
   font-size: clamp(1.5rem, 3.5vw, 2.1rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
-.maint_stat_label {
+.svc_stat_label {
   margin-top: 0.35rem;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.55);
 }
 
 /* --- shared section chrome --- */
-.maint_section {
+.svc_section {
   max-width: min(1200px, 90vw);
   margin: 0 auto;
   padding: clamp(3rem, 8vw, 5.5rem) 0 0;
 }
 
-.maint_eyebrow {
+.svc_eyebrow {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -467,15 +467,15 @@ padding: 10px 20px;
   color: rgba(255, 255, 255, 0.45);
 }
 
-.maint_eyebrow::before,
-.maint_eyebrow::after {
+.svc_eyebrow::before,
+.svc_eyebrow::after {
   content: "";
   width: clamp(24px, 6vw, 52px);
   height: 1px;
   background: rgba(255, 255, 255, 0.2);
 }
 
-.maint_heading {
+.svc_heading {
   text-align: center;
   font-size: clamp(1.7rem, 5vw, 2.75rem);
   font-weight: 700;
@@ -483,7 +483,7 @@ padding: 10px 20px;
   letter-spacing: -0.03em;
 }
 
-.maint_sub {
+.svc_sub {
   max-width: 640px;
   margin: 1rem auto 0;
   text-align: center;
@@ -493,14 +493,14 @@ padding: 10px 20px;
 }
 
 /* --- what is covered --- */
-.maint_grid {
+.svc_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: clamp(1.1rem, 2.5vw, 1.75rem);
   margin-top: clamp(2rem, 5vw, 3rem);
 }
 
-.maint_card {
+.svc_card {
   position: relative;
   padding: 1.75rem 1.6rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -511,7 +511,7 @@ padding: 10px 20px;
     background-color 0.35s ease;
 }
 
-.maint_card::before {
+.svc_card::before {
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
@@ -526,17 +526,17 @@ padding: 10px 20px;
   transition: opacity 0.35s ease;
 }
 
-.maint_card:hover {
+.svc_card:hover {
   transform: translateY(-6px);
   border-color: rgba(255, 255, 255, 0.3);
   background-color: #0b0b0b;
 }
 
-.maint_card:hover::before {
+.svc_card:hover::before {
   opacity: 1;
 }
 
-.maint_card_icon {
+.svc_card_icon {
   display: grid;
   place-items: center;
   width: 52px;
@@ -548,21 +548,21 @@ padding: 10px 20px;
   background: rgba(255, 255, 255, 0.06);
 }
 
-.maint_card_title {
+.svc_card_title {
   font-size: 1.15rem;
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 0.55rem;
 }
 
-.maint_card_desc {
+.svc_card_desc {
   font-size: 0.93rem;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.62);
 }
 
 /* --- process --- */
-.maint_steps {
+.svc_steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: clamp(1.1rem, 2.5vw, 1.75rem);
@@ -570,13 +570,13 @@ padding: 10px 20px;
   list-style: none;
 }
 
-.maint_step {
+.svc_step {
   position: relative;
   padding-top: 1.6rem;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 
-.maint_step_num {
+.svc_step_num {
   display: block;
   margin-bottom: 0.7rem;
   font-size: 0.8rem;
@@ -585,20 +585,20 @@ padding: 10px 20px;
   color: rgba(255, 255, 255, 0.4);
 }
 
-.maint_step_title {
+.svc_step_title {
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-.maint_step_desc {
+.svc_step_desc {
   font-size: 0.92rem;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.62);
 }
 
 /* --- care plans --- */
-.maint_plans {
+.svc_plans {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(1.1rem, 2.5vw, 1.75rem);
@@ -606,7 +606,7 @@ padding: 10px 20px;
   align-items: stretch;
 }
 
-.maint_plan {
+.svc_plan {
   display: flex;
   flex-direction: column;
   padding: 2rem 1.75rem;
@@ -616,18 +616,18 @@ padding: 10px 20px;
   transition: transform 0.35s ease, border-color 0.35s ease;
 }
 
-.maint_plan:hover {
+.svc_plan:hover {
   transform: translateY(-6px);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-.maint_plan_best {
+.svc_plan_best {
   border-color: rgba(255, 255, 255, 0.4);
   background-color: #0d0d0d;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-.maint_plan_badge {
+.svc_plan_badge {
   align-self: flex-start;
   margin-bottom: 0.9rem;
   padding: 5px 12px;
@@ -640,20 +640,20 @@ padding: 10px 20px;
   border-radius: 999px;
 }
 
-.maint_plan_name {
+.svc_plan_name {
   font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-.maint_plan_tagline {
+.svc_plan_tagline {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.58);
 }
 
-.maint_plan_list {
+.svc_plan_list {
   flex: 1;
   margin: 1.5rem 0;
   padding: 1.5rem 0 0;
@@ -664,7 +664,7 @@ padding: 10px 20px;
   list-style: none;
 }
 
-.maint_plan_item {
+.svc_plan_item {
   display: flex;
   align-items: flex-start;
   gap: 0.7rem;
@@ -673,13 +673,13 @@ padding: 10px 20px;
   color: rgba(255, 255, 255, 0.78);
 }
 
-.maint_plan_item i {
+.svc_plan_item i {
   margin-top: 0.28em;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.55);
 }
 
-.maint_plan_btn {
+.svc_plan_btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -693,24 +693,24 @@ padding: 10px 20px;
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.maint_plan_btn:hover {
+.svc_plan_btn:hover {
   background: #ffffff;
   border-color: #ffffff;
   color: #000000;
 }
 
-.maint_plan_best .maint_plan_btn {
+.svc_plan_best .svc_plan_btn {
   background: #ffffff;
   border-color: #ffffff;
   color: #000000;
 }
 
-.maint_plan_best .maint_plan_btn:hover {
+.svc_plan_best .svc_plan_btn:hover {
   background: rgba(255, 255, 255, 0.85);
 }
 
 /* --- closing cta --- */
-.maint_cta {
+.svc_cta {
   max-width: min(880px, 90vw);
   margin: clamp(3rem, 8vw, 5.5rem) auto 0;
   padding: clamp(2.25rem, 6vw, 3.5rem) clamp(1.5rem, 5vw, 3rem)
@@ -726,14 +726,14 @@ padding: 10px 20px;
   );
 }
 
-.maint_cta_heading {
+.svc_cta_heading {
   font-size: clamp(1.5rem, 4.5vw, 2.25rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
-.maint_cta_sub {
+.svc_cta_sub {
   max-width: 560px;
   margin: 1rem auto 0;
   font-size: clamp(0.92rem, 2.2vw, 1.02rem);
@@ -741,7 +741,7 @@ padding: 10px 20px;
   color: rgba(255, 255, 255, 0.6);
 }
 
-.maint_cta_btn {
+.svc_cta_btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -756,18 +756,223 @@ padding: 10px 20px;
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.maint_cta_btn:hover {
+.svc_cta_btn:hover {
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.88);
 }
 
 @media (max-width: 700px) {
-  .maint_stat {
+  .svc_stat {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .maint_stat:last-child {
+  .svc_stat:last-child {
     border-bottom: none;
+  }
+}
+
+
+/* --- industries / who it's for --- */
+.svc_industries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: clamp(0.9rem, 2vw, 1.5rem);
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.svc_industry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background-color: #050505;
+  transition: transform 0.35s ease, border-color 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.svc_industry:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: #0b0b0b;
+}
+
+.svc_industry_img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.9) contrast(1.05);
+  opacity: 0.85;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.svc_industry:hover .svc_industry_img {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.svc_industry_label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* --- FAQ --- */
+.svc_faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 860px;
+  margin: clamp(2rem, 5vw, 3rem) auto 0;
+}
+
+.svc_faq_key {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background-color: #050505;
+  padding: 0.4rem 1.25rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.svc_faq_key:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  background-color: #0b0b0b;
+}
+
+.svc_faq_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.svc_faq_title {
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.svc_faq_icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  font-size: 0.85rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.75);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.svc_faq_key:hover .svc_faq_icon {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.svc_faq_ans {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.62);
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.svc_faq_ans.active {
+  display: block;
+  opacity: 1;
+  padding: 0 0 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: -0.25rem;
+  padding-top: 1rem;
+}
+
+/* --- hero: keep it on the same monochrome system --- */
+.service_page {
+  background: radial-gradient(
+      ellipse 80% 70% at 50% 0%,
+      rgba(255, 255, 255, 0.12),
+      transparent 70%
+    ),
+    #000000;
+}
+
+.service_content {
+  padding: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.service_content_img {
+  width: min(40%, 420px);
+  flex: 1 1 300px;
+}
+
+.service_details {
+  width: auto;
+  flex: 1 1 380px;
+  line-height: 1.6;
+}
+
+.selectedContent_name {
+  font-size: clamp(1.9rem, 5.5vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.selectedContent_heading {
+  margin-top: 1rem;
+  font-size: clamp(1.15rem, 3vw, 1.75rem);
+  line-height: 1.3;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.selectedContent_para {
+  margin-top: 1rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.selectedContent_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
+  background: #ffffff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.selectedContent_btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+@media (max-width: 850px) {
+  .service_content {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .service_content_img {
+    width: min(70%, 320px);
   }
 }
