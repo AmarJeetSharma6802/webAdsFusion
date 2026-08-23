@@ -89,11 +89,22 @@ function Dynamic({ selectedContent }) {
             <div className={style.svc_grid}>
               {selectedContent.care.map((item) => (
                 <div key={item.id} className={style.svc_card}>
-                  <span className={style.svc_card_icon}>
-                    <i className={item.icon}></i>
-                  </span>
-                  <h3 className={style.svc_card_title}>{item.title}</h3>
-                  <p className={style.svc_card_desc}>{item.desc}</p>
+                  <div className={style.svc_card_media}>
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      width={120}
+                      height={120}
+                      className={style.svc_card_img}
+                    />
+                    <span className={style.svc_card_icon}>
+                      <i className={item.icon}></i>
+                    </span>
+                  </div>
+                  <div className={style.svc_card_body}>
+                    <h3 className={style.svc_card_title}>{item.title}</h3>
+                    <p className={style.svc_card_desc}>{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -112,8 +123,11 @@ function Dynamic({ selectedContent }) {
             <ol className={style.svc_steps}>
               {selectedContent.steps.map((item, index) => (
                 <li key={item.id} className={style.svc_step}>
+                  <span className={style.svc_step_marker}>
+                    <span className={style.svc_step_dot}></span>
+                  </span>
                   <span className={style.svc_step_num}>
-                    {String(index + 1).padStart(2, "0")}
+                    Step {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className={style.svc_step_title}>{item.title}</h3>
                   <p className={style.svc_step_desc}>{item.desc}</p>
