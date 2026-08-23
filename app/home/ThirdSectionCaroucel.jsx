@@ -2,15 +2,13 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination, Keyboard, A11y } from "swiper/modules";
+import { Autoplay, Pagination, Keyboard, A11y } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 function ThirdSectionCaroucel() {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const swiperRef = useRef(null);
 
   const itemMember = [
     {
@@ -111,7 +109,10 @@ function ThirdSectionCaroucel() {
       <div className="fusion_swiper_wrap">
       <Swiper
         className="fusion_swiper"
-        modules={[Autoplay, Navigation, Pagination, Keyboard, A11y]}
+        modules={[Autoplay, Pagination, Keyboard, A11y]}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
         spaceBetween={24}
         slidesPerView={1}
         loop={true}
@@ -122,12 +123,7 @@ function ThirdSectionCaroucel() {
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
-        navigation={{ prevEl: null, nextEl: null }}
-        onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-        }}
-        pagination={{ clickable: true, dynamicBullets: true }}
+        pagination={{ clickable: true }}
         breakpoints={{
           640: { slidesPerView: 1.4, spaceBetween: 20 },
           900: { slidesPerView: 2, spaceBetween: 24 },
@@ -171,18 +167,18 @@ function ThirdSectionCaroucel() {
       </Swiper>
 
       <button
-        ref={prevRef}
         className="fusion_nav_btn fusion_nav_prev"
         type="button"
         aria-label="Previous slide"
+        onClick={() => swiperRef.current?.slidePrev()}
       >
         <Image src="/left-arrow.png" alt="" width={20} height={20} />
       </button>
       <button
-        ref={nextRef}
         className="fusion_nav_btn fusion_nav_next"
         type="button"
         aria-label="Next slide"
+        onClick={() => swiperRef.current?.slideNext()}
       >
         <Image src="/right-arrow.png" alt="" width={20} height={20} />
       </button>

@@ -11,7 +11,7 @@
     background-color: rgb(15, 14, 14);
      
     padding: 2rem 4rem;
-     background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000;
+     background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 255, 255, 0.12), transparent 70%), #000000;
        background-repeat: no-repeat;
   background-attachment: fixed;
 }

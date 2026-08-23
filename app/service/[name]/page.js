@@ -166,8 +166,143 @@ export async function generateMetadata({ params }) {
       heading: "Keep Your Website Running Smoothly with Expert Maintenance",
       para: "Focus on growing your business while we keep your website secure, updated, and error-free. From routine checks to emergency fixes, our maintenance services ensure your site performs reliably every day.",
       img: "/serviceWebMaintance.png",
-      btn:"Secure Your Website Today",
-      qeustion: []
+      btn: "Secure Your Website Today",
+      stats: [
+        { id: 1, value: "24/7", label: "Uptime monitoring" },
+        { id: 2, value: "24-48h", label: "Critical fix window" },
+        { id: 3, value: "Weekly", label: "Offsite backups" },
+        { id: 4, value: "Monthly", label: "Health report" },
+      ],
+      care: [
+        {
+          id: 1,
+          icon: "fa-solid fa-shield-halved",
+          title: "Security & Malware Scans",
+          desc: "Continuous scanning, firewall rules and SSL checks. If something suspicious shows up, we clean it and close the hole before it reaches your visitors.",
+        },
+        {
+          id: 2,
+          icon: "fa-solid fa-arrows-rotate",
+          title: "Core, Plugin & Package Updates",
+          desc: "Framework, CMS, plugin and dependency updates applied on staging first, so a routine patch never takes your live site down.",
+        },
+        {
+          id: 3,
+          icon: "fa-solid fa-database",
+          title: "Automated Offsite Backups",
+          desc: "Scheduled database and file backups stored away from your server, with a tested one-click restore whenever you need to roll back.",
+        },
+        {
+          id: 4,
+          icon: "fa-solid fa-gauge-high",
+          title: "Speed & Core Web Vitals",
+          desc: "Image compression, caching, script cleanup and LCP/CLS tuning so your pages stay fast on real devices and real networks.",
+        },
+        {
+          id: 5,
+          icon: "fa-solid fa-bug",
+          title: "Bug Fixes & Broken Links",
+          desc: "Forms that stopped sending, 404s, layout breaks after a browser update - reported, fixed and verified without you chasing anyone.",
+        },
+        {
+          id: 6,
+          icon: "fa-solid fa-chart-line",
+          title: "SEO & Analytics Health",
+          desc: "Sitemaps, metadata, redirects, schema and tracking checked every month so a silent technical issue never costs you rankings.",
+        },
+      ],
+      steps: [
+        {
+          id: 1,
+          title: "Audit",
+          desc: "We start with a full health check - security, speed, SEO, broken pages and outdated dependencies - and hand you a written report of what needs attention.",
+        },
+        {
+          id: 2,
+          title: "Stabilise",
+          desc: "Everything urgent gets fixed first: vulnerabilities patched, backups configured, errors cleared and a staging environment set up for safe changes.",
+        },
+        {
+          id: 3,
+          title: "Monitor",
+          desc: "Uptime, forms and performance are watched around the clock. If something breaks at 2am, we know before your customers do.",
+        },
+        {
+          id: 4,
+          title: "Report",
+          desc: "Every month you get a plain-English summary: what was updated, what was fixed, how the site performed and what we recommend next.",
+        },
+      ],
+      plans: [
+        {
+          id: 1,
+          name: "Essential",
+          best: false,
+          tagline: "For brochure sites that just need to stay safe and current.",
+          features: [
+            "Monthly core & plugin updates",
+            "Weekly offsite backups",
+            "Uptime monitoring",
+            "Security scan & SSL checks",
+            "Email support",
+          ],
+        },
+        {
+          id: 2,
+          name: "Growth",
+          best: true,
+          tagline: "For business sites that actively bring in leads.",
+          features: [
+            "Everything in Essential",
+            "Weekly updates on staging first",
+            "Daily backups with tested restores",
+            "Speed & Core Web Vitals tuning",
+            "Content and small design edits",
+            "Monthly health report",
+          ],
+        },
+        {
+          id: 3,
+          name: "Priority",
+          best: false,
+          tagline: "For stores and high-traffic sites where downtime costs money.",
+          features: [
+            "Everything in Growth",
+            "24-48h critical fix window",
+            "24/7 uptime & transaction monitoring",
+            "Staging + rollback on every release",
+            "SEO and analytics monitoring",
+            "Dedicated point of contact",
+          ],
+        },
+      ],
+      qeustion: [
+        {
+          id: 1,
+          ques: "What exactly is included in website maintenance?",
+          ans: "Maintenance covers everything that keeps a live site healthy: security scans and patches, core, plugin and dependency updates, offsite backups, speed and Core Web Vitals tuning, broken link and bug fixes, plus SEO and analytics checks. You also get a monthly report of what changed.",
+        },
+        {
+          id: 2,
+          ques: "My website is already built. Can you still maintain it?",
+          ans: "Yes. We take over sites we did not build all the time. We begin with a full audit of security, performance, SEO and outdated dependencies, fix anything urgent, then move the site onto our regular maintenance schedule.",
+        },
+        {
+          id: 3,
+          ques: "How quickly do you respond if my site goes down?",
+          ans: "Uptime monitoring alerts us the moment your site stops responding, usually before you notice. Critical issues such as downtime, checkout failures or broken forms are addressed within a 24 to 48 hour window on our Priority plan.",
+        },
+        {
+          id: 4,
+          ques: "Will updates break my website?",
+          ans: "That is exactly why we apply updates on a staging copy first. Changes are tested there before they reach your live site, and every release has a tested rollback, so a routine update never becomes an outage.",
+        },
+        {
+          id: 5,
+          ques: "Do I need maintenance if my website rarely changes?",
+          ans: "Yes. Even a site you never edit sits on software that keeps changing. Unpatched plugins, expired SSL certificates, broken third-party scripts and search engine algorithm shifts all affect a site that has not been touched in months.",
+        },
+      ],
     },
     {
       id: 4,

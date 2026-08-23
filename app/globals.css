@@ -168,6 +168,10 @@ body {
   padding: 6px 4px 3.5rem;
 }
 
+.fusion_swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
 .fusion_slide {
   height: auto;
   display: flex;
@@ -297,7 +301,8 @@ body {
   position: absolute;
   top: calc(50% - 1.75rem);
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 20;
+  pointer-events: auto;
   width: 44px;
   height: 44px;
   display: flex;
@@ -341,14 +346,30 @@ body {
 /* Pagination */
 .fusion_swiper .swiper-pagination {
   bottom: 0;
+  z-index: 20;
+  pointer-events: auto;
 }
 
 .fusion_swiper .swiper-pagination-bullet {
+  position: relative;
   width: 9px;
   height: 9px;
+  margin: 0 6px;
   background: #d0d2da;
   opacity: 1;
+  cursor: pointer;
   transition: background 0.3s ease, width 0.3s ease;
+}
+
+/* enlarge the tap target without changing how the dot looks */
+.fusion_swiper .swiper-pagination-bullet::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+}
+
+.fusion_swiper .swiper-pagination-bullet:hover {
+  background: #9aa0ad;
 }
 
 .fusion_swiper .swiper-pagination-bullet-active {
