@@ -32,7 +32,7 @@
 
 
 .Logo_img{
-  width: 170px;
+  width: clamp(126px, 32vw, 170px);
   height: auto;
   display: block;
   cursor: pointer;
@@ -41,13 +41,22 @@
 .header{
   display: flex;
   justify-content: space-between;
-  padding: 0px 6rem;
+  gap: 1rem;
+  padding: 0px clamp(1rem, 5vw, 6rem);
   height: 60px;
   border-bottom: 0.5px solid rgb(77, 76, 76);
   align-items: center;
-   background-color: transparent; 
   color: white;
-   background-color: black;
+  background-color: black;
+  position: relative;
+}
+
+/* the logo sits inside a <label>, which is inline by default and adds stray height */
+.header > label {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 0;
 }
 .nav{
   /* position: relative; */

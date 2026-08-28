@@ -1060,3 +1060,263 @@ padding: 10px 20px;
     width: min(70%, 320px);
   }
 }
+
+
+/* buttons that used to be links */
+.svc_plan_btn,
+.svc_cta_btn,
+.selectedContent_btn {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.svc_plan_btn {
+  background: transparent;
+}
+
+.svc_cta_btn {
+  border: none;
+}
+
+/* ==========================================================
+   Service enquiry form (modal)
+   ========================================================== */
+
+.form_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  overflow-y: auto;
+}
+
+.form_box {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 22px;
+  background-color: #050505;
+  background-image: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    rgba(255, 255, 255, 0.09),
+    transparent 70%
+  );
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+}
+
+.form_close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.form_close:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.form_eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.form_heading {
+  margin-top: 0.5rem;
+  font-size: clamp(1.35rem, 4vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.form_plan {
+  margin-top: 0.6rem;
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+.form_sub {
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.form_field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form_label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.form_optional {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form_input,
+.form_textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.form_textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+
+.form_input::placeholder,
+.form_textarea::placeholder {
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.form_input:focus,
+.form_textarea:focus {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.form_submit {
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  background: #ffffff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.form_submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.form_submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* ==========================================================
+   Shared CTA behaviour: the button inverts and lights up on hover.
+   Same treatment on every service page.
+   ========================================================== */
+
+.selectedContent_btn,
+.svc_cta_btn,
+.svc_plan_btn,
+.form_submit {
+  border: 1px solid transparent;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+/* solid white buttons -> go dark and glow */
+.selectedContent_btn:hover,
+.svc_cta_btn:hover,
+.form_submit:hover:not(:disabled),
+.svc_plan_best .svc_plan_btn:hover {
+  background: #0a0a0a;
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.55),
+    0 0 44px rgba(255, 255, 255, 0.28), 0 0 90px rgba(255, 255, 255, 0.12);
+}
+
+/* outlined plan button -> fills white and glows */
+.svc_plan_btn:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.5),
+    0 0 44px rgba(255, 255, 255, 0.24), 0 0 90px rgba(255, 255, 255, 0.1);
+}
+
+/* keyboard users get the same signal */
+.selectedContent_btn:focus-visible,
+.svc_cta_btn:focus-visible,
+.svc_plan_btn:focus-visible,
+.form_submit:focus-visible {
+  outline: none;
+  border-color: #ffffff;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.55),
+    0 0 44px rgba(255, 255, 255, 0.28);
+}
+
+.selectedContent_btn:active,
+.svc_cta_btn:active,
+.svc_plan_btn:active,
+.form_submit:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selectedContent_btn,
+  .svc_cta_btn,
+  .svc_plan_btn,
+  .form_submit {
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .selectedContent_btn:hover,
+  .svc_cta_btn:hover,
+  .svc_plan_btn:hover,
+  .form_submit:hover:not(:disabled) {
+    transform: none;
+  }
+}

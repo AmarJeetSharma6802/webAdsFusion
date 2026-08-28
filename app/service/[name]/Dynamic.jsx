@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import style from "../../style/service.module.css";
 import Image from "next/image";
-import Link from "next/link";
+import ServiceForm from "./ServiceForm.jsx";
 
 // Renders a multi-line heading string ("first line\nsecond line") as <br />-separated lines.
 function MultilineHeading({ text, className }) {
@@ -21,10 +21,14 @@ function MultilineHeading({ text, className }) {
 
 function Dynamic({ selectedContent }) {
   const [active, setActive] = useState(null);
+  const [formPlan, setFormPlan] = useState(null);
 
   const handleClick = (ques) => {
     setActive(ques === active ? null : ques);
   };
+
+  const openForm = (plan) => setFormPlan(plan);
+  const closeForm = () => setFormPlan(null);
 
   return (
     <>
@@ -53,9 +57,13 @@ function Dynamic({ selectedContent }) {
               <p className={style.selectedContent_para}>
                 {selectedContent.para}
               </p>
-              <Link href="/contact" className={style.selectedContent_btn}>
+              <button
+                type="button"
+                className={style.selectedContent_btn}
+                onClick={() => openForm("")}
+              >
                 {selectedContent.btn}
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -196,9 +204,13 @@ function Dynamic({ selectedContent }) {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact" className={style.svc_plan_btn}>
+                  <button
+                    type="button"
+                    className={style.svc_plan_btn}
+                    onClick={() => openForm(plan.name)}
+                  >
                     Get a quote
-                  </Link>
+                  </button>
                 </div>
               ))}
             </div>
@@ -250,12 +262,24 @@ function Dynamic({ selectedContent }) {
               {selectedContent.ctaHeading}
             </h2>
             <p className={style.svc_cta_sub}>{selectedContent.ctaSub}</p>
-            <Link href="/contact" className={style.svc_cta_btn}>
+            <button
+              type="button"
+              className={style.svc_cta_btn}
+              onClick={() => openForm("")}
+            >
               {selectedContent.ctaBtn}
-            </Link>
+            </button>
           </section>
         )}
       </div>
+
+      {formPlan !== null && (
+        <ServiceForm
+          service={selectedContent.name}
+          plan={formPlan}
+          onClose={closeForm}
+        />
+      )}
     </>
   );
 }

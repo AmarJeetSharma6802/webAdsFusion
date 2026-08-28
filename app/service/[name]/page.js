@@ -888,6 +888,177 @@ const content = [
       },
     ],
   },
+  {
+    id: 8,
+    name: "E-commerce",
+    heading: "Online Stores Built to Sell, Not Just to Look Good",
+    para: "We build and scale e-commerce stores end to end — storefront, catalogue, checkout and the ads that fill them. Fast product pages, a checkout that does not lose people, and tracking clean enough to actually optimise against.",
+    img: "/online-shop.png",
+    btn: "Start Your Store Project",
+    stats: [
+      { id: 1, value: "₹3.66Cr", label: "Conversion value driven" },
+      { id: 2, value: "11,442", label: "Purchases tracked" },
+      { id: 3, value: "47,531", label: "Adds to cart" },
+      { id: 4, value: "3-10x", label: "ROAS range" },
+    ],
+    careHeading: "Everything a store needs\nbetween cart and cash",
+    careSub:
+      "We have built the storefronts and run the ad accounts behind them — so the build is shaped by what actually converts, not by what looks good in a mockup.",
+    care: [
+      {
+        id: 1,
+        icon: "fa-brands fa-shopify",
+        title: "Shopify & Custom Storefronts",
+        img: "/shopify.png",
+        desc: "Shopify when you want speed to market, a custom Next.js build when you need control. We will tell you honestly which one your business actually needs.",
+      },
+      {
+        id: 2,
+        icon: "fa-solid fa-boxes-stacked",
+        title: "Catalogue, Search & Filters",
+        img: "/online-shop.png",
+        desc: "Collections, variants, stock and filters structured so shoppers reach the right product in two clicks instead of giving up on page three.",
+      },
+      {
+        id: 3,
+        icon: "fa-solid fa-credit-card",
+        title: "Checkout & Payments",
+        img: "/planning.png",
+        desc: "Razorpay, UPI, cards and COD wired in with a short, distraction-free checkout — because most abandoned carts die on the payment step, not the product page.",
+      },
+      {
+        id: 4,
+        icon: "fa-solid fa-mobile-screen-button",
+        title: "Speed & Mobile Experience",
+        img: "/performance.png",
+        desc: "Most of your traffic is on a phone on mobile data. Image optimisation, caching and Core Web Vitals tuning are treated as revenue work, not polish.",
+      },
+      {
+        id: 5,
+        icon: "fa-solid fa-tags",
+        title: "Product Feeds & Shopping Ads",
+        img: "/marketing.png",
+        desc: "Merchant Center feeds cleaned, then Shopping, Performance Max and Meta catalogue ads run against them — the setup behind ₹3.66Cr in tracked conversion value.",
+      },
+      {
+        id: 6,
+        icon: "fa-solid fa-chart-line",
+        title: "Analytics & Conversion Tracking",
+        img: "/GoogleAnalytics.jpg",
+        desc: "GA4, Tag Manager, Meta pixel and server-side events configured properly, so add-to-cart, checkout and purchase numbers can be trusted.",
+      },
+    ],
+    stepsHeading: "From first product upload\nto a store that scales",
+    steps: [
+      {
+        id: 1,
+        title: "Plan",
+        desc: "We map your catalogue, margins, shipping and payment needs, then pick the platform around them instead of forcing your business into a template.",
+      },
+      {
+        id: 2,
+        title: "Build",
+        desc: "Storefront, product pages, cart and checkout built and reviewed on a live preview URL, with your real products and real prices in it.",
+      },
+      {
+        id: 3,
+        title: "Launch",
+        desc: "Payments tested end to end, tracking verified with test purchases, feeds submitted and the store handed over with an admin walkthrough.",
+      },
+      {
+        id: 4,
+        title: "Scale",
+        desc: "Shopping and Meta catalogue campaigns switched on, then optimised weekly against cost per purchase and return on ad spend.",
+      },
+    ],
+    industriesHeading: "Stores we build and scale",
+    industries: [
+      { id: 1, heading: "Fashion & apparel", img: "/businessman.png" },
+      { id: 2, heading: "Health & wellness", img: "/light-bulb.svg" },
+      { id: 3, heading: "Home & lifestyle", img: "/estate-agent.png" },
+      { id: 4, heading: "Electronics & parts", img: "/tools.png" },
+      { id: 5, heading: "Books & stationery", img: "/textbook.png" },
+      { id: 6, heading: "Food & beverage", img: "/online-shop.png" },
+    ],
+    plansHeading: "Where does your store\nstand right now?",
+    plansSub:
+      "Each engagement is scoped against your catalogue size, platform and margins — pick the one that matches where you are today.",
+    plans: [
+      {
+        id: 1,
+        name: "Launch",
+        best: false,
+        tagline: "No store yet, or a store that never really went live.",
+        features: [
+          "Shopify or custom storefront setup",
+          "Up to 50 products loaded",
+          "Payments & shipping configured",
+          "Mobile-first product and cart pages",
+          "GA4 and pixel tracking installed",
+          "Admin walkthrough at handover",
+        ],
+      },
+      {
+        id: 2,
+        name: "Scale",
+        best: true,
+        tagline: "Store is live but traffic is not turning into orders.",
+        features: [
+          "Everything in Launch",
+          "Conversion audit of product and checkout flow",
+          "Core Web Vitals and speed tuning",
+          "Merchant Center feed cleanup",
+          "Shopping, PMax and Meta catalogue ads",
+          "Weekly optimisation on cost per purchase",
+        ],
+      },
+      {
+        id: 3,
+        name: "Custom",
+        best: false,
+        tagline: "Large catalogue, B2B pricing or a headless build.",
+        features: [
+          "Everything in Scale",
+          "Headless Next.js storefront",
+          "Custom pricing, roles and bulk ordering",
+          "ERP, CRM and inventory integrations",
+          "Staging environment with release rollback",
+          "Dedicated point of contact",
+        ],
+      },
+    ],
+    ctaHeading: "Store live but not converting?",
+    ctaSub:
+      "Send us the URL. We’ll review your product pages, checkout flow, speed and tracking, and tell you where the orders are leaking.",
+    ctaBtn: "Get a free store audit",
+    qeustion: [
+      {
+        id: 1,
+        ques: "Should I use Shopify or a custom-built store?",
+        ans: "Shopify is faster to launch and cheaper to run if your catalogue and rules are straightforward. A custom Next.js build makes sense when you need B2B pricing, unusual checkout logic, deep integrations or full control over performance. We look at your catalogue and margins before recommending either.",
+      },
+      {
+        id: 2,
+        ques: "Can you migrate my existing store without losing SEO?",
+        ans: "Yes. Migrations include a full URL map with 301 redirects, preserved metadata and structured data, and a Search Console submission afterwards. Rankings usually settle within a few weeks when redirects are done properly.",
+      },
+      {
+        id: 3,
+        ques: "Do you also run the ads for the store?",
+        ans: "We do, and that is the main reason our builds convert. The same team handles Shopping, Performance Max and Meta catalogue campaigns — across live accounts that has meant 11,442 tracked purchases and ₹3.66Cr in conversion value.",
+      },
+      {
+        id: 4,
+        ques: "Why do people add to cart but never buy?",
+        ans: "Usually a slow or multi-step checkout, unexpected shipping costs shown late, missing payment options such as UPI or COD, or a mobile experience that breaks on smaller screens. A store audit identifies which of these is costing you, and in what order to fix them.",
+      },
+      {
+        id: 5,
+        ques: "Who owns the store and the accounts?",
+        ans: "You do. Shopify, Merchant Center, ad accounts, domain and codebase all stay in your name. We work with access you grant and can revoke at any time.",
+      },
+    ],
+  },
 ];
 
 
