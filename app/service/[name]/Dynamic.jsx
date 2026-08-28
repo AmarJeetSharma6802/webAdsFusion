@@ -21,14 +21,16 @@ function MultilineHeading({ text, className }) {
 
 function Dynamic({ selectedContent }) {
   const [active, setActive] = useState(null);
-  const [formPlan, setFormPlan] = useState(null);
+  const [selectedPlan, setSelectedPlan] = useState('');
 
   const handleClick = (ques) => {
     setActive(ques === active ? null : ques);
   };
 
-  const openForm = (plan) => setFormPlan(plan);
-  const closeForm = () => setFormPlan(null);
+  const goToForm = (planName) => {
+    setSelectedPlan(planName);
+    document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -60,7 +62,7 @@ function Dynamic({ selectedContent }) {
               <button
                 type="button"
                 className={style.selectedContent_btn}
-                onClick={() => openForm("")}
+                onClick={() => goToForm("")}
               >
                 {selectedContent.btn}
               </button>
@@ -207,7 +209,7 @@ function Dynamic({ selectedContent }) {
                   <button
                     type="button"
                     className={style.svc_plan_btn}
-                    onClick={() => openForm(plan.name)}
+                    onClick={() => goToForm(plan.name)}
                   >
                     Get a quote
                   </button>
@@ -255,31 +257,16 @@ function Dynamic({ selectedContent }) {
           </section>
         )}
 
-        {/* ---------- closing CTA ---------- */}
-        {selectedContent.ctaHeading && (
-          <section className={style.svc_cta}>
-            <h2 className={style.svc_cta_heading}>
-              {selectedContent.ctaHeading}
-            </h2>
-            <p className={style.svc_cta_sub}>{selectedContent.ctaSub}</p>
-            <button
-              type="button"
-              className={style.svc_cta_btn}
-              onClick={() => openForm("")}
-            >
-              {selectedContent.ctaBtn}
-            </button>
-          </section>
-        )}
-      </div>
-
-      {formPlan !== null && (
+        {/* ---------- enquiry form ---------- */}
         <ServiceForm
           service={selectedContent.name}
-          plan={formPlan}
-          onClose={closeForm}
+          heading={selectedContent.ctaHeading}
+          sub={selectedContent.ctaSub}
+          submitLabel={selectedContent.ctaBtn}
+          plan={selectedPlan}
+          onClearPlan={() => setSelectedPlan('')}
         />
-      )}
+      </div>
     </>
   );
 }

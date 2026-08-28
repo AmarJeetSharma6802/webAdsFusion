@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import style from "../../style/service.module.css";
+import Image from "next/image";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-function ServiceForm({ service, plan, onClose }) {
+function ServiceForm({ service, heading, sub, submitLabel, plan, onClearPlan }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,7 +34,7 @@ function ServiceForm({ service, plan, onClose }) {
 
       toast.success(res.data.message);
       setFormData({ name: "", email: "", phone: "", message: "" });
-      onClose();
+      onClearPlan();
     } catch (err) {
       toast.error(err.response?.data?.message || "Something went wrong");
     } finally {
@@ -42,51 +43,84 @@ function ServiceForm({ service, plan, onClose }) {
   };
 
   return (
-    <div className={style.form_overlay} onClick={onClose}>
-      <div className={style.form_box} onClick={(e) => e.stopPropagation()}>
-        <button
-          type="button"
-          className={style.form_close}
-          onClick={onClose}
-          aria-label="Close form"
-        >
-          <i className="fa-solid fa-xmark"></i>
-        </button>
-
-        <p className={style.form_eyebrow}>Enquiry</p>
-        <h3 className={style.form_heading}>{service}</h3>
-        {plan ? (
-          <p className={style.form_plan}>{plan} plan</p>
-        ) : (
-          <p className={style.form_sub}>
-            Fill this in and we will get back to you within one working day.
+    <section className={style.enq} id="enquiry">
+      <div className={style.enq_media}>
+        <Image
+          src="/ab.png"
+          alt=""
+          width={660}
+          height={380}
+          className={style.enq_media_img}
+        />
+        <div className={style.enq_media_note}>
+          <p className={style.enq_media_note_title}>One reply, one working day</p>
+          <p className={style.enq_media_note_text}>
+            No call centre and no sales script. The person who reads this is the
+            person who will work on it.
           </p>
+        </div>
+      </div>
+
+      <div className={style.enq_panel}>
+        <p className={style.enq_eyebrow}>Enquiry &mdash; {service}</p>
+        <h2 className={style.enq_heading}>{heading}</h2>
+        <p className={style.enq_sub}>{sub}</p>
+
+        {plan && (
+          <div className={style.enq_plan}>
+            <span className={style.enq_plan_badge}>{plan} plan</span>
+            <button
+              type="button"
+              className={style.enq_plan_clear}
+              onClick={onClearPlan}
+            >
+              clear
+            </button>
+          </div>
         )}
 
-        <form className={style.form} onSubmit={handleSubmit}>
-          <div className={style.form_field}>
-            <label className={style.form_label} htmlFor="enquiry-name">
-              Name
-            </label>
-            <input
-              id="enquiry-name"
-              className={style.form_input}
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your full name"
-              required
-            />
+        <form className={style.enq_form} onSubmit={handleSubmit}>
+          <div className={style.enq_row}>
+            <div className={style.enq_field}>
+              <label className={style.enq_label} htmlFor="enquiry-name">
+                Name
+              </label>
+              <input
+                id="enquiry-name"
+                className={style.enq_input}
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your full name"
+                required
+              />
+            </div>
+
+            <div className={style.enq_field}>
+              <label className={style.enq_label} htmlFor="enquiry-phone">
+                Phone
+              </label>
+              <input
+                id="enquiry-phone"
+                className={style.enq_input}
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="10 digit mobile number"
+                required
+              />
+            </div>
           </div>
 
-          <div className={style.form_field}>
-            <label className={style.form_label} htmlFor="enquiry-email">
+          <div className={style.enq_field}>
+            <label className={style.enq_label} htmlFor="enquiry-email">
               Email
             </label>
             <input
               id="enquiry-email"
-              className={style.form_input}
+              className={style.enq_input}
               type="email"
               name="email"
               value={formData.email}
@@ -96,29 +130,13 @@ function ServiceForm({ service, plan, onClose }) {
             />
           </div>
 
-          <div className={style.form_field}>
-            <label className={style.form_label} htmlFor="enquiry-phone">
-              Phone
-            </label>
-            <input
-              id="enquiry-phone"
-              className={style.form_input}
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="10 digit mobile number"
-              required
-            />
-          </div>
-
-          <div className={style.form_field}>
-            <label className={style.form_label} htmlFor="enquiry-message">
-              Message <span className={style.form_optional}>(optional)</span>
+          <div className={style.enq_field}>
+            <label className={style.enq_label} htmlFor="enquiry-message">
+              Message <span className={style.enq_optional}>(optional)</span>
             </label>
             <textarea
               id="enquiry-message"
-              className={style.form_textarea}
+              className={style.enq_textarea}
               name="message"
               value={formData.message}
               onChange={handleChange}
@@ -127,12 +145,12 @@ function ServiceForm({ service, plan, onClose }) {
             />
           </div>
 
-          <button type="submit" className={style.form_submit} disabled={loading}>
-            {loading ? "Sending..." : "Send enquiry"}
+          <button type="submit" className={style.enq_submit} disabled={loading}>
+            {loading ? "Sending..." : submitLabel}
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 }
 
