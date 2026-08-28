@@ -22,14 +22,20 @@ function MultilineHeading({ text, className }) {
 function Dynamic({ selectedContent }) {
   const [active, setActive] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState('');
+  const [formOpen, setFormOpen] = useState(false);
 
   const handleClick = (ques) => {
     setActive(ques === active ? null : ques);
   };
 
-  const goToForm = (planName) => {
+  const openForm = (planName) => {
     setSelectedPlan(planName);
-    document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' });
+    setFormOpen(true);
+  };
+
+  const closeForm = () => {
+    setSelectedPlan('');
+    setFormOpen(false);
   };
 
   return (
@@ -62,7 +68,7 @@ function Dynamic({ selectedContent }) {
               <button
                 type="button"
                 className={style.selectedContent_btn}
-                onClick={() => goToForm("")}
+                onClick={() => openForm("")}
               >
                 {selectedContent.btn}
               </button>
@@ -209,7 +215,7 @@ function Dynamic({ selectedContent }) {
                   <button
                     type="button"
                     className={style.svc_plan_btn}
-                    onClick={() => goToForm(plan.name)}
+                    onClick={() => openForm(plan.name)}
                   >
                     Get a quote
                   </button>
@@ -257,16 +263,34 @@ function Dynamic({ selectedContent }) {
           </section>
         )}
 
-        {/* ---------- enquiry form ---------- */}
+        {/* ---------- closing CTA ---------- */}
+        {selectedContent.ctaHeading && (
+          <section className={style.svc_cta}>
+            <h2 className={style.svc_cta_heading}>
+              {selectedContent.ctaHeading}
+            </h2>
+            <p className={style.svc_cta_sub}>{selectedContent.ctaSub}</p>
+            <button
+              type="button"
+              className={style.svc_cta_btn}
+              onClick={() => openForm("")}
+            >
+              {selectedContent.ctaBtn}
+            </button>
+          </section>
+        )}
+      </div>
+
+      {formOpen && (
         <ServiceForm
           service={selectedContent.name}
           heading={selectedContent.ctaHeading}
           sub={selectedContent.ctaSub}
           submitLabel={selectedContent.ctaBtn}
           plan={selectedPlan}
-          onClearPlan={() => setSelectedPlan('')}
+          onClose={closeForm}
         />
-      </div>
+      )}
     </>
   );
 }
