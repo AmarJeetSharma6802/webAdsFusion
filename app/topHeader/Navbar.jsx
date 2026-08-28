@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import style from "../style/navbar.module.css";
 import Image from "next/image";
 import {  useRouter } from "next/navigation";
@@ -10,6 +10,48 @@ function Navbar() {
   const router  = useRouter()
   const [serv, setServ] = useState(false);
   const [nav,setNav] = useState(false)
+  const headerRef = useRef(null)
+
+  const closeNav = () => {
+    setNav(false);
+    setServ(false);
+  };
+
+  // click anywhere outside the header closes the open menu
+  useEffect(() => {
+    if (!nav) return;
+
+    const handleOutside = (e) => {
+      if (headerRef.current && !headerRef.current.contains(e.target)) {
+        closeNav();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutside);
+    document.addEventListener("touchstart", handleOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("touchstart", handleOutside);
+    };
+  }, [nav]);
+
+  // scrolling away by more than 60% of a screen height closes the menu too
+  useEffect(() => {
+    if (!nav) return;
+
+    const startY = window.scrollY;
+    const limit = window.innerHeight * 0.6;
+
+    const handleScroll = () => {
+      if (Math.abs(window.scrollY - startY) > limit) {
+        closeNav();
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [nav]);
 
   const handleServ = () => {
     setServ(!serv);
@@ -36,7 +78,7 @@ function Navbar() {
   }
   return (
     <div>
-      <header className={style.header}>
+      <header className={style.header} ref={headerRef}>
         <label htmlFor="" onClick={handleHome}>
           <img src="/logo.png" alt="WebAdsFusion" className={style.Logo_img} />
         </label>
