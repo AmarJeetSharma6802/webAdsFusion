@@ -8,7 +8,7 @@ margin:1rem auto;
 border-radius: 10px;
  background: radial-gradient(ellipse 80% 70% at 50% 0%, rgba(255, 255, 255, 0.12), transparent 70%), #000000;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .service_bg{
     position: relative;
@@ -106,7 +106,7 @@ font-weight: 600;
     ),
     #000000;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .webCard:hover {
@@ -139,7 +139,7 @@ font-size: 15px;
 .webDesign_section_two{
     /* background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 255, 255, 0.12), transparent 70%), #000000; */
        background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   height: 600px;
   /* color: white; */
   padding: 1.5rem;
@@ -186,7 +186,7 @@ font-size: 15px;
   color: #fff;
    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 255, 255, 0.12), transparent 70%), #000000;
        background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .qeustion {
@@ -1233,9 +1233,8 @@ padding: 10px 20px;
 .enq_media {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
   /* grid children default to min-height:auto, which stops them shrinking
      inside the capped modal - without this the panel overflows and the
      submit button gets clipped away */
@@ -1250,14 +1249,18 @@ padding: 10px 20px;
 }
 
 .enq_media_img {
+  /* grow into whatever height the panel has, so the artwork fills the
+     white side instead of leaving a large empty area under it */
+  flex: 1 1 auto;
   width: 100%;
-  height: auto;
-  max-height: 300px;
+  height: 100%;
+  min-height: 0;
   object-fit: contain;
 }
 
 .enq_media_note {
-  padding-top: 1.5rem;
+  flex: 0 0 auto;
+  padding-top: 1.25rem;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
@@ -1447,8 +1450,10 @@ padding: 10px 20px;
   }
 
   .enq_media_img {
+    flex: 0 0 40%;
     width: 40%;
-    max-height: 160px;
+    height: auto;
+    max-height: 170px;
   }
 
   .enq_media_note {
@@ -1467,7 +1472,9 @@ padding: 10px 20px;
   }
 
   .enq_media_img {
+    flex: 0 0 auto;
     width: 100%;
+    max-height: 200px;
   }
 
   .enq_media_note {
@@ -1486,10 +1493,6 @@ padding: 10px 20px;
 
   .enq_media {
     padding: 1.25rem;
-  }
-
-  .enq_media_img {
-    max-height: 190px;
   }
 
   .enq_media_note {
