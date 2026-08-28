@@ -49,9 +49,9 @@ export default function Home() {
 
         <div className={style.home_video_bg}>
           <video
-          className={style.home_video}
-            src="https://res.cloudinary.com/futurecoder/video/upload/w_1280,q_auto,br_2000k,f_auto/v1776837406/jxxwitaeu2a6zr2ahqdh.mp4"
-            poster="https://res.cloudinary.com/futurecoder/video/upload/so_0,w_1280,q_80,f_jpg/v1776837406/jxxwitaeu2a6zr2ahqdh.jpg"
+            className={style.home_video}
+            src="/hero-video.mp4"
+            poster="/hero-poster.jpg"
             loop
             muted
             autoPlay
